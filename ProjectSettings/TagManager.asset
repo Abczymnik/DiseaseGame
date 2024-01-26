@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Light
+  - Drop
+  - Mobs_zombie
+  - GUI Element
+  - Spawn point
+  - Menu Buttons
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - Building
+  - Enemy
+  - 
+  - 
+  - Weapon
+  - 
+  - Environment
+  - 
+  - 
+  - 
+  - 
+  - Terrain
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: UI
+    uniqueID: 9134033
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0

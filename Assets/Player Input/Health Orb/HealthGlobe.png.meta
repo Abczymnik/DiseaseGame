@@ -1,0 +1,3048 @@
+fileFormatVersion: 2
+guid: 52e14008ef7c6b445976f428abd4be92
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8700355362082931903
+    second: HealthGlobe_0
+  - first:
+      213: 802648875868280889
+    second: HealthGlobe_1
+  - first:
+      213: -4612693839797764520
+    second: HealthGlobe_2
+  - first:
+      213: 7824585658803158214
+    second: HealthGlobe_3
+  - first:
+      213: -6077183633608319160
+    second: HealthGlobe_4
+  - first:
+      213: -2037964008171762945
+    second: HealthGlobe_5
+  - first:
+      213: -2038745567179950610
+    second: HealthGlobe_6
+  - first:
+      213: 7581975507068125844
+    second: HealthGlobe_7
+  - first:
+      213: 717575861719821508
+    second: HealthGlobe_8
+  - first:
+      213: -4886808407839082783
+    second: HealthGlobe_9
+  - first:
+      213: -1717908840603647541
+    second: HealthGlobe_10
+  - first:
+      213: 7635454454763219561
+    second: HealthGlobe_11
+  - first:
+      213: 5064379960629616200
+    second: HealthGlobe_12
+  - first:
+      213: -947113936663604380
+    second: HealthGlobe_13
+  - first:
+      213: -2047401346016022641
+    second: HealthGlobe_14
+  - first:
+      213: 6913603351744623645
+    second: HealthGlobe_15
+  - first:
+      213: -7873682919751648446
+    second: HealthGlobe_16
+  - first:
+      213: -6723372577583693211
+    second: HealthGlobe_17
+  - first:
+      213: -3437798082236025214
+    second: HealthGlobe_18
+  - first:
+      213: -1583246916230187027
+    second: HealthGlobe_19
+  - first:
+      213: 2905222830077804462
+    second: HealthGlobe_20
+  - first:
+      213: -2477010291982931140
+    second: HealthGlobe_21
+  - first:
+      213: -5792913377754210454
+    second: HealthGlobe_22
+  - first:
+      213: 4367090103428795383
+    second: HealthGlobe_23
+  - first:
+      213: 576895932250696183
+    second: HealthGlobe_24
+  - first:
+      213: -1815648844724361308
+    second: HealthGlobe_25
+  - first:
+      213: 3233636548031818837
+    second: HealthGlobe_26
+  - first:
+      213: 308761533392648012
+    second: HealthGlobe_27
+  - first:
+      213: 5451046209008502952
+    second: HealthGlobe_28
+  - first:
+      213: 5099970637054520966
+    second: HealthGlobe_29
+  - first:
+      213: 6652276360950747864
+    second: HealthGlobe_30
+  - first:
+      213: -4165739983793316304
+    second: HealthGlobe_31
+  - first:
+      213: 9014454433800612781
+    second: HealthGlobe_32
+  - first:
+      213: -5744846393883770223
+    second: HealthGlobe_33
+  - first:
+      213: -7593271691396093574
+    second: HealthGlobe_34
+  - first:
+      213: 978672163706685871
+    second: HealthGlobe_35
+  - first:
+      213: -2661838029981958023
+    second: HealthGlobe_36
+  - first:
+      213: 1201910539961090497
+    second: HealthGlobe_37
+  - first:
+      213: -1891477362108366119
+    second: HealthGlobe_38
+  - first:
+      213: -4313705322577244534
+    second: HealthGlobe_39
+  - first:
+      213: -2948170176737966586
+    second: HealthGlobe_40
+  - first:
+      213: 3470071028196941943
+    second: HealthGlobe_41
+  - first:
+      213: 2407967302480907308
+    second: HealthGlobe_42
+  - first:
+      213: -8716213069822213103
+    second: HealthGlobe_43
+  - first:
+      213: 5494707254083504712
+    second: HealthGlobe_44
+  - first:
+      213: -44667737594116258
+    second: HealthGlobe_45
+  - first:
+      213: -8922024862290333447
+    second: HealthGlobe_46
+  - first:
+      213: 8404598855889390562
+    second: HealthGlobe_47
+  - first:
+      213: -366945815765580300
+    second: HealthGlobe_48
+  - first:
+      213: 5997616400624898989
+    second: HealthGlobe_49
+  - first:
+      213: -7092668160864464753
+    second: HealthGlobe_50
+  - first:
+      213: 739446236668609259
+    second: HealthGlobe_51
+  - first:
+      213: -6399521823188915088
+    second: HealthGlobe_52
+  - first:
+      213: 8455057566145216888
+    second: HealthGlobe_53
+  - first:
+      213: -7743305060056887654
+    second: HealthGlobe_54
+  - first:
+      213: 1836947159595664426
+    second: HealthGlobe_55
+  - first:
+      213: -2495133360926929452
+    second: HealthGlobe_56
+  - first:
+      213: 1238374546977657658
+    second: HealthGlobe_57
+  - first:
+      213: -6289032914763079459
+    second: HealthGlobe_58
+  - first:
+      213: -5997430297944673828
+    second: HealthGlobe_59
+  - first:
+      213: 6951944978676490571
+    second: HealthGlobe_60
+  - first:
+      213: 8701880812714919709
+    second: HealthGlobe_61
+  - first:
+      213: 8235424725285460137
+    second: HealthGlobe_62
+  - first:
+      213: 4836767585419415494
+    second: HealthGlobe_63
+  - first:
+      213: -1064491138689353290
+    second: HealthGlobe_64
+  - first:
+      213: -7750995364796052664
+    second: HealthGlobe_65
+  - first:
+      213: -4416062210031686499
+    second: HealthGlobe_66
+  - first:
+      213: -7478699541890854997
+    second: HealthGlobe_67
+  - first:
+      213: -1836646987886389663
+    second: HealthGlobe_68
+  - first:
+      213: -8205713785028083502
+    second: HealthGlobe_69
+  - first:
+      213: -1216510973691173370
+    second: HealthGlobe_70
+  - first:
+      213: -2794993354209741343
+    second: HealthGlobe_71
+  - first:
+      213: 4327609818780310951
+    second: HealthGlobe_72
+  - first:
+      213: 7269467519622089516
+    second: HealthGlobe_73
+  - first:
+      213: -8662628717088312605
+    second: HealthGlobe_74
+  - first:
+      213: -759832478590212082
+    second: HealthGlobe_75
+  - first:
+      213: -3685299997734938439
+    second: HealthGlobe_76
+  - first:
+      213: -8341658610735911042
+    second: HealthGlobe_77
+  - first:
+      213: 5282066282836785041
+    second: HealthGlobe_78
+  - first:
+      213: 1958192393834459669
+    second: HealthGlobe_79
+  - first:
+      213: 8625579635871455687
+    second: HealthGlobe_80
+  - first:
+      213: 6640612211678050822
+    second: HealthGlobe_81
+  - first:
+      213: 4301029831108930543
+    second: HealthGlobe_82
+  - first:
+      213: -6580689007160563522
+    second: HealthGlobe_83
+  - first:
+      213: 9135438572804548426
+    second: HealthGlobe_84
+  - first:
+      213: 6524639272689427302
+    second: HealthGlobe_85
+  - first:
+      213: -5835168229616948669
+    second: HealthGlobe_86
+  - first:
+      213: 8274273158191242736
+    second: HealthGlobe_87
+  - first:
+      213: -5090377831355107692
+    second: HealthGlobe_88
+  - first:
+      213: 7442065797418526457
+    second: HealthGlobe_89
+  - first:
+      213: 751856519406802195
+    second: HealthGlobe_90
+  - first:
+      213: 6491647943373378854
+    second: HealthGlobe_91
+  - first:
+      213: -3286524276782548149
+    second: HealthGlobe_92
+  - first:
+      213: -4199392971704202030
+    second: HealthGlobe_93
+  - first:
+      213: 1800086321522097253
+    second: HealthGlobe_94
+  - first:
+      213: -4098303879251449432
+    second: HealthGlobe_95
+  - first:
+      213: 4547273297435127802
+    second: HealthGlobe_96
+  - first:
+      213: -4555659780422909257
+    second: HealthGlobe_97
+  - first:
+      213: -6546021181317644132
+    second: HealthGlobe_98
+  - first:
+      213: -6914096052568741151
+    second: HealthGlobe_99
+  - first:
+      213: 5559470544120575453
+    second: HealthGlobe_100
+  - first:
+      213: 705898910729312764
+    second: HealthGlobe_101
+  - first:
+      213: -6234777803428373795
+    second: HealthGlobe_102
+  - first:
+      213: -4159329588796297533
+    second: HealthGlobe_103
+  - first:
+      213: 1312329023430889839
+    second: HealthGlobe_104
+  - first:
+      213: -187634865391927080
+    second: HealthGlobe_105
+  - first:
+      213: -3239786144517317543
+    second: HealthGlobe_106
+  - first:
+      213: 8024419364795693167
+    second: HealthGlobe_107
+  - first:
+      213: -1442664765474007965
+    second: HealthGlobe_108
+  - first:
+      213: 938800159888659606
+    second: HealthGlobe_109
+  - first:
+      213: 562157487373392732
+    second: HealthGlobe_110
+  - first:
+      213: -6735125014100269049
+    second: HealthGlobe_111
+  - first:
+      213: 8364646647489754147
+    second: HealthGlobe_112
+  - first:
+      213: -4422333301309189325
+    second: HealthGlobe_113
+  - first:
+      213: 5232345914000513376
+    second: HealthGlobe_114
+  - first:
+      213: -2612827572101860680
+    second: HealthGlobe_115
+  - first:
+      213: -3318444604845461161
+    second: HealthGlobe_116
+  - first:
+      213: 4463458563242656610
+    second: HealthGlobe_117
+  - first:
+      213: 3139690825357587920
+    second: HealthGlobe_118
+  - first:
+      213: 1133480369236033730
+    second: HealthGlobe_119
+  - first:
+      213: -1777748237852804902
+    second: HealthGlobe_120
+  - first:
+      213: -8215864150716127771
+    second: HealthGlobe_121
+  - first:
+      213: 4883825845165565512
+    second: HealthGlobe_122
+  - first:
+      213: -4856526860513806658
+    second: HealthGlobe_123
+  - first:
+      213: 1776643192746507435
+    second: HealthGlobe_124
+  - first:
+      213: -2062293016508990475
+    second: HealthGlobe_125
+  - first:
+      213: 6784062786012222531
+    second: HealthGlobe_126
+  - first:
+      213: -3731752577466523596
+    second: HealthGlobe_127
+  - first:
+      213: 8153768548787360154
+    second: HealthGlobe_128
+  - first:
+      213: -7259715618413382157
+    second: HealthGlobe_129
+  - first:
+      213: -4000384987272409534
+    second: HealthGlobe_130
+  - first:
+      213: 4330554504902557787
+    second: HealthGlobe_131
+  - first:
+      213: 2586875761649435035
+    second: HealthGlobe_132
+  - first:
+      213: -9203864038280637148
+    second: HealthGlobe_133
+  - first:
+      213: 5836441853574399402
+    second: HealthGlobe_134
+  - first:
+      213: 305326229955053409
+    second: HealthGlobe_135
+  - first:
+      213: -6789664152231159090
+    second: HealthGlobe_136
+  - first:
+      213: 145085166858444431
+    second: HealthGlobe_137
+  - first:
+      213: -4780577387779369043
+    second: HealthGlobe_138
+  - first:
+      213: 1690865545958703121
+    second: HealthGlobe_139
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HealthGlobe_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc10157e203c828e0800000000000000
+      internalID: -1717908840603647541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_11
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ae5da4f5596f960800000000000000
+      internalID: 7635454454763219561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_12
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e5fe0fdba484640800000000000000
+      internalID: 5064379960629616200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_13
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463185384ec2bd2f0800000000000000
+      internalID: -947113936663604380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_14
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fee0ac25b2693e0800000000000000
+      internalID: -2047401346016022641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_15
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1430ba5e9d02ff50800000000000000
+      internalID: 6913603351744623645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_16
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b742ed91f0bb290800000000000000
+      internalID: -7873682919751648446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_17
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562858c3348c1b2a0800000000000000
+      internalID: -6723372577583693211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_18
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2867dc2cbdc7a40d0800000000000000
+      internalID: -3437798082236025214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_19
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 3546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7fd5e615d270ae0800000000000000
+      internalID: -1583246916230187027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf742c75cc615820800000000000000
+      internalID: 2905222830077804462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_21
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bee516344ef9dd0800000000000000
+      internalID: -2477010291982931140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_22
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f1a50a9ff6b9fa0800000000000000
+      internalID: -5792913377754210454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_23
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb4ffcaf450b9c30800000000000000
+      internalID: 4367090103428795383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_24
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9ab2a3bcb810800800000000000000
+      internalID: 576895932250696183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_25
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a72b55def48dc6e0800000000000000
+      internalID: -1815648844724361308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_26
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c2822de4f20ec20800000000000000
+      internalID: 3233636548031818837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_27
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c477c2e8af0f84400800000000000000
+      internalID: 308761533392648012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_28
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8013e65a106ab40800000000000000
+      internalID: 5451046209008502952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_29
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 3346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68eae8a064cb6c640800000000000000
+      internalID: 5099970637054520966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_30
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d29232ea12a15c50800000000000000
+      internalID: 6652276360950747864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_31
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e9b574e815036c0800000000000000
+      internalID: -4165739983793316304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_32
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab61a20c86c91d70800000000000000
+      internalID: 9014454433800612781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_33
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192cf5b64a43640b0800000000000000
+      internalID: -5744846393883770223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_34
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a796e47a0a74f9690800000000000000
+      internalID: -7593271691396093574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_35
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9cc4dc521f49d00800000000000000
+      internalID: 978672163706685871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_36
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970cc4d2a604f0bd0800000000000000
+      internalID: -2661838029981958023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_37
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1cd22a44b0ea010800000000000000
+      internalID: 1201910539961090497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_38
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d286d25c5f10c5e0800000000000000
+      internalID: -1891477362108366119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_39
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 3146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e42163dd3a224c0800000000000000
+      internalID: -4313705322577244534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_40
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606022628def517d0800000000000000
+      internalID: -2948170176737966586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_41
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770ad05073b282030800000000000000
+      internalID: 3470071028196941943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_42
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c412fe081da6120800000000000000
+      internalID: 2407967302480907308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_43
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11441aab46ac90780800000000000000
+      internalID: -8716213069822213103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_44
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ac868a22f114c40800000000000000
+      internalID: 5494707254083504712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_45
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5748c7edee416ff0800000000000000
+      internalID: -44667737594116258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_46
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f03bfd98a99e2480800000000000000
+      internalID: -8922024862290333447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_47
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb01f4412223a470800000000000000
+      internalID: 8404598855889390562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_48
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f50a7789b858eaf0800000000000000
+      internalID: -366945815765580300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_49
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 2946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3dd42f650db3350800000000000000
+      internalID: 5997616400624898989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_50
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8053f1e2e7c19d90800000000000000
+      internalID: -7092668160864464753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_51
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2c12b3f6a034a00800000000000000
+      internalID: 739446236668609259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_52
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ce674dec45037a0800000000000000
+      internalID: -6399521823188915088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_53
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87180914f06665570800000000000000
+      internalID: 8455057566145216888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_54
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e03dbd2114a8490800000000000000
+      internalID: -7743305060056887654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_55
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24ccd685b52e7910800000000000000
+      internalID: 1836947159595664426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_56
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd49b29d618f5dd0800000000000000
+      internalID: -2495133360926929452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_57
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a331d7bd6179f2110800000000000000
+      internalID: 1238374546977657658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_58
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0aece72edd8b8a0800000000000000
+      internalID: -6289032914763079459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_59
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 2746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1b7d57be8d4cca0800000000000000
+      internalID: -5997430297944673828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_60
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b41a21800254a7060800000000000000
+      internalID: 6951944978676490571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_61
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1709af9e7a43c870800000000000000
+      internalID: 8701880812714919709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_62
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8db1d872b1a4270800000000000000
+      internalID: 8235424725285460137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_63
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf4c0e1e76af1340800000000000000
+      internalID: 4836767585419415494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_64
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9bed303fa2a31f0800000000000000
+      internalID: -1064491138689353290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_65
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84bc1a148ceee6490800000000000000
+      internalID: -7750995364796052664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_66
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ce80931def6b2c0800000000000000
+      internalID: -4416062210031686499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_67
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf08b7f362563890800000000000000
+      internalID: -7478699541890854997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_68
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1669d35ab4be286e0800000000000000
+      internalID: -1836646987886389663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_69
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 2546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d000eac9c27f1e80800000000000000
+      internalID: -8205713785028083502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_70
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606e5cbf6b51e1fe0800000000000000
+      internalID: -1216510973691173370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_71
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e530c45a503639d0800000000000000
+      internalID: -2794993354209741343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_72
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad94e69332ce0c30800000000000000
+      internalID: 4327609818780310951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_73
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b805d913652e460800000000000000
+      internalID: 7269467519622089516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_74
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e27ad0141928c780800000000000000
+      internalID: -8662628717088312605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_75
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0863d0f2688475f0800000000000000
+      internalID: -759832478590212082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_76
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8d2487d2f2bdcc0800000000000000
+      internalID: -3685299997734938439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_77
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fe18580b97c3c80800000000000000
+      internalID: -8341658610735911042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_78
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 197fd847c4bad4940800000000000000
+      internalID: 5282066282836785041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_79
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 2346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512ff547b95ec2b10800000000000000
+      internalID: 1958192393834459669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_80
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c916f18af634b770800000000000000
+      internalID: 8625579635871455687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_81
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60af0308f91382c50800000000000000
+      internalID: 6640612211678050822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_82
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb2b93f7d350bb30800000000000000
+      internalID: 4301029831108930543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_83
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb860e6c632bca4a0800000000000000
+      internalID: -6580689007160563522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_84
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47aa67faf897ce70800000000000000
+      internalID: 9135438572804548426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_85
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663673879dc2c8a50800000000000000
+      internalID: 6524639272689427302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_86
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a69054961550fa0800000000000000
+      internalID: -5835168229616948669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_87
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdd980399f14d270800000000000000
+      internalID: 8274273158191242736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_88
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4963e8515585b59b0800000000000000
+      internalID: -5090377831355107692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_89
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 2146
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6273ab967874760800000000000000
+      internalID: 7442065797418526457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_90
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315dd4955812f6a00800000000000000
+      internalID: 751856519406802195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_91
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6255aa70967f61a50800000000000000
+      internalID: 6491647943373378854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_92
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4bbda0459be362d0800000000000000
+      internalID: -3286524276782548149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_93
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc8c417752c8b5c0800000000000000
+      internalID: -4199392971704202030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_94
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c3d5fd8f03bf810800000000000000
+      internalID: 1800086321522097253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_95
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9ac97e556ef17c0800000000000000
+      internalID: -4098303879251449432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_96
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff6d36b8f82b1f30800000000000000
+      internalID: 4547273297435127802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_97
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2cb5e019b07c0c0800000000000000
+      internalID: -4555659780422909257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_98
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90016bfa6cd725a0800000000000000
+      internalID: -6546021181317644132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_99
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 1946
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eaa5bbc5423c00a0800000000000000
+      internalID: -6914096052568741151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_100
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5fd892105372d40800000000000000
+      internalID: 5559470544120575453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_101
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf91b5db15bdbc900800000000000000
+      internalID: 705898910729312764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_102
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda592dfe9e9979a0800000000000000
+      internalID: -6234777803428373795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_103
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce660ca6c71746c0800000000000000
+      internalID: -4159329588796297533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_104
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6198063b44563210800000000000000
+      internalID: 1312329023430889839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_105
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d006d48513656df0800000000000000
+      internalID: -187634865391927080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_106
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c10dbaaa7f903d0800000000000000
+      internalID: -3239786144517317543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_107
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68b967a5e67c5f60800000000000000
+      internalID: 8024419364795693167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_108
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36413f31a00aafbe0800000000000000
+      internalID: -1442664765474007965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_109
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 1746
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6945e3d75c9470d00800000000000000
+      internalID: 938800159888659606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_110
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b97be914f2dc700800000000000000
+      internalID: 562157487373392732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_111
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708a4b0eb770882a0800000000000000
+      internalID: -6735125014100269049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_112
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 324f94fdec1351470800000000000000
+      internalID: 8364646647489754147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_113
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333d5110b47b0a2c0800000000000000
+      internalID: -4422333301309189325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_114
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06997f9f2e60d9840800000000000000
+      internalID: 5232345914000513376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_115
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2b581aa2f5dbbd0800000000000000
+      internalID: -2612827572101860680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_116
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751ff59b63482f1d0800000000000000
+      internalID: -3318444604845461161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_117
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26301c33ae361fd30800000000000000
+      internalID: 4463458563242656610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_118
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5fdfdbb2c629b20800000000000000
+      internalID: 3139690825357587920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_119
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 1546
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c04130f36eeabf00800000000000000
+      internalID: 1133480369236033730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_120
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8f4b6856b2457e0800000000000000
+      internalID: -1777748237852804902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_121
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5e2bd95136bfd80800000000000000
+      internalID: -8215864150716127771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_122
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84627f50bb5d6c340800000000000000
+      internalID: 4883825845165565512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_123
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb67ee42d862a9cb0800000000000000
+      internalID: -4856526860513806658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_124
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac754c1297e7a810800000000000000
+      internalID: 1776643192746507435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_125
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb76309d634163e0800000000000000
+      internalID: -2062293016508990475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_126
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344943e0925d52e50800000000000000
+      internalID: 6784062786012222531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_127
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430a57e6dc6263cc0800000000000000
+      internalID: -3731752577466523596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_128
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91193b6b41082170800000000000000
+      internalID: 8153768548787360154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthGlobe_129
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f57d12db1f404b90800000000000000
+      internalID: -7259715618413382157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8fa710429f50b99458290eb96542418a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

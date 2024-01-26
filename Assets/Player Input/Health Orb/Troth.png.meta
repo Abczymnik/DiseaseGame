@@ -1,0 +1,3348 @@
+fileFormatVersion: 2
+guid: fb54dc74c8c9bb84194ec403f6f35553
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -491992231203924285
+    second: troth_0
+  - first:
+      213: 7093539617805295440
+    second: troth_1
+  - first:
+      213: -4954048475862029418
+    second: troth_2
+  - first:
+      213: -6868899135105933921
+    second: troth_3
+  - first:
+      213: -7737218172139159474
+    second: troth_4
+  - first:
+      213: 8747682117273433286
+    second: troth_5
+  - first:
+      213: 7619126002848332074
+    second: troth_6
+  - first:
+      213: 7636894562458683607
+    second: troth_7
+  - first:
+      213: -1102876262706431170
+    second: troth_8
+  - first:
+      213: -4343060713298468622
+    second: troth_9
+  - first:
+      213: -7910511316599588057
+    second: troth_10
+  - first:
+      213: -3904804401529728708
+    second: troth_11
+  - first:
+      213: 7585039096569194985
+    second: troth_12
+  - first:
+      213: 3913677300163538201
+    second: troth_13
+  - first:
+      213: -1414364244179174188
+    second: troth_14
+  - first:
+      213: 4191896766692410558
+    second: troth_15
+  - first:
+      213: 623449534352292007
+    second: troth_16
+  - first:
+      213: 3702382345875320682
+    second: troth_17
+  - first:
+      213: -463529958124864737
+    second: troth_18
+  - first:
+      213: -7326724241355783152
+    second: troth_19
+  - first:
+      213: 1138081743172852998
+    second: troth_20
+  - first:
+      213: 1339592459432623926
+    second: troth_21
+  - first:
+      213: 6442102032354323033
+    second: troth_22
+  - first:
+      213: 753962705310908512
+    second: troth_23
+  - first:
+      213: 3354258962448280351
+    second: troth_24
+  - first:
+      213: -7381706658513484139
+    second: troth_25
+  - first:
+      213: -5320888630649145924
+    second: troth_26
+  - first:
+      213: 6658809562565048229
+    second: troth_27
+  - first:
+      213: 5272454781543550825
+    second: troth_28
+  - first:
+      213: -6993810659317374051
+    second: troth_29
+  - first:
+      213: -7228419034339304916
+    second: troth_30
+  - first:
+      213: -258964163819027895
+    second: troth_31
+  - first:
+      213: 7871557583167963741
+    second: troth_32
+  - first:
+      213: 881009380973621654
+    second: troth_33
+  - first:
+      213: 9152352442862712034
+    second: troth_34
+  - first:
+      213: 8949061287907325407
+    second: troth_35
+  - first:
+      213: 2342395158454916369
+    second: troth_36
+  - first:
+      213: -2675459045674266488
+    second: troth_37
+  - first:
+      213: -5810027695200448257
+    second: troth_38
+  - first:
+      213: -1957779603899627277
+    second: troth_39
+  - first:
+      213: -2283211458423868685
+    second: troth_40
+  - first:
+      213: -7098664419770200448
+    second: troth_41
+  - first:
+      213: -1402422928841547417
+    second: troth_42
+  - first:
+      213: -4164785107048432048
+    second: troth_43
+  - first:
+      213: 8729879150554834721
+    second: troth_44
+  - first:
+      213: 7140642122535941709
+    second: troth_45
+  - first:
+      213: -1265410737686791788
+    second: troth_46
+  - first:
+      213: -7690387272444550460
+    second: troth_47
+  - first:
+      213: 3465730141212719219
+    second: troth_48
+  - first:
+      213: -1843308717768473381
+    second: troth_49
+  - first:
+      213: -2767864033910857185
+    second: troth_50
+  - first:
+      213: -7341370479697748999
+    second: troth_51
+  - first:
+      213: -2388416716746694405
+    second: troth_52
+  - first:
+      213: -6217848019624262477
+    second: troth_53
+  - first:
+      213: 8930755233703957309
+    second: troth_54
+  - first:
+      213: -6087666038917066413
+    second: troth_55
+  - first:
+      213: 2106166363739775164
+    second: troth_56
+  - first:
+      213: 4959757592068947031
+    second: troth_57
+  - first:
+      213: 6881082951741567434
+    second: troth_58
+  - first:
+      213: 2213214743196096762
+    second: troth_59
+  - first:
+      213: 8105342039999593747
+    second: troth_60
+  - first:
+      213: 858077181865904800
+    second: troth_61
+  - first:
+      213: 1649269196282289376
+    second: troth_62
+  - first:
+      213: 7714749911924717093
+    second: troth_63
+  - first:
+      213: 2271072084708578192
+    second: troth_64
+  - first:
+      213: -5019064934377210976
+    second: troth_65
+  - first:
+      213: -1034996668663465658
+    second: troth_66
+  - first:
+      213: -3191323378768962060
+    second: troth_67
+  - first:
+      213: 6403734153813809342
+    second: troth_68
+  - first:
+      213: 4026829419632191378
+    second: troth_69
+  - first:
+      213: 5694282969337567382
+    second: troth_70
+  - first:
+      213: 9211513575105809571
+    second: troth_71
+  - first:
+      213: -6570209095544445108
+    second: troth_72
+  - first:
+      213: -7477373969025520329
+    second: troth_73
+  - first:
+      213: 3348705825382660903
+    second: troth_74
+  - first:
+      213: -5190039694366588851
+    second: troth_75
+  - first:
+      213: 416643644261959639
+    second: troth_76
+  - first:
+      213: 3297769121656315594
+    second: troth_77
+  - first:
+      213: -5845197520281917374
+    second: troth_78
+  - first:
+      213: 970673202462429790
+    second: troth_79
+  - first:
+      213: 6918944648559381174
+    second: troth_80
+  - first:
+      213: 6072134659151931821
+    second: troth_81
+  - first:
+      213: 6818284859258433862
+    second: troth_82
+  - first:
+      213: 2524465710513406736
+    second: troth_83
+  - first:
+      213: 7198049398494959260
+    second: troth_84
+  - first:
+      213: -3891738943278121139
+    second: troth_85
+  - first:
+      213: -440276024820885640
+    second: troth_86
+  - first:
+      213: -8652873281505773827
+    second: troth_87
+  - first:
+      213: 8001237674026686581
+    second: troth_88
+  - first:
+      213: 4272466404880972204
+    second: troth_89
+  - first:
+      213: 2698449214508773858
+    second: troth_90
+  - first:
+      213: 6178053127203853459
+    second: troth_91
+  - first:
+      213: 9148648147476136223
+    second: troth_92
+  - first:
+      213: -6849080885622295060
+    second: troth_93
+  - first:
+      213: 6657250283882464339
+    second: troth_94
+  - first:
+      213: -1453978270152612009
+    second: troth_95
+  - first:
+      213: 2419538859586480676
+    second: troth_96
+  - first:
+      213: -6841576671265259332
+    second: troth_97
+  - first:
+      213: 6876635312504796704
+    second: troth_98
+  - first:
+      213: -7957077787896334826
+    second: troth_99
+  - first:
+      213: 4180713183270870187
+    second: troth_100
+  - first:
+      213: -6192725573849298636
+    second: troth_101
+  - first:
+      213: 3992367681304326324
+    second: troth_102
+  - first:
+      213: -8914163277867434009
+    second: troth_103
+  - first:
+      213: -2381738789500654141
+    second: troth_104
+  - first:
+      213: 7130144242534348581
+    second: troth_105
+  - first:
+      213: 5085825907100620201
+    second: troth_106
+  - first:
+      213: 8494402167625468961
+    second: troth_107
+  - first:
+      213: -2124090913393936280
+    second: troth_108
+  - first:
+      213: -6467356192918465658
+    second: troth_109
+  - first:
+      213: 5882306800652093540
+    second: troth_110
+  - first:
+      213: 1275414584743468927
+    second: troth_111
+  - first:
+      213: 7695013746443468535
+    second: troth_112
+  - first:
+      213: -4467861033725391237
+    second: troth_113
+  - first:
+      213: 4536290694191055856
+    second: troth_114
+  - first:
+      213: 4507291939892695485
+    second: troth_115
+  - first:
+      213: 3949858450176346500
+    second: troth_116
+  - first:
+      213: 2707530653448332398
+    second: troth_117
+  - first:
+      213: 1474936173174217704
+    second: troth_118
+  - first:
+      213: 6903769520371968994
+    second: troth_119
+  - first:
+      213: 5007481877038557708
+    second: Troth_0
+  - first:
+      213: -7521360565280241799
+    second: Troth_1
+  - first:
+      213: 595316025102443491
+    second: Troth_2
+  - first:
+      213: -6131153625024694450
+    second: Troth_3
+  - first:
+      213: 5929383062836880421
+    second: Troth_4
+  - first:
+      213: -4281542765618421268
+    second: Troth_5
+  - first:
+      213: -7920161442432134564
+    second: Troth_6
+  - first:
+      213: 8429769950290940048
+    second: Troth_7
+  - first:
+      213: 4680587605403198720
+    second: Troth_8
+  - first:
+      213: 1290974122362968923
+    second: Troth_9
+  - first:
+      213: -3740876956958420930
+    second: Troth_10
+  - first:
+      213: 8018200776239328507
+    second: Troth_11
+  - first:
+      213: -4138537482947237832
+    second: Troth_12
+  - first:
+      213: 4974091012397486878
+    second: Troth_13
+  - first:
+      213: -5534966344491107329
+    second: Troth_14
+  - first:
+      213: 6137060779700952390
+    second: Troth_15
+  - first:
+      213: 6435038380056813548
+    second: Troth_16
+  - first:
+      213: 6181005364743827324
+    second: Troth_17
+  - first:
+      213: 396618863832077420
+    second: Troth_18
+  - first:
+      213: -4922565597837116933
+    second: Troth_19
+  - first:
+      213: 8715337567773874063
+    second: Troth_20
+  - first:
+      213: -4498254252750703694
+    second: Troth_21
+  - first:
+      213: 2800012006478081884
+    second: Troth_22
+  - first:
+      213: 2928604015841641715
+    second: Troth_23
+  - first:
+      213: 3204276830533263891
+    second: Troth_24
+  - first:
+      213: -5375276727888365643
+    second: Troth_25
+  - first:
+      213: -6836364415195284067
+    second: Troth_26
+  - first:
+      213: 5072703822282088168
+    second: Troth_27
+  - first:
+      213: 3897451431563892714
+    second: Troth_28
+  - first:
+      213: -6031999440350051738
+    second: Troth_29
+  - first:
+      213: -6585108163442599059
+    second: Troth_30
+  - first:
+      213: -6135857292174854539
+    second: Troth_31
+  - first:
+      213: -4550961296899832413
+    second: Troth_32
+  - first:
+      213: -7932628931166106652
+    second: Troth_33
+  - first:
+      213: -3625931035417080816
+    second: Troth_34
+  - first:
+      213: 5646410668323657267
+    second: Troth_35
+  - first:
+      213: -7050304831606101743
+    second: Troth_36
+  - first:
+      213: -306112866503626351
+    second: Troth_37
+  - first:
+      213: 1988258232572407425
+    second: Troth_38
+  - first:
+      213: 7672073569815808627
+    second: Troth_39
+  - first:
+      213: -4094337218242076006
+    second: Troth_40
+  - first:
+      213: 4092499038169865037
+    second: Troth_41
+  - first:
+      213: 5526129640828896673
+    second: Troth_42
+  - first:
+      213: 5938078340168790473
+    second: Troth_43
+  - first:
+      213: 8481041410524019515
+    second: Troth_44
+  - first:
+      213: -795977738907127284
+    second: Troth_45
+  - first:
+      213: -4275009316486143597
+    second: Troth_46
+  - first:
+      213: -4288230212943155174
+    second: Troth_47
+  - first:
+      213: 8340407655331991382
+    second: Troth_48
+  - first:
+      213: 7780475053682840299
+    second: Troth_49
+  - first:
+      213: 4366677732586884016
+    second: Troth_50
+  - first:
+      213: 839243165426983477
+    second: Troth_51
+  - first:
+      213: -900425019948919209
+    second: Troth_52
+  - first:
+      213: -1804862818745677674
+    second: Troth_53
+  - first:
+      213: -5234733591891605911
+    second: Troth_54
+  - first:
+      213: -6377401170083043580
+    second: Troth_55
+  - first:
+      213: 3537700582154459565
+    second: Troth_56
+  - first:
+      213: -4719963657361949456
+    second: Troth_57
+  - first:
+      213: -2217787717429656095
+    second: Troth_58
+  - first:
+      213: 2208416857600548914
+    second: Troth_59
+  - first:
+      213: -1353408039943536165
+    second: Troth_60
+  - first:
+      213: -1422348900841553074
+    second: Troth_61
+  - first:
+      213: 8115951750159336366
+    second: Troth_62
+  - first:
+      213: 568214308873367588
+    second: Troth_63
+  - first:
+      213: 6859999753493459192
+    second: Troth_64
+  - first:
+      213: -8467208798147770898
+    second: Troth_65
+  - first:
+      213: -2310984059947530013
+    second: Troth_66
+  - first:
+      213: 8993455796289444171
+    second: Troth_67
+  - first:
+      213: -4583182539416371022
+    second: Troth_68
+  - first:
+      213: -7115085062367562195
+    second: Troth_69
+  - first:
+      213: 8445388648919834315
+    second: Troth_70
+  - first:
+      213: 2043729957981512270
+    second: Troth_71
+  - first:
+      213: 4028861629775254565
+    second: Troth_72
+  - first:
+      213: -79973397957273634
+    second: Troth_73
+  - first:
+      213: -418522055118776804
+    second: Troth_74
+  - first:
+      213: 5872405153643806991
+    second: Troth_75
+  - first:
+      213: 5149917982548398956
+    second: Troth_76
+  - first:
+      213: 1096618383655601948
+    second: Troth_77
+  - first:
+      213: -504859079456784571
+    second: Troth_78
+  - first:
+      213: -2117726395829352000
+    second: Troth_79
+  - first:
+      213: 7899638794161586471
+    second: Troth_80
+  - first:
+      213: -576740207240022411
+    second: Troth_81
+  - first:
+      213: -3455505219554392114
+    second: Troth_82
+  - first:
+      213: 5991686097099670435
+    second: Troth_83
+  - first:
+      213: 8111007726713840505
+    second: Troth_84
+  - first:
+      213: 2905764991056894667
+    second: Troth_85
+  - first:
+      213: 4470608967198817072
+    second: Troth_86
+  - first:
+      213: 3088448163471395688
+    second: Troth_87
+  - first:
+      213: 6122489087507571248
+    second: Troth_88
+  - first:
+      213: 6477041433924482854
+    second: Troth_89
+  - first:
+      213: 7745112658693599071
+    second: Troth_90
+  - first:
+      213: 1884706965758223414
+    second: Troth_91
+  - first:
+      213: -5896168962517781409
+    second: Troth_92
+  - first:
+      213: -8661887379944055648
+    second: Troth_93
+  - first:
+      213: 1450374161519910307
+    second: Troth_94
+  - first:
+      213: 548892843542962235
+    second: Troth_95
+  - first:
+      213: 3299272586174383734
+    second: Troth_96
+  - first:
+      213: -4671432266919479573
+    second: Troth_97
+  - first:
+      213: -2405811949879497639
+    second: Troth_98
+  - first:
+      213: -6445389941100706640
+    second: Troth_99
+  - first:
+      213: 891902637322537497
+    second: Troth_100
+  - first:
+      213: 2131574368426284025
+    second: Troth_101
+  - first:
+      213: -3531367808892285499
+    second: Troth_102
+  - first:
+      213: -6359125740419212864
+    second: Troth_103
+  - first:
+      213: -6552573400303830508
+    second: Troth_104
+  - first:
+      213: -7161472364290298822
+    second: Troth_105
+  - first:
+      213: 4627648584734094661
+    second: Troth_106
+  - first:
+      213: 8661607720564180446
+    second: Troth_107
+  - first:
+      213: 2285724178414375131
+    second: Troth_108
+  - first:
+      213: 6949573736871413057
+    second: Troth_109
+  - first:
+      213: -1240703348816179836
+    second: Troth_110
+  - first:
+      213: -4114602779058515355
+    second: Troth_111
+  - first:
+      213: 8798201887402792172
+    second: Troth_112
+  - first:
+      213: -8216476754567707687
+    second: Troth_113
+  - first:
+      213: 8972807367011508204
+    second: Troth_114
+  - first:
+      213: -5146770098851436322
+    second: Troth_115
+  - first:
+      213: 44465978196613964
+    second: Troth_116
+  - first:
+      213: -8680062422193039231
+    second: Troth_117
+  - first:
+      213: -349904582256583818
+    second: Troth_118
+  - first:
+      213: 4109528635829581002
+    second: Troth_119
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Troth_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2003
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ae6148c362e7540800000000000000
+      internalID: 5007481877038557708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 2003
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97707de6a62ce9790800000000000000
+      internalID: -7521360565280241799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 2003
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3245d45ccf24800800000000000000
+      internalID: 595316025102443491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2003
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e47fd052344c9eaa0800000000000000
+      internalID: -6131153625024694450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2003
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5242c9dfa76694250800000000000000
+      internalID: 5929383062836880421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1958
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1abac0a87e494c0800000000000000
+      internalID: -4281542765618421268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1958
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c525614812fe51290800000000000000
+      internalID: -7920161442432134564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1958
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0909a516b1f8cf470800000000000000
+      internalID: 8429769950290940048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_8
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1958
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0056728d0a9c4f040800000000000000
+      internalID: 4680587605403198720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_9
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1958
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b9aa9df167ae110800000000000000
+      internalID: 1290974122362968923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1913
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e309c084a3cb51cc0800000000000000
+      internalID: -3740876956958420930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1913
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfca18daf1f564f60800000000000000
+      internalID: 8018200776239328507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_12
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1913
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8386a4f0616f096c0800000000000000
+      internalID: -4138537482947237832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1913
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e135a620c65870540800000000000000
+      internalID: 4974091012397486878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1913
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb7dd86f69df23b0800000000000000
+      internalID: -5534966344491107329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1868
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d9e0b73483b2550800000000000000
+      internalID: 6137060779700952390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_16
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1868
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef9a47ff49dd4950800000000000000
+      internalID: 6435038380056813548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_17
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1868
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fe65081a757c550800000000000000
+      internalID: 6181005364743827324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_18
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1868
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c641ee951c2118500800000000000000
+      internalID: 396618863832077420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_19
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1868
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf93c5d6ba88fabb0800000000000000
+      internalID: -4922565597837116933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1823
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8757c0975913f870800000000000000
+      internalID: 8715337567773874063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_21
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1823
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b37763079df291c0800000000000000
+      internalID: -4498254252750703694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_22
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1823
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f64f4b514abd620800000000000000
+      internalID: 2800012006478081884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_23
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1823
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4060406dd74a820800000000000000
+      internalID: 2928604015841641715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_24
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1823
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31223f5ecc0e77c20800000000000000
+      internalID: 3204276830533263891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1778
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b73ac0ab4e2765b0800000000000000
+      internalID: -5375276727888365643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_26
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1778
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9df925f8ca5021a0800000000000000
+      internalID: -6836364415195284067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1778
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eed3e1004dd56640800000000000000
+      internalID: 5072703822282088168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_28
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1778
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae714bb6d67861630800000000000000
+      internalID: 3897451431563892714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_29
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1778
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6628498c7780a4ca0800000000000000
+      internalID: -6031999440350051738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1733
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b9a76c30ffc94a0800000000000000
+      internalID: -6585108163442599059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_31
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1733
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5767d6b4d4e09daa0800000000000000
+      internalID: -6135857292174854539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_32
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1733
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a50cbfffccb7d0c0800000000000000
+      internalID: -4550961296899832413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_33
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1733
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb8bd61404a9e190800000000000000
+      internalID: -7932628931166106652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_34
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1733
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c86ed2fea1eadc0800000000000000
+      internalID: -3625931035417080816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1688
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336586d36941c5e40800000000000000
+      internalID: 5646410668323657267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_36
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1688
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119e5e91c19482e90800000000000000
+      internalID: -7050304831606101743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1688
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191ffd248f770cbf0800000000000000
+      internalID: -306112866503626351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_38
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1688
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e693a0456b79b10800000000000000
+      internalID: 1988258232572407425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_39
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1688
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ac88b634ea87a60800000000000000
+      internalID: 7672073569815808627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1643
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9225042efdfd27c0800000000000000
+      internalID: -4094337218242076006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_41
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1643
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b1eb5313a7bc830800000000000000
+      internalID: 4092499038169865037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_42
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1643
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a50d5031a1c0bc40800000000000000
+      internalID: 5526129640828896673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_43
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1643
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1b3320aca486250800000000000000
+      internalID: 5938078340168790473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_44
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1643
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b79a77a36b2b570800000000000000
+      internalID: 8481041410524019515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1598
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c027257b67e14f4f0800000000000000
+      internalID: -795977738907127284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_46
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1598
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391ab573dad1ca4c0800000000000000
+      internalID: -4275009316486143597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_47
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1598
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10fc6267552d74c0800000000000000
+      internalID: -4288230212943155174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_48
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1598
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f030ab2941fb370800000000000000
+      internalID: 8340407655331991382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_49
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1598
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2dd8ea6dcc9fb60800000000000000
+      internalID: 7780475053682840299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1553
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb037b134e899c30800000000000000
+      internalID: 4366677732586884016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_51
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1553
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5322373663795ab00800000000000000
+      internalID: 839243165426983477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_52
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1553
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756121b073c0183f0800000000000000
+      internalID: -900425019948919209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_53
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1553
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6988a5434d6d3f6e0800000000000000
+      internalID: -1804862818745677674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_54
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1553
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9660f71788d7a57b0800000000000000
+      internalID: -5234733591891605911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1508
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4072a0bbc6bee77a0800000000000000
+      internalID: -6377401170083043580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_56
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1508
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da952099fef681130800000000000000
+      internalID: 3537700582154459565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_57
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1508
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcff22af025f7eb0800000000000000
+      internalID: -4719963657361949456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_58
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1508
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5816342d5d831e0800000000000000
+      internalID: -2217787717429656095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_59
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1508
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230e3496e6fd5ae10800000000000000
+      internalID: 2208416857600548914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1463
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1020fee8ab73de0800000000000000
+      internalID: -1353408039943536165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_61
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1463
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e430caae53dc24ce0800000000000000
+      internalID: -1422348900841553074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_62
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1463
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3057add17a1a070800000000000000
+      internalID: 8115951750159336366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_63
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1463
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420f0b447e3b2e700800000000000000
+      internalID: 568214308873367588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_64
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1463
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0be321e6d933f50800000000000000
+      internalID: 6859999753493459192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1418
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee50753957e6e7a80800000000000000
+      internalID: -8467208798147770898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_66
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1418
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8cc39dd3cbdefd0800000000000000
+      internalID: -2310984059947530013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_67
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1418
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b499209b56c2fcc70800000000000000
+      internalID: 8993455796289444171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_68
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1418
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0805d53c34560c0800000000000000
+      internalID: -4583182539416371022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_69
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1418
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26b4e645d3224d90800000000000000
+      internalID: -7115085062367562195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1373
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce9bf80b3c043570800000000000000
+      internalID: 8445388648919834315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_71
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1373
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42ef429199cc5c10800000000000000
+      internalID: 2043729957981512270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_72
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1373
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52494f37e4469e730800000000000000
+      internalID: 4028861629775254565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_73
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1373
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed796474e90e3eef0800000000000000
+      internalID: -79973397957273634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_74
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1373
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c169af5886c113af0800000000000000
+      internalID: -418522055118776804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_75
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1328
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01cc18bf59fe7150800000000000000
+      internalID: 5872405153643806991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_76
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1328
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c639134ae1f287740800000000000000
+      internalID: 5149917982548398956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_77
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1328
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1784fb1c98f73f00800000000000000
+      internalID: 1096618383655601948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_78
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1328
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ff85397516ef8f0800000000000000
+      internalID: -504859079456784571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_79
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1328
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c98f1d20135c92e0800000000000000
+      internalID: -2117726395829352000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1283
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72185e311a721ad60800000000000000
+      internalID: 7899638794161586471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_81
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1283
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576f5c356d10ff7f0800000000000000
+      internalID: -576740207240022411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_82
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1283
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7c3f49f449b00d0800000000000000
+      internalID: -3455505219554392114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_83
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1283
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3c54f82ceb62350800000000000000
+      internalID: 5991686097099670435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_84
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1283
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9732a31bd86109070800000000000000
+      internalID: 8111007726713840505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1238
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca56bc2dd9535820800000000000000
+      internalID: 2905764991056894667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_86
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1238
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03bbf8b5b2bca0e30800000000000000
+      internalID: 4470608967198817072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_87
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1238
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b8beacd3f5cda20800000000000000
+      internalID: 3088448163471395688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_88
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1238
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0322812036377f450800000000000000
+      internalID: 6122489087507571248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_89
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1238
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6273e880ed213e950800000000000000
+      internalID: 6477041433924482854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1193
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f20de7dea2c7b60800000000000000
+      internalID: 7745112658693599071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_91
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1193
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63429bfeff2d72a10800000000000000
+      internalID: 1884706965758223414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_92
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1193
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54b17d51999c2ea0800000000000000
+      internalID: -5896168962517781409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_93
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1193
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0acdef1125bcac780800000000000000
+      internalID: -8661887379944055648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_94
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1193
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad9cc09d93c02410800000000000000
+      internalID: 1450374161519910307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_95
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1148
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30e12f022f0e9700800000000000000
+      internalID: 548892843542962235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_96
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1148
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676cb14dfee59cd20800000000000000
+      internalID: 3299272586174383734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_97
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1148
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be677f18a1dbb2fb0800000000000000
+      internalID: -4671432266919479573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_98
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1148
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cea0337c6dc9ed0800000000000000
+      internalID: -2405811949879497639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_99
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1148
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b401d96fff5d86a0800000000000000
+      internalID: -6445389941100706640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1103
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a08df19bca06c00800000000000000
+      internalID: 891902637322537497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_101
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1103
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f35062389fd49d10800000000000000
+      internalID: 2131574368426284025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_102
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1103
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cdc9b310bf0efec0800000000000000
+      internalID: -3531367808892285499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_103
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1103
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c91548c4d8dfb7a0800000000000000
+      internalID: -6359125740419212864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_104
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1103
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a773e95359015a0800000000000000
+      internalID: -6552573400303830508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1058
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c23b9e3d65d9c90800000000000000
+      internalID: -7161472364290298822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_106
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1058
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5453a669ed5b83040800000000000000
+      internalID: 4627648584734094661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_107
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1058
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed54208a456343870800000000000000
+      internalID: 8661607720564180446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_108
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1058
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd019eca70688bf10800000000000000
+      internalID: 2285724178414375131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_109
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1058
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145ca964e78d17060800000000000000
+      internalID: 6949573736871413057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1013
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d8c26b0e228cee0800000000000000
+      internalID: -1240703348816179836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_111
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1013
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562d162929ef5e6c0800000000000000
+      internalID: -4114602779058515355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_112
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1013
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce490d0700e791a70800000000000000
+      internalID: 8798201887402792172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_113
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1013
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3ccbaace539fd80800000000000000
+      internalID: -8216476754567707687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_114
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1013
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef9ab4a2c0d58c70800000000000000
+      internalID: 8972807367011508204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_115
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 968
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8ab552ddff298b0800000000000000
+      internalID: -5146770098851436322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_116
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 968
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4bdff25299fd9000800000000000000
+      internalID: 44465978196613964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_117
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 968
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18897f847393a8780800000000000000
+      internalID: -8680062422193039231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_118
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 968
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b9055e2a3e42bf0800000000000000
+      internalID: -349904582256583818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troth_119
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 968
+        width: 200
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4fae4658af70930800000000000000
+      internalID: 4109528635829581002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 90c97e79f42b2ba408717b550cad5ff6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
