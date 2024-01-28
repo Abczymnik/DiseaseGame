@@ -2057,6 +2057,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41180b920e09b1d44af5b20205d8e094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ZombieAnimator>k__BackingField: {fileID: 337535006}
+  <ZombieAgent>k__BackingField: {fileID: 337535004}
+--- !u!95 &337535006 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  m_PrefabInstance: {fileID: 337535001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &343046028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6259,6 +6266,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   m_PrefabInstance: {fileID: 1470306920}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1187552576 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  m_PrefabInstance: {fileID: 1470306920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1187552577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187552573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0c5b2d579822a4493804d3966670a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ZombieAnimator>k__BackingField: {fileID: 1187552576}
+  <ZombieAgent>k__BackingField: {fileID: 1187552574}
 --- !u!1 &1217603004
 GameObject:
   m_ObjectHideFlags: 0
@@ -6370,7 +6396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1262054779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7358,6 +7384,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1505572107 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  m_PrefabInstance: {fileID: 1505572103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1505572108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505572105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0c5b2d579822a4493804d3966670a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ZombieAnimator>k__BackingField: {fileID: 1505572107}
+  <ZombieAgent>k__BackingField: {fileID: 1505572106}
 --- !u!1 &1561788294
 GameObject:
   m_ObjectHideFlags: 0
