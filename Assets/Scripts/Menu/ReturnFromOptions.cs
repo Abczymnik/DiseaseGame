@@ -3,40 +3,32 @@ using UnityEngine.EventSystems;
 
 public class ReturnFromOptions : MonoBehaviour, IPointerClickHandler
 {
-    private Transform mainMenuTrans;
-    private Transform optionsButton;
-    private Transform optionsTrans;
-    private CanvasGroup[] canvasArray;
+    private CanvasGroup[] buttonsArray;
 
-    private void Awake()
+    private void Start()
     {
-        optionsTrans = transform.parent;
-        optionsButton = optionsTrans.parent;
-        mainMenuTrans = optionsButton.parent;
-    }
-
-    private void OnEnable()
-    {
-        CursorSwitch.ShowCursor();
-    }
-
-    private void EnableMainButtons()
-    {
-        canvasArray = mainMenuTrans.GetComponentsInChildren<CanvasGroup>();
-        foreach (CanvasGroup canvas in canvasArray)
-        {
-            canvas.alpha = 1;
-            canvas.interactable = true;
-            canvas.blocksRaycasts = true;
-        }
-
-        optionsTrans.gameObject.SetActive(false);
+        buttonsArray = transform.root.GetComponentsInChildren<CanvasGroup>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        DisableOptionsList();
         EnableMainButtons();
         CursorSwitch.HideCursor();
-        optionsButton.GetComponent<ButtonHighlight>().enabled = true;
+    }
+
+    private void DisableOptionsList()
+    {
+        transform.parent.gameObject.SetActive(false);
+    }
+
+    private void EnableMainButtons()
+    {
+        foreach (CanvasGroup button in buttonsArray)
+        {
+            button.alpha = 1;
+            button.interactable = true;
+            button.blocksRaycasts = true;
+        }
     }
 }

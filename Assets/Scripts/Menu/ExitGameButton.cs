@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class StartGameButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
+public class ExitGameButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        EventManager.TriggerEvent("ChangeLevel");
+        Application.Quit();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
