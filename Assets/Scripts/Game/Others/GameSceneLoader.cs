@@ -13,7 +13,7 @@ public class GameSceneLoader : MonoBehaviour
 
     private void Start()
     {
-        CursorSwitch.SwitchSkin("Standard");
+        CursorSwitch.SwitchSkin(CursorName.Standard);
         if(skyLightIntense == null) skyLightIntense = GameObject.Find("/Settings/Dim Sky").GetComponent<Volume>();
         StartGameScene();
     }
@@ -49,7 +49,7 @@ public class GameSceneLoader : MonoBehaviour
             yield return null;
         }
 
-        CursorSwitch.SwitchSkin("Standard");
+        CursorSwitch.SwitchSkin(CursorName.Standard);
     }
 
     private void GetLights()

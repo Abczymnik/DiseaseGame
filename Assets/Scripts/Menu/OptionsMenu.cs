@@ -5,7 +5,7 @@ public class OptionsMenu : MonoBehaviour
     private void OnEnable()
     {
         CursorSwitch.ShowCursor();
-        CursorSwitch.SwitchSkin("Options");
+        CursorSwitch.SwitchSkin(CursorName.Options);
     }
 
     public void SetQuality (int qualityIndex)
@@ -16,6 +16,6 @@ public class OptionsMenu : MonoBehaviour
     private void OnDisable()
     {
         CursorSwitch.HideCursor();
-        CursorSwitch.SwitchSkin("Standard");
+        CursorSwitch.SwitchSkin(CursorName.Standard);
     }
 }
