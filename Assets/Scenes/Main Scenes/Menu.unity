@@ -959,6 +959,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1896945918212096, guid: 00251936fc650f442980d7c4cee33664, type: 3}
   m_PrefabInstance: {fileID: 98076711}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &98076714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7521467547245547741, guid: 00251936fc650f442980d7c4cee33664, type: 3}
+  m_PrefabInstance: {fileID: 98076711}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98076713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &98076718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,6 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88cff99d6a0adf47ab1f13cc289177e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightData: {fileID: 98076714}
 --- !u!4 &123086640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4849780626944534223, guid: 7aa6455788ec9194a933ebfc3606315c, type: 3}
@@ -1457,7 +1469,6 @@ GameObject:
   - component: {fileID: 203255278}
   - component: {fileID: 203255277}
   - component: {fileID: 203255276}
-  - component: {fileID: 203255280}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1550,18 +1561,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &203255280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203255275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f130a3f52fdc11b40ba0e86c843c1fb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &217894827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2576,7 +2575,7 @@ CanvasGroup:
   m_GameObject: {fileID: 398323598}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 0
+  m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &398323602
@@ -2954,7 +2953,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 3.2131958}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &486217815
@@ -4502,7 +4501,6 @@ GameObject:
   - component: {fileID: 751132394}
   - component: {fileID: 751132392}
   - component: {fileID: 751132397}
-  - component: {fileID: 751132393}
   m_Layer: 5
   m_Name: Opcje button
   m_TagString: Menu Buttons
@@ -4541,18 +4539,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01c0aef2e25e4214896d9eee78c5665e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &751132393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751132390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ef49eddeaf1134db29d21407c53620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &751132394
@@ -5050,7 +5036,7 @@ MonoBehaviour:
   m_margin: {x: 29.926758, y: -0.101501465, z: 29.184692, w: -2.934204}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &881780708
@@ -5111,6 +5097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9878e7f82da2f646a87947b96111c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lanternRigbody: {fileID: 908417608}
   lanternHandle: {fileID: 1262054779}
 --- !u!153 &908417607
 ConfigurableJoint:
@@ -5222,8 +5209,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 4
+  m_CollisionDetection: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5961,7 +5948,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1090685347
@@ -6396,7 +6383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1262054779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6409,6 +6396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548512c470b6df4aa31af0a2a1ceff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorHandleRigbody: {fileID: 1262054784}
 --- !u!4 &1262054783
 Transform:
   m_ObjectHideFlags: 0
@@ -6437,7 +6425,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 3
 --- !u!1 &1266863798
 GameObject:
@@ -7482,7 +7470,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1561788294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee1e3eba39920764e9c6ff7d1e6d03e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ff9daa9cc669de43831fac6bc78f7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1561788297
@@ -7494,7 +7482,7 @@ Transform:
   m_GameObject: {fileID: 1561788294}
   m_LocalRotation: {x: 0.20752388, y: -0.059714545, z: 0.012692717, w: 0.9763232}
   m_LocalPosition: {x: 29.7595, y: 4.192, z: 10.451}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.050000004, y: 0.050000004, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -7734,7 +7722,6 @@ GameObject:
   - component: {fileID: 1764446102}
   - component: {fileID: 1764446100}
   - component: {fileID: 1764446105}
-  - component: {fileID: 1764446101}
   m_Layer: 5
   m_Name: Wyjdz button
   m_TagString: Menu Buttons
@@ -7772,18 +7759,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f130a3f52fdc11b40ba0e86c843c1fb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1764446101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764446098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ef49eddeaf1134db29d21407c53620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &1764446102
@@ -8635,7 +8610,6 @@ GameObject:
   - component: {fileID: 1960856590}
   - component: {fileID: 1960856595}
   - component: {fileID: 1960856594}
-  - component: {fileID: 1960856593}
   m_Layer: 5
   m_Name: Nowa gra button
   m_TagString: Menu Buttons
@@ -8736,18 +8710,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960856588}
   m_CullTransparentMesh: 1
---- !u!114 &1960856593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1960856588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ef49eddeaf1134db29d21407c53620, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1960856594
 MonoBehaviour:
   m_ObjectHideFlags: 0

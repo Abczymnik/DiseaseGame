@@ -165,7 +165,7 @@ public class Intro : MonoBehaviour
         bloodFade.material.SetColor("_BaseColor", new Color(1, 1, 1, 1));
         bloodFade.enabled = false;
 
-        CursorSwitch.SwitchSkin("Standard");
+        CursorSwitch.SwitchSkin(CursorName.Standard);
         CursorSwitch.ShowCursor();
         changeScene = true;
     }

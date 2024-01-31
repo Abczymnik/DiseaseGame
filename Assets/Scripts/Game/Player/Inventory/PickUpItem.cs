@@ -18,20 +18,20 @@ public class PickUpItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (item != null) toolTip.GenerateTooltip(item);
 
-        CursorSwitch.SwitchSkin("Note");
+        CursorSwitch.SwitchSkin(CursorName.Note);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         toolTip.gameObject.SetActive(false);
-        CursorSwitch.SwitchSkin("Standard");
+        CursorSwitch.SwitchSkin(CursorName.Standard);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         toolTip.gameObject.SetActive(false);
         PickUp();
-        CursorSwitch.SwitchSkin("Standard");
+        CursorSwitch.SwitchSkin(CursorName.Standard);
     }
 
     private void PickUp()

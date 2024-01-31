@@ -103,11 +103,11 @@ public class Inventory : MonoBehaviour
         inventoryPanel.GetComponent<Image>().enabled = isInventoryEnabled;
         inventoryPanel.GetChild(0).gameObject.SetActive(isInventoryEnabled);
 
-        if (isInventoryEnabled) CursorSwitch.SwitchSkin("Note");
+        if (isInventoryEnabled) CursorSwitch.SwitchSkin(CursorName.Note);
         else
         {
             UIHelper.EnableGUI();
-            CursorSwitch.SwitchSkin("Standard");
+            CursorSwitch.SwitchSkin(CursorName.Standard);
             inventoryPanel.GetChild(1).gameObject.SetActive(isInventoryEnabled);
         }
     }

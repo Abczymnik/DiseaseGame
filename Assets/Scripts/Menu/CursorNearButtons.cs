@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CursorNearButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class CursorNearButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -11,10 +11,5 @@ public class CursorNearButtons : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OnPointerExit(PointerEventData eventData)
     {
         CursorSwitch.HideCursor();
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-
     }
 }

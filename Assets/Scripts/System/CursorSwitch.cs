@@ -6,7 +6,7 @@ public class CursorSwitch : MonoBehaviour
     public static CursorSwitch Instance { get; private set; }
     [field: SerializeField] public List<CursorTypeData> CursorTypeDatas { get; private set; } 
     private SpriteRenderer spriteRend;
-    private string actualSkinName;
+    private CursorName actualSkinName;
 
     private void Awake()
     {
@@ -28,17 +28,17 @@ public class CursorSwitch : MonoBehaviour
         spriteRend = GetComponent<SpriteRenderer>(); 
     }
     
-    public static void SwitchSkin(string cursorSkinName) 
+    public static void SwitchSkin(CursorName cursorSkinName) 
     { 
         if (cursorSkinName == Instance.actualSkinName) return;
 
         foreach(CursorTypeData cursor in Instance.CursorTypeDatas) 
         {
-            if (cursor.CursorName == cursorSkinName)
+            if (cursor.CursorName == cursorSkinName.ToString())
             {
                 Instance.spriteRend.sprite = cursor.CursorSprite;
                 Instance.spriteRend.material.mainTexture = cursor.CursorTexture;
-                Instance.actualSkinName = cursor.CursorName;
+                Instance.actualSkinName = cursorSkinName;
                 return;
             }
         }

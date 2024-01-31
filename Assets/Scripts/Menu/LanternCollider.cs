@@ -1,25 +1,23 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class LanternCollider : MonoBehaviour
 {
-    private const float PUSH_FORCE = 6f;
+    [SerializeField, HideInInspector] private Rigidbody lanternRigbody;
+    [SerializeField, HideInInspector] private CursorFollower lanternHandle;
 
-    private Rigidbody lanternRigbody;
-    [SerializeField] private CursorFollower lanternHandle;
+    private const float PUSH_FORCE = 5f;
 
-    private void Awake()
+    private void OnValidate()
     {
         lanternRigbody = GetComponent<Rigidbody>();
-        lanternRigbody.isKinematic = true;
+        lanternHandle = FindAnyObjectByType<CursorFollower>();
     }
 
     private void Start()
     {
-        if(lanternHandle == null) lanternHandle = GameObject.Find("/Cursor Drag Point").GetComponent<CursorFollower>();
         Cursor.lockState = CursorLockMode.Confined;
-        lanternRigbody.isKinematic = false;
-        lanternRigbody.constraints = RigidbodyConstraints.FreezePositionY;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -33,13 +31,13 @@ public class LanternCollider : MonoBehaviour
     {
         if (collision.contactCount == 0) return;
         Vector3 collisionNormal = collision.GetContact(0).normal;
-        PushCursorFromCollider(collisionNormal);
+        PushCursorFromCollider(collisionNormal*2);
     }
 
-    private void PushCursorFromCollider(Vector3 collisionNormal)
+    private void PushCursorFromCollider(Vector3 dirToPush)
     {
-        int cursorXAxisOffset = (int)Mathf.Ceil(collisionNormal.x * lanternRigbody.velocity.magnitude * PUSH_FORCE);
-        int cursorYAxisOffset = (int)Mathf.Ceil(collisionNormal.z * lanternRigbody.velocity.magnitude * PUSH_FORCE);
+        int cursorXAxisOffset = (int)Mathf.Ceil(dirToPush.x * lanternRigbody.velocity.magnitude * PUSH_FORCE);
+        int cursorYAxisOffset = (int)Mathf.Ceil(dirToPush.z * lanternRigbody.velocity.magnitude * PUSH_FORCE);
         Vector2 cursorOffset = new Vector2(cursorXAxisOffset, cursorYAxisOffset);
         lanternHandle.LastCursorPosition += cursorOffset; 
         Mouse.current.WarpCursorPosition(lanternHandle.LastCursorPosition);
