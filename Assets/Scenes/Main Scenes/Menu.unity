@@ -959,6 +959,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1896945918212096, guid: 00251936fc650f442980d7c4cee33664, type: 3}
   m_PrefabInstance: {fileID: 98076711}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &98076714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7521467547245547741, guid: 00251936fc650f442980d7c4cee33664, type: 3}
+  m_PrefabInstance: {fileID: 98076711}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98076713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &98076718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,6 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88cff99d6a0adf47ab1f13cc289177e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightData: {fileID: 98076714}
 --- !u!4 &123086640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4849780626944534223, guid: 7aa6455788ec9194a933ebfc3606315c, type: 3}
@@ -5085,6 +5097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9878e7f82da2f646a87947b96111c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lanternRigbody: {fileID: 908417608}
   lanternHandle: {fileID: 1262054779}
 --- !u!153 &908417607
 ConfigurableJoint:
@@ -5196,8 +5209,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 4
+  m_CollisionDetection: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -6383,6 +6396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d548512c470b6df4aa31af0a2a1ceff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorHandleRigbody: {fileID: 1262054784}
 --- !u!4 &1262054783
 Transform:
   m_ObjectHideFlags: 0
@@ -6411,7 +6425,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 3
 --- !u!1 &1266863798
 GameObject:

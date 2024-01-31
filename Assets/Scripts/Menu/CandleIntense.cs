@@ -2,23 +2,24 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering.HighDefinition;
 
+[RequireComponent(typeof(HDAdditionalLightData))]
 public class CandleIntense : MonoBehaviour
 {
-    private HDAdditionalLightData lightData;
+    [SerializeField, HideInInspector] private HDAdditionalLightData lightData;
     private UnityAction onLevelChange;
+
+    private void OnValidate()
+    {
+        lightData = GetComponent<HDAdditionalLightData>();
+    }
 
     private void OnEnable()
     {
         onLevelChange += OnLevelChange;
         EventManager.StartListening("ChangeLevel", onLevelChange);
     }
-
-    private void Start()
-    {
-        lightData = GetComponent<HDAdditionalLightData>();
-    }
     
-    void Update()
+    private void Update()
     {
         lightData.intensity = 20 + Mathf.PingPong(Time.time*100, 10);
     }
