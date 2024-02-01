@@ -32,15 +32,19 @@ public class CursorSkin : MonoBehaviour
         switch (sceneIndex)
         {
             case 0:
+                CursorSwitch.HideCursor();
                 PlayerUI.SwitchActionMap(PlayerUI.inputActions.Menu);
                 break;
             case 1:
+                CursorSwitch.ShowCursor();
                 PlayerUI.SwitchActionMap(PlayerUI.inputActions.Intro);
                 break;
             case 2:
+                CursorSwitch.ShowCursor();
                 PlayerUI.SwitchActionMap(PlayerUI.inputActions.Gameplay);
                 break;
             default:
+                CursorSwitch.ShowCursor();
                 PlayerUI.SwitchActionMap(PlayerUI.inputActions.Gameplay);
                 break;
         }
