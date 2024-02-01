@@ -2,19 +2,22 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
 
+[RequireComponent(typeof(VisualEffect))]
 public class WindController : MonoBehaviour
 {
-    private VisualEffect fireVFX;
-    private Vector3 windVelocity;
+    [SerializeField, HideInInspector] private VisualEffect fireVFX;
+    private Vector3 baseWindVelocity;
+    private int windVelocityID;
 
-    private void Awake()
+    private void OnValidate()
     {
         fireVFX = GetComponent<VisualEffect>();
     }
 
     private void Start()
     {
-        windVelocity = fireVFX.GetVector3("Wind Velocity");
+        windVelocityID = Shader.PropertyToID("_WindVelocity");
+        baseWindVelocity = fireVFX.GetVector3(windVelocityID);
         StartCoroutine(WindVariations());
     }
 
@@ -22,21 +25,21 @@ public class WindController : MonoBehaviour
     {
         while (true)
         {
-            fireVFX.SetVector3("Wind Velocity", windVelocity + new Vector3(0.5f, -0.25f, 2f));
+            fireVFX.SetVector3(windVelocityID, baseWindVelocity + new Vector3(0.5f, -0.25f, 2f));
             yield return new WaitForSeconds(0.8f);
-            fireVFX.SetVector3("Wind Velocity", windVelocity - new Vector3(0.5f, 0.25f, 2f));
+            fireVFX.SetVector3(windVelocityID, baseWindVelocity - new Vector3(0.5f, 0.25f, 2f));
             yield return new WaitForSeconds(0.6f);
-            fireVFX.SetVector3("Wind Velocity", windVelocity);
+            fireVFX.SetVector3(windVelocityID, baseWindVelocity);
             yield return new WaitForSeconds(2.4f);
-            fireVFX.SetVector3("Wind Velocity", windVelocity + new Vector3(0.5f, -0.25f, 2f));
+            fireVFX.SetVector3(windVelocityID, baseWindVelocity + new Vector3(0.5f, -0.25f, 2f));
             yield return new WaitForSeconds(1f);
-            fireVFX.SetVector3("Wind Velocity", windVelocity);
+            fireVFX.SetVector3(windVelocityID, baseWindVelocity);
             yield return new WaitForSeconds(2.4f);
-            fireVFX.SetVector3("Wind Velocity", windVelocity - new Vector3(0.5f, 0.25f, 0.5f));
+            fireVFX.SetVector3(windVelocityID, baseWindVelocity - new Vector3(0.5f, 0.25f, 0.5f));
             yield return new WaitForSeconds(1.4f);
-            fireVFX.SetVector3("Wind Velocity", windVelocity - new Vector3(0.5f, 0.25f, 2f));
+            fireVFX.SetVector3(windVelocityID, baseWindVelocity - new Vector3(0.5f, 0.25f, 2f));
             yield return new WaitForSeconds(1f);
-            fireVFX.SetVector3("Wind Velocity", windVelocity);
+            fireVFX.SetVector3(windVelocityID, baseWindVelocity);
             yield return new WaitForSeconds(2.4f);
         }
     }
