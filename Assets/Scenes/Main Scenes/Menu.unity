@@ -4890,8 +4890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1260853b9694341bcdc134fcd1f2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingBar: {fileID: 1308956252}
   skyLightIntense: {fileID: 1768078789}
+  loadingSlider: {fileID: 13946980}
 --- !u!4 &789872249
 Transform:
   m_ObjectHideFlags: 0
@@ -6677,7 +6677,7 @@ GameObject:
   - component: {fileID: 1308956253}
   - component: {fileID: 1308956255}
   m_Layer: 5
-  m_Name: Ladowanie indicator
+  m_Name: Ladowanie slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10044,3 +10044,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33496e90995000640b66dccc160eae7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireVFX: {fileID: 8234447037773669876}
+--- !u!2083052967 &8234447037773669876 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 8234447036980846082, guid: 950685266f7098c488ddda4842c8725a, type: 3}
+  m_PrefabInstance: {fileID: 8234447037773669871}
+  m_PrefabAsset: {fileID: 0}

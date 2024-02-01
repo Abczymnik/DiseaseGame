@@ -3,29 +3,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Rendering.HighDefinition;
-using System.Collections.Generic;
 using UnityEngine.Rendering;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private GameObject loadingBar;
-    [SerializeField] private Volume skyLightIntense;
-    private Slider loadingSlider;
-    private List<CanvasGroup> buttonsAlpha = new List<CanvasGroup>();
-    private List<HDAdditionalLightData> lightsData = new List<HDAdditionalLightData>();
-    private List<float> lightIntensities = new List<float>();
+    [SerializeField, HideInInspector] private Volume skyLightIntense;
+    [SerializeField] private Slider loadingSlider; //inactive -> referenced in editor
+    private CanvasGroup[] buttons;
+    private HDAdditionalLightData[] lightsData;
+    private float[] lightIntensities;
 
     private UnityAction onLevelChange;
 
-    private void Awake()
+    private void OnValidate()
     {
-        if(loadingBar == null) loadingBar = GameObject.Find("/Menu").transform.GetChild(0).gameObject;
-        loadingSlider = loadingBar.transform.GetChild(1).GetComponent<Slider>();
-        if(skyLightIntense == null) skyLightIntense = GameObject.Find("/Settings/Dim Sky").GetComponent<Volume>();
-        GetLights();
-        TurnOffLights();
+        skyLightIntense = GameObject.Find("/Settings/Dim Sky").GetComponent<Volume>();
     }
 
     private void OnEnable()
@@ -34,10 +28,27 @@ public class SceneLoader : MonoBehaviour
         EventManager.StartListening("ChangeLevel", onLevelChange);
     }
 
+    private void Awake()
+    {
+        GetLights();
+        TurnOffLights();
+    }
+
     private void Start()
     {
         GetButtons();
         StartCoroutine(LoadFirstScene());
+    }
+
+    private void GetLights()
+    {
+        lightsData = FindObjectsByType<HDAdditionalLightData>(FindObjectsSortMode.None);
+        lightIntensities = new float[lightsData.Length];
+
+        for (int i = 0; i < lightsData.Length; i++)
+        {
+            lightIntensities[i] = lightsData[i].intensity;
+        }
     }
 
     private void TurnOffLights()
@@ -48,24 +59,9 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    private void GetLights()
-    {
-        GameObject[] lightsObj = GameObject.FindGameObjectsWithTag("Light");
-        foreach(GameObject light in lightsObj)
-        {
-            HDAdditionalLightData lightAddData = light.GetComponent<HDAdditionalLightData>();
-            lightsData.Add(lightAddData);
-            lightIntensities.Add(lightAddData.intensity);
-        }
-    }
-
     private void GetButtons()
     {
-        GameObject[] buttons = GameObject.FindGameObjectsWithTag("Menu Buttons");
-        foreach(GameObject button in buttons)
-        {
-            buttonsAlpha.Add(button.GetComponent<CanvasGroup>());
-        }
+        buttons = FindObjectsByType<CanvasGroup>(FindObjectsSortMode.None);
     }
 
     IEnumerator LoadFirstScene()
@@ -76,28 +72,25 @@ public class SceneLoader : MonoBehaviour
         while (timer < speed)
         {
             timer += Time.deltaTime;
-
-            for (int i = 0; i < lightsData.Count; i++)
+            for (int i = 0; i < lightsData.Length; i++)
             {
                 lightsData[i].intensity = Mathf.Lerp(0, lightIntensities[i], timer / speed);
             }
 
             skyLightIntense.weight = Mathf.Lerp(1, 0, timer / speed);
-
             yield return null;
         }
  
         timer = 0;
         speed = 1f;
+
         while (timer < speed)
         {
             timer += Time.deltaTime;
-
-            foreach (CanvasGroup button in buttonsAlpha)
+            foreach (CanvasGroup button in buttons)
             {
                 button.alpha = Mathf.Lerp(0, 1, timer / speed);
             }
-
             yield return null;
         }
     }
@@ -105,15 +98,14 @@ public class SceneLoader : MonoBehaviour
     IEnumerator LoadNextScene()
     {
         InputSystem.DisableDevice(Mouse.current);
-        loadingBar.SetActive(true);
+        loadingSlider.transform.parent.gameObject.SetActive(true);
         float timer = 0;
         float speed = 1f;
 
         while (timer < speed)
         {
             timer += Time.deltaTime;
-
-            foreach (CanvasGroup button in buttonsAlpha)
+            foreach (CanvasGroup button in buttons)
             {
                 button.alpha = Mathf.Lerp(1, 0, timer / speed);
             }
@@ -130,13 +122,12 @@ public class SceneLoader : MonoBehaviour
             timer += Time.deltaTime;
             loadingSlider.value = timer+1;
 
-            for (int i = 0; i < lightsData.Count; i++)
+            for (int i = 0; i < lightsData.Length; i++)
             {
                 lightsData[i].intensity = Mathf.Lerp(lightIntensities[i], 0, timer / speed);
             }
 
             skyLightIntense.weight = Mathf.Lerp(0, 1, timer / speed);
-
             yield return null;
         }
         InputSystem.EnableDevice(Mouse.current);
