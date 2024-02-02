@@ -471,6 +471,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimVolume: {fileID: 969185559}
+  bloodOnNote: {fileID: 518778467}
+  tipOnNote: {fileID: 737606353}
 --- !u!1 &260064417
 GameObject:
   m_ObjectHideFlags: 0
