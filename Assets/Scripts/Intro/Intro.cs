@@ -7,55 +7,37 @@ using UnityEngine.UI;
 
 public class Intro : MonoBehaviour
 {
-    private CanvasGroup actualCanvasFade;
-    private Image actualImageFade;
-    private Transform actualSceneTrans;
-    private GameObject blood;
-    private GameObject tip;
+    [SerializeField, HideInInspector] private Volume dimVolume;
+    [SerializeField] private GameObject bloodOnNote; //inactive -> referenced in editor 
+    [SerializeField] private GameObject tipOnNote; //inactive -> referenced in editor
+
+    private CanvasGroup currentNoteCanvasFade;
+    private Image currentNoteImageFade;
+    private Transform currentNoteTrans;
+    private int currentMaterialMetallicPropertyID;
+    private int currentMaterialColorPropertyID;
+
     private bool changeScene = false;
-    private InputAction skip;
     private bool skipTriggered = false;
-    [SerializeField] private Volume dimVolume;
 
-    private void Awake()
+    private readonly float[] timersToReadNotes = { 20f, 15f };
+
+    private InputAction skip;
+
+    private void OnValidate()
     {
-        blood = transform.GetChild(4).gameObject;
-        tip = transform.GetChild(5).gameObject;
-        if(dimVolume == null) dimVolume = GameObject.Find("/Settings/Dim Volume").GetComponent<Volume>();
+        dimVolume = GameObject.Find("/Settings/Dim Volume").GetComponent<Volume>();
+    }
+
+    private void OnEnable()
+    {
         skip = PlayerUI.inputActions.Intro.Skip;
-        PlayerUI.SwitchActionMap(PlayerUI.inputActions.Intro);
-    }
-
-    public void SkipPerformed(InputAction.CallbackContext context)
-    {
-        skipTriggered = true;
-    }
-
-    private void SetComponentsForScene(int scene)
-    {
-        actualSceneTrans = transform.GetChild(scene);
-        actualCanvasFade = actualSceneTrans.GetComponent<CanvasGroup>();
-        actualImageFade = actualSceneTrans.GetChild(0).GetComponent<Image>();
-        actualImageFade.material.SetFloat("_Metallic", 0);
-        actualSceneTrans.GetComponent<Canvas>().enabled = true;
-    }
-
-    private void DisableTipAndSkip()
-    {
-        skip.performed -= SkipPerformed;
-        skipTriggered = false;
-        tip.SetActive(false);
-    }
-
-    private void EnableTipAndSkip()
-    {
-        tip.SetActive(true);
-        skip.performed += SkipPerformed;
     }
 
     public IEnumerator Start()
     {
         CursorSwitch.ShowCursor();
+        StartCoroutine(AsyncLoadScene());
 
         for (float f = 0; f < 1.5; f += Time.deltaTime)
         {
@@ -63,80 +45,80 @@ public class Intro : MonoBehaviour
             yield return null;
         }
 
-        SetComponentsForScene(1);
+        StartCoroutine(AnimateBasicNote(0));
+    }
 
-        yield return new WaitForSeconds(1.5f);
-
+    private IEnumerator AnimateBasicNote(int noteIndex)
+    {
+        SetComponentsForNote(noteIndex+1);
         for (float f = 0; f < 3; f += Time.deltaTime)
         {
-            actualCanvasFade.alpha = f / 3;
-            actualImageFade.material.SetFloat("_Metallic", f / 3);
+            currentNoteCanvasFade.alpha = f / 3;
+            currentNoteImageFade.material.SetFloat(currentMaterialMetallicPropertyID, f / 3);
             yield return null;
         }
 
-        StartCoroutine(AsyncLoadScene());
-        yield return new WaitForSeconds(5);
-
+        yield return new WaitForSeconds(3f);
         EnableTipAndSkip();
 
-        for (float f = 0; f < 20; f += Time.deltaTime)
+        for (float f = 0; f < timersToReadNotes[noteIndex]; f += Time.deltaTime)
         {
             if (skipTriggered) { break; }
             yield return null;
         }
 
         DisableTipAndSkip();
-
         for (float f = 0; f < 3; f += Time.deltaTime)
         {
-            actualCanvasFade.alpha = 1 - f / 3;
-            actualImageFade.material.SetFloat("_Metallic", 1 - f / 3);
+            currentNoteCanvasFade.alpha = 1 - f / 3;
+            currentNoteImageFade.material.SetFloat(currentMaterialMetallicPropertyID, 1 - f / 3);
             yield return null;
         }
 
-        actualSceneTrans.GetComponent<Canvas>().enabled = false;
-        actualImageFade.material.SetFloat("_Metallic", 1);
+        currentNoteTrans.GetComponent<Canvas>().enabled = false;
+        currentNoteImageFade.material.SetFloat(currentMaterialMetallicPropertyID, 1);
 
-        SetComponentsForScene(2);
+        if (noteIndex < timersToReadNotes.Length-1) yield return StartCoroutine(AnimateBasicNote(noteIndex+1));
+        else if(noteIndex == timersToReadNotes.Length - 1) yield return StartCoroutine(AnimateBloodyNote());
+        yield break;
+    }
 
+    private void SetComponentsForNote(int noteIndex)
+    {
+        currentNoteTrans = transform.GetChild(noteIndex);
+        currentNoteCanvasFade = currentNoteTrans.GetComponent<CanvasGroup>();
+        currentNoteImageFade = currentNoteTrans.GetChild(0).GetComponent<Image>();
+
+        currentMaterialMetallicPropertyID = Shader.PropertyToID("_Metallic");
+        currentNoteImageFade.material.SetFloat(currentMaterialMetallicPropertyID, 0);
+        currentNoteTrans.GetComponent<Canvas>().enabled = true;
+        if (noteIndex == timersToReadNotes.Length + 1) currentMaterialColorPropertyID = Shader.PropertyToID("_BaseColor");
+    }
+
+    private void EnableTipAndSkip()
+    {
+        tipOnNote.SetActive(true);
+        skip.performed += SkipPerformed;
+    }
+
+    private void DisableTipAndSkip()
+    {
+        skip.performed -= SkipPerformed;
+        skipTriggered = false;
+        tipOnNote.SetActive(false);
+    }
+
+    private IEnumerator AnimateBloodyNote()
+    {
+        SetComponentsForNote(3);
         for (float f = 0; f < 3; f += Time.deltaTime)
         {
-            actualCanvasFade.alpha = f / 3;
-            actualImageFade.material.SetFloat("_Metallic", f / 3);
+            currentNoteCanvasFade.alpha = f / 3;
+            currentNoteImageFade.material.SetFloat(currentMaterialMetallicPropertyID, f / 3);
             yield return null;
         }
 
         EnableTipAndSkip();
-
-        for (float f = 0; f < 15; f += Time.deltaTime)
-        {
-            if (skipTriggered) { break; }
-            yield return null;
-        }
-
-        DisableTipAndSkip();
-
-        for (float f = 0; f < 3; f += Time.deltaTime)
-        {
-            actualCanvasFade.alpha = 1 - f / 3;
-            actualImageFade.material.SetFloat("_Metallic", 1 - f / 3);
-            yield return null;
-        }
-
-        actualSceneTrans.GetComponent<Canvas>().enabled = false;
-        actualImageFade.material.SetFloat("_Metallic", 1);
-
-        SetComponentsForScene(3);
-
-        for (float f = 0; f < 3; f += Time.deltaTime)
-        {
-            actualCanvasFade.alpha = f / 3;
-            actualImageFade.material.SetFloat("_Metallic", f / 3);
-            yield return null;
-        }
-
-        EnableTipAndSkip();
-
         for (float f = 0; f < 7; f += Time.deltaTime)
         {
             if (skipTriggered) { break; }
@@ -144,30 +126,25 @@ public class Intro : MonoBehaviour
         }
 
         DisableTipAndSkip();
-        blood.SetActive(true);
-        Image bloodFade = blood.GetComponent<Image>();
+        bloodOnNote.SetActive(true);
+        Image bloodFade = bloodOnNote.GetComponent<Image>();
 
-        for (float f = 0; f < 4; f += Time.deltaTime)
-        {
-            yield return null;
-        }
+        yield return new WaitForSeconds(4f);
 
         for (float f = 0; f < 3; f += Time.deltaTime)
         {
-            actualCanvasFade.alpha = 1 - f / 3;
-            actualImageFade.material.SetFloat("_Metallic", 1 - f / 3);
-            bloodFade.material.SetColor("_BaseColor", new Color(1, 1, 1, 1 - f / 3));
+            currentNoteCanvasFade.alpha = 1 - f / 3;
+            currentNoteImageFade.material.SetFloat(currentMaterialMetallicPropertyID, 1 - f / 3);
+            bloodFade.material.SetColor(currentMaterialColorPropertyID, new Color(1, 1, 1, 1 - f / 3));
             yield return null;
         }
 
-        actualSceneTrans.GetComponent<Canvas>().enabled = false;
-        actualImageFade.material.SetFloat("_Metallic", 1);
-        bloodFade.material.SetColor("_BaseColor", new Color(1, 1, 1, 1));
+        currentNoteTrans.GetComponent<Canvas>().enabled = false;
+        currentNoteImageFade.material.SetFloat(currentMaterialMetallicPropertyID, 1);
+        bloodFade.material.SetColor(currentMaterialColorPropertyID, new Color(1, 1, 1, 1));
         bloodFade.enabled = false;
-
-        CursorSwitch.SwitchSkin(CursorName.Standard);
-        CursorSwitch.ShowCursor();
         changeScene = true;
+        yield break;
     }
 
     private IEnumerator AsyncLoadScene()
@@ -185,5 +162,10 @@ public class Intro : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void SkipPerformed(InputAction.CallbackContext _)
+    {
+        skipTriggered = true;
     }
 }
