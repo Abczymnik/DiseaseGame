@@ -56,7 +56,7 @@ public sealed class CatchPlayer : GAction
 
         if (distToTarget > MaxRange)
         {
-            if (IsAgentLost()) { Beliefs.ModifyState("lost", 1); }
+            if (IsAgentLost()) { Beliefs.SetState("lost", 1); }
 
             zombieAnimator.SetBool("move", false);
             Agent.ResetPath();

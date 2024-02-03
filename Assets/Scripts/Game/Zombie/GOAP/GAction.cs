@@ -33,7 +33,7 @@ public abstract class GAction : MonoBehaviour
         UpdatePreAfterEff();
 
         ZombieSpawnPoint = transform.position;
-        Beliefs = GetComponent<GAgent>().beliefs;
+        Beliefs = GetComponent<GAgent>().Beliefs;
     }
 
     protected void UpdatePreAfterEff()

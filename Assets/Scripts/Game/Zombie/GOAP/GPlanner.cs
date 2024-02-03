@@ -2,32 +2,30 @@ using System.Collections.Generic;
 
 public class Node
 {
-    public Node parent;
-    public float cost;
-    public Dictionary<string, int> state;
-    public GAction action;
+    public Node Parent { get; private set; }
+    public float Cost { get; private set; }
+    public Dictionary<string, int> State { get; private set; }
+    public GAction Action { get; private set; }
 
     public Node(Node parent, float cost, Dictionary<string, int> allstates, GAction action)
     {
-        this.parent = parent;
-        this.cost = cost;
-        this.state = new Dictionary<string, int>(allstates);
-        this.action = action;
+        Parent = parent;
+        Cost = cost;
+        State = new Dictionary<string, int>(allstates);
+        Action = action;
     }
 
     public Node(Node parent, float cost, Dictionary<string, int> allstates, Dictionary<string, int> beliefstates, GAction action)
     {
-        this.parent = parent;
-        this.cost = cost;
-        this.state = new Dictionary<string, int>(allstates);
-        foreach(KeyValuePair<string, int> b in beliefstates)
+        Parent = parent;
+        Cost = cost;
+        State = new Dictionary<string, int>(allstates);
+        foreach(KeyValuePair<string, int> state in beliefstates)
         {
-            if(!this.state.ContainsKey(b.Key))
-            {
-                this.state.Add(b.Key, b.Value);
-            }
+            if(!State.ContainsKey(state.Key)) State.Add(state.Key, state.Value);
         }
-        this.action = action;
+
+        Action = action;
     }
 }
 
@@ -36,56 +34,39 @@ public class GPlanner
     public Queue<GAction> Plan(List<GAction> actions, Dictionary<string, int> goal, WorldStates beliefstates)
     {
         List<GAction> usableActions = new List<GAction>();
-        foreach(GAction a in actions)
+        foreach(GAction action in actions)
         {
-            if(a.IsAchievable())
-            {
-                usableActions.Add(a);
-            }
+            if(action.IsAchievable()) usableActions.Add(action);
         }
 
         List<Node> leaves = new List<Node>();
-        Node start = new Node(null, 0, GWorld.Instance.GetWorld().GetStates(), beliefstates.GetStates(), null);
+        Node start = new Node(null, 0, GWorld.Instance.World.States, beliefstates.States, null);
 
         bool success = BuildGraph(start, leaves, usableActions, goal);
 
-        if(!success)
-        {
-            return null;
-        }
+        if(!success) return null;
 
         Node cheapest = null;
         foreach(Node leaf in leaves)
         {
-            if(cheapest == null)
-            {
-                cheapest = leaf;
-            }
-            else
-            {
-                if (leaf.cost < cheapest.cost)
-                {
-                    cheapest = leaf;
-                }
-            }
+            if(cheapest == null) cheapest = leaf;
+            else if (leaf.Cost < cheapest.Cost) cheapest = leaf;
         }
 
-        List<GAction> result = new List<GAction>();
-        Node n = cheapest;
-        while( n != null)
+        List<GAction> actionsTrace = new List<GAction>();
+        Node node = cheapest;
+        while( node != null)
         {
-            if(n.action != null)
-            {
-                result.Insert(0, n.action);
-            }
-            n = n.parent;
+            if(node.Action != null) actionsTrace.Insert(0, node.Action);
+            node = node.Parent;
         }
 
         Queue<GAction> queue = new Queue<GAction>();
-        foreach(GAction a in result)
+        foreach(GAction action in actionsTrace)
         {
-            queue.Enqueue(a);
+            queue.Enqueue(action);
         }
+
         return queue;
     }
 
@@ -94,60 +75,51 @@ public class GPlanner
         bool foundPath = false;
         foreach(GAction action in usableActions)
         {
-            if(action.IsAchievableGiven(parent.state))
+            if(action.IsAchievableGiven(parent.State))
             {
-                Dictionary<string, int> currentState = new Dictionary<string, int>(parent.state);
-                foreach(KeyValuePair<string, int> eff in action.Effects)
+                Dictionary<string, int> currentState = new Dictionary<string, int>(parent.State);
+                foreach(KeyValuePair<string, int> effect in action.Effects)
                 {
-                    if(!currentState.ContainsKey(eff.Key))
-                    {
-                        currentState.Add(eff.Key, eff.Value);
-                    }
+                    if(!currentState.ContainsKey(effect.Key)) currentState.Add(effect.Key, effect.Value);
                 }
 
-                Node node = new Node(parent, parent.cost + action.Cost, currentState, action);
+                Node node = new Node(parent, parent.Cost + action.Cost, currentState, action);
 
                 if (GoalAchieved(goal, currentState))
                 {
                     leaves.Add(node);
                     foundPath = true;
                 }
+
                 else
                 {
                     List<GAction> subset = ActionSubset(usableActions, action);
                     bool found = BuildGraph(node, leaves, subset, goal);
-                    if(found)
-                    {
-                        foundPath = true;
-                    }
+                    if(found) foundPath = true;
                 }
             }
         }
         return foundPath;
     }
 
-    private bool GoalAchieved(Dictionary<string, int> goal, Dictionary<string, int> state)
+    private bool GoalAchieved(Dictionary<string, int> goals, Dictionary<string, int> state)
     {
-        foreach(KeyValuePair<string, int> g in goal)
+        foreach(KeyValuePair<string, int> goal in goals)
         {
-            if(!state.ContainsKey(g.Key))
-            {
-                return false;
-            }
+            if(!state.ContainsKey(goal.Key)) return false;
         }
+
         return true;
     }
 
-    private List<GAction> ActionSubset(List<GAction> actions, GAction removeMe)
+    private List<GAction> ActionSubset(List<GAction> actions, GAction actionToRemove)
     {
         List<GAction> subset = new List<GAction>();
-        foreach(GAction a in actions)
+        foreach(GAction action in actions)
         {
-            if(!a.Equals(removeMe))
-            {
-                subset.Add(a);
-            }
+            if(!action.Equals(actionToRemove)) subset.Add(action);
         }
+
         return subset;
     }
 }
