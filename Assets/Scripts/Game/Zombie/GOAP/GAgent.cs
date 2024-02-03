@@ -15,12 +15,14 @@ public class GAgent : MonoBehaviour
     private SubGoal currentGoal;
     private Coroutine decisionMakerCoroutine;
 
+    private float currentActionRefreshRate;
+
     private readonly Dictionary<string, float> actionsRefreshRateDict = new Dictionary<string, float>()
     {
         {"Search", 1f},
         {"Lost", 0.5f},
-        {"Static movement", 1f},
-        {"Dynamic movement", 0f},
+        {"StaticMovement", 1f},
+        {"DynamicMovement", 0f},
         {"Attack", 0.1f}
     };
 
@@ -54,7 +56,7 @@ public class GAgent : MonoBehaviour
                     CurrentAction.running = false;
                 }
 
-                yield return new WaitForSeconds(GetRefreshRate(CurrentAction.ActionType));
+                yield return new WaitForSeconds(currentActionRefreshRate);
 
                 continue;
             }
@@ -78,15 +80,16 @@ public class GAgent : MonoBehaviour
 
     private float GetRefreshRate(string actionType)
     {
-        bool hasValue = actionsRefreshRateDict.TryGetValue(actionType, out float refreshRate);
-        if (hasValue) return refreshRate;
+        if(actionsRefreshRateDict.TryGetValue(actionType, out float refreshRate))
+        {
+            return refreshRate;
+        }
         return 0f;
     }
 
     private void FindNewPlan()
     {
         planner = new GPlanner();
-
         var sortedGoals = from entry in Goals orderby entry.Value descending select entry;
 
         foreach (KeyValuePair<SubGoal, int> sg in sortedGoals)
@@ -104,7 +107,11 @@ public class GAgent : MonoBehaviour
     {
         CurrentAction = actionQueue.Dequeue();
 
-        if (CurrentAction.PrePerform()) CurrentAction.running = true;
+        if (CurrentAction.PrePerform())
+        {
+            CurrentAction.running = true;
+            currentActionRefreshRate = GetRefreshRate(CurrentAction.ActionType.ToString());
+        }
 
         else actionQueue = null;
     }

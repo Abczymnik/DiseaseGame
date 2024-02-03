@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public sealed class CatchPlayer : GAction
 {
     public override string ActionName { get => "Catch player"; }
-    public override string ActionType { get => "Dynamic movement"; }
+    public override ActionTypes ActionType { get => ActionTypes.DynamicMovement; }
     public override string TargetTag { get => "Player"; }
     public override NavMeshAgent Agent { get; protected set; }
 

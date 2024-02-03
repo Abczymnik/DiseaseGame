@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class ReturnToSpawn : GAction
 {
     public override string ActionName { get => "Return to spawn"; }
-    public override string ActionType { get => "Static movement"; }
+    public override ActionTypes ActionType { get => ActionTypes.StaticMovement; }
     public override string TargetTag { get => "Spawn point"; }
     public override NavMeshAgent Agent { get; protected set; }
 

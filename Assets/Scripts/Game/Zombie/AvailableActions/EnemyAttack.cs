@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class EnemyAttack : GAction
 {
     public override string ActionName { get => "Attack player"; }
-    public override string ActionType { get => "Attack"; }
+    public override ActionTypes ActionType { get => ActionTypes.Attack; }
     public override string TargetTag { get => "Player"; }
     public override NavMeshAgent Agent { get; protected set; }
 

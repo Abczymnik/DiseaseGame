@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public sealed class LookForPlayer : GAction
 {
     public override string ActionName { get => "Look for player"; }
-    public override string ActionType { get => "Search"; }
+    public override ActionTypes ActionType { get => ActionTypes.Search; }
     public override string TargetTag { get => "Player"; }
     public override NavMeshAgent Agent { get; protected set; }
 
