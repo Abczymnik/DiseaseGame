@@ -1,30 +1,32 @@
-using System.Text;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class ReturnToSpawn : GAction
+public sealed class ReturnToSpawn : GAction
 {
     public override string ActionName { get => "Return to spawn"; }
     public override ActionTypes ActionType { get => ActionTypes.StaticMovement; }
     public override string TargetTag { get => "Spawn point"; }
-    public override NavMeshAgent Agent { get; protected set; }
+    [field: SerializeField] public Vector3 ZombieSpawnPoint { get; private set; }
 
-    private Transform playerTrans;
+    [SerializeField] private Transform playerTrans;
+    [SerializeField] private Transform spawnerTrans;
+    private GameObject spawnPoint;
 
-    private new void Awake()
+    protected override void Awake()
     {
-        Agent = GetComponent<NavMeshAgent>();
-        MinRange = 2f;
+        ZombieSpawnPoint = transform.position;
+        MaxRange = 12f;
         PreConditionsVisual = SetPreconditions();
         AfterEffectsVisual = SetAfterEffects();
 
         base.Awake();
     }
 
-    private void Start()
+    protected override void OnValidate()
     {
-        if(playerTrans == null) playerTrans = GameObject.Find("Player").transform;
-        Target = GameObject.Find("/SpawnPoints/" + GetTargetSpawnName());
+        playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
+        spawnerTrans = GameObject.FindGameObjectWithTag("Respawn").transform;
+
+        base.OnValidate();
     }
 
     private WorldState[] SetPreconditions()
@@ -49,24 +51,32 @@ public class ReturnToSpawn : GAction
 
     public override bool PrePerform()
     {
+        if (spawnPoint == null)
+        {
+            CreateSpawnPoint();
+            Target = spawnPoint;
+        }
+
         Agent.SetDestination(Target.transform.position);
-        zombieAnimator.SetBool("move", true);
+        ZombieAnimator.SetBool("move", true);
         return true;
     }
 
     public override bool PostPerform()
     {
         Beliefs.RemoveState("lost");
-        zombieAnimator.SetBool("move", false);
+        ZombieAnimator.SetBool("move", false);
         return true;
     }
 
     public override bool Func()
     {
-        float distToTarget = Vector3.Distance(transform.position, playerTrans.position);
-        if (distToTarget >= 12f) { return true; }
-        Beliefs.RemoveState("lost");
-        return false;
+        if (IsPlayerNearby())
+        {
+            Beliefs.RemoveState("lost");
+            return false;
+        }
+        return true;
     }
 
     public override bool Success()
@@ -76,11 +86,25 @@ public class ReturnToSpawn : GAction
         return false;
     }
 
-    private string GetTargetSpawnName()
+    private bool IsPlayerNearby()
     {
-        StringBuilder targetName = new StringBuilder(transform.name);
-        targetName.Remove(0, 7);
-        targetName.Insert(0, "SpawnPoint ");
-        return targetName.ToString();
+        float distToPlayer = Vector3.Distance(transform.position, playerTrans.transform.position);
+        if (distToPlayer < MaxRange && IsPlayerInFront(0.3f)) return true;
+        if (distToPlayer < MaxRange / 2) return true;
+        return false;
+    }
+
+    private bool IsPlayerInFront(float range)
+    {
+        Vector3 dirToPlayer = (playerTrans.transform.position - transform.position).normalized;
+        bool playerInFront = Vector3.Dot(transform.forward, dirToPlayer) > range;
+        return playerInFront;
+    }
+
+    private void CreateSpawnPoint()
+    {
+        spawnPoint = new GameObject("SpawnPoint");
+        spawnPoint.transform.position = ZombieSpawnPoint;
+        spawnPoint.transform.SetParent(spawnerTrans);
     }
 }

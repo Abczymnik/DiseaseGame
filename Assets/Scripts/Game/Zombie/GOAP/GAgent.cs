@@ -54,6 +54,7 @@ public class GAgent : MonoBehaviour
                 {
                     actionQueue = null;
                     CurrentAction.running = false;
+                    continue;
                 }
 
                 yield return new WaitForSeconds(currentActionRefreshRate);

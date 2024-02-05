@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public sealed class LookForPlayer : GAction
 {
     public override string ActionName { get => "Look for player"; }
     public override ActionTypes ActionType { get => ActionTypes.Search; }
     public override string TargetTag { get => "Player"; }
-    public override NavMeshAgent Agent { get; protected set; }
 
-    private new void Awake()
+    protected override void Awake()
     {
-        Agent = GetComponent<NavMeshAgent>();
         MinRange = 12f;
         PreConditionsVisual = SetPreconditions();
         AfterEffectsVisual = SetAfterEffects();
@@ -23,7 +18,7 @@ public sealed class LookForPlayer : GAction
     {
         WorldState[] preConditions =
         {
-
+            
         };
 
         return preConditions;
@@ -41,12 +36,12 @@ public sealed class LookForPlayer : GAction
 
     public override bool PrePerform()
     {
-        zombieAnimator.SetBool("move", false);
         return true;
     }
 
     public override bool PostPerform()
     {
+        ZombieAnimator.SetBool("move", true);
         return true;
     }
 

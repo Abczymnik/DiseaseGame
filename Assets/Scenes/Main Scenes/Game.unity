@@ -3704,6 +3704,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 68.52794, y: 0.272, z: 45.154167}
   running: 0
 --- !u!195 &81260137
 NavMeshAgent:
@@ -3775,7 +3776,10 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  playerTrans: {fileID: 77649853}
+  spawnerTrans: {fileID: 702955628}
 --- !u!114 &81260150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3806,6 +3810,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 68.52794, y: 0.272, z: 45.154167}
   running: 0
 --- !u!1 &97814961
 GameObject:
@@ -10629,6 +10634,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 85.69794, y: 0.05, z: 146.18417}
   running: 0
 --- !u!114 &544762100
 MonoBehaviour:
@@ -10648,6 +10654,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 85.69794, y: 0.05, z: 146.18417}
   running: 0
 --- !u!114 &544762101
 MonoBehaviour:
@@ -10679,7 +10686,10 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  playerTrans: {fileID: 77649853}
+  spawnerTrans: {fileID: 702955628}
 --- !u!1 &547298910
 GameObject:
   m_ObjectHideFlags: 0
@@ -10869,6 +10879,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 112.44194, y: 0.05, z: 107.38416}
   running: 0
 --- !u!195 &554216173
 NavMeshAgent:
@@ -10924,7 +10935,10 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  playerTrans: {fileID: 77649853}
+  spawnerTrans: {fileID: 702955628}
 --- !u!114 &554216178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10955,6 +10969,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 112.44194, y: 0.05, z: 107.38416}
   running: 0
 --- !u!1 &565621731
 GameObject:
@@ -13610,27 +13625,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 702955628}
-  - component: {fileID: 702955627}
   m_Layer: 0
   m_Name: SpawnPoints
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &702955627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702955626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e173ecab2481a6040a4f30828784e78a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zombiesTrans: {fileID: 1830724561}
 --- !u!4 &702955628
 Transform:
   m_ObjectHideFlags: 0
@@ -15470,6 +15471,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 71.52794, y: 0.05, z: 142.83417}
   running: 0
 --- !u!114 &801135941
 MonoBehaviour:
@@ -15501,7 +15503,10 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  playerTrans: {fileID: 77649853}
+  spawnerTrans: {fileID: 702955628}
 --- !u!114 &801135961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15556,6 +15561,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 71.52794, y: 0.05, z: 142.83417}
   running: 0
 --- !u!1 &806883478
 GameObject:
@@ -18313,6 +18319,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 84.88794, y: 0.05, z: 143.79417}
   running: 0
 --- !u!114 &890068581
 MonoBehaviour:
@@ -18344,7 +18351,10 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  playerTrans: {fileID: 77649853}
+  spawnerTrans: {fileID: 702955628}
 --- !u!114 &890068601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18399,6 +18409,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 84.88794, y: 0.05, z: 143.79417}
   running: 0
 --- !u!1001 &891312119
 PrefabInstance:
@@ -24527,6 +24538,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 90.66794, y: 0.15, z: 36.48417}
   running: 0
 --- !u!114 &1219828077
 MonoBehaviour:
@@ -24558,7 +24570,10 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  playerTrans: {fileID: 77649853}
+  spawnerTrans: {fileID: 702955628}
 --- !u!114 &1219828081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24613,6 +24628,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 90.66794, y: 0.15, z: 36.48417}
   running: 0
 --- !u!4 &1220768711 stripped
 Transform:
@@ -25911,6 +25927,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 73.03793, y: 0.05, z: 144.62418}
   running: 0
 --- !u!195 &1293707143
 NavMeshAgent:
@@ -25964,6 +25981,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 73.03793, y: 0.05, z: 144.62418}
   running: 0
 --- !u!114 &1293707162
 MonoBehaviour:
@@ -25983,7 +26001,10 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  playerTrans: {fileID: 77649853}
+  spawnerTrans: {fileID: 702955628}
 --- !u!1 &1294304174
 GameObject:
   m_ObjectHideFlags: 0
@@ -30722,6 +30743,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 70.73794, y: 0.05, z: 146.60417}
   running: 0
 --- !u!114 &1594041222
 MonoBehaviour:
@@ -30741,7 +30763,10 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  playerTrans: {fileID: 77649853}
+  spawnerTrans: {fileID: 702955628}
 --- !u!114 &1594041240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30774,6 +30799,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 70.73794, y: 0.05, z: 146.60417}
   running: 0
 --- !u!195 &1594041243
 NavMeshAgent:
@@ -36001,6 +36027,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 113.01294, y: 0.05, z: 111.79217}
   running: 0
 --- !u!195 &1877376385
 NavMeshAgent:
@@ -36056,7 +36083,10 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  playerTrans: {fileID: 77649853}
+  spawnerTrans: {fileID: 702955628}
 --- !u!114 &1877376414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36087,6 +36117,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 113.01294, y: 0.05, z: 111.79217}
   running: 0
 --- !u!1 &1879951137
 GameObject:
@@ -49589,6 +49620,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 113.01294, y: 0.05, z: 111.79217}
   running: 0
 --- !u!1 &4803014352319157651
 GameObject:
@@ -49636,6 +49668,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 70.73794, y: 0.05, z: 146.60417}
   running: 0
 --- !u!1 &4803014352620310927
 GameObject:
@@ -49683,6 +49716,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 73.03793, y: 0.05, z: 144.62418}
   running: 0
 --- !u!1 &4803014352680529786
 GameObject:
@@ -49730,6 +49764,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 90.66794, y: 0.15, z: 36.48417}
   running: 0
 --- !u!1 &4803014353023953010
 GameObject:
@@ -49777,6 +49812,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 84.88794, y: 0.05, z: 143.79417}
   running: 0
 --- !u!1 &4803014353137003346
 GameObject:
@@ -49824,6 +49860,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 71.52794, y: 0.05, z: 142.83417}
   running: 0
 --- !u!1 &4803014353348288226
 GameObject:
@@ -49871,6 +49908,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 85.69794, y: 0.05, z: 146.18417}
   running: 0
 --- !u!1 &4803014353359838437
 GameObject:
@@ -49918,6 +49956,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 112.44194, y: 0.05, z: 107.38416}
   running: 0
 --- !u!1 &4803014353823651937
 GameObject:
@@ -49965,6 +50004,7 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
+  <ZombieSpawnPoint>k__BackingField: {x: 68.52794, y: 0.272, z: 45.154167}
   running: 0
 --- !u!4 &4872485736020066573
 Transform:

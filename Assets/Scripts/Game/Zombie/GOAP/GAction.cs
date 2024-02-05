@@ -7,7 +7,7 @@ public abstract class GAction : MonoBehaviour
     public abstract string ActionName { get; }
     public abstract ActionTypes ActionType { get; }
     public abstract string TargetTag { get; }
-    public abstract NavMeshAgent Agent { get; protected set; }
+    public NavMeshAgent Agent { get; protected set; }
 
     [field: SerializeField] public GameObject Target { get; protected set; }
     [field: SerializeField] public float Cost { get; protected set; } = 1f;
@@ -20,19 +20,18 @@ public abstract class GAction : MonoBehaviour
     public Dictionary<string, int> Preconditions { get; private set; }
     public Dictionary<string, int> Effects { get; private set; }
 
-    protected Animator zombieAnimator;
-    public Vector3 ZombieSpawnPoint { get; private set; }
+    public Animator ZombieAnimator { get; private set; }
     public bool running = false;
 
-    private void OnValidate()
+    protected virtual void OnValidate()
     {
-        zombieAnimator = GetComponent<Animator>();
+        Agent = GetComponent<NavMeshAgent>();
+        ZombieAnimator = GetComponent<Animator>();
         Target = GameObject.FindGameObjectWithTag(TargetTag);
-        ZombieSpawnPoint = transform.position;
         Beliefs = GetComponent<GAgent>().Beliefs;
     }
 
-    public void Awake()
+    protected virtual void Awake()
     {
         Preconditions = new Dictionary<string, int>();
         Effects = new Dictionary<string, int>();
