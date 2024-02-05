@@ -1,16 +1,15 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public sealed class CatchPlayer : GAction
 {
     public override string ActionName { get => "Catch player"; }
-    public override string ActionType { get => "Dynamic movement"; }
+    public override ActionTypes ActionType { get => ActionTypes.DynamicMovement; }
     public override string TargetTag { get => "Player"; }
-    public override NavMeshAgent Agent { get; protected set; }
+    [field: SerializeField] public Vector3 ZombieSpawnPoint { get; private set; }
 
-    private new void Awake()
+    protected override void Awake()
     {
-        Agent = GetComponent<NavMeshAgent>();
+        ZombieSpawnPoint = transform.position;
         MaxRange = 12f;
         MinRange = 1.2f;
         PreConditionsVisual = SetPreconditions();
@@ -40,13 +39,13 @@ public sealed class CatchPlayer : GAction
 
     public override bool PrePerform()
     {
-        zombieAnimator.SetBool("move", true);
+        ZombieAnimator.SetBool("move", true);
         return true;
     }
 
     public override bool PostPerform()
     {
-        zombieAnimator.SetBool("move", false);
+        ZombieAnimator.SetBool("move", false);
         return true;
     }
 
@@ -56,15 +55,15 @@ public sealed class CatchPlayer : GAction
 
         if (distToTarget > MaxRange)
         {
-            if (IsAgentLost()) { Beliefs.ModifyState("lost", 1); }
+            if (IsAgentLost()) { Beliefs.SetState("lost", 1); }
 
-            zombieAnimator.SetBool("move", false);
+            ZombieAnimator.SetBool("move", false);
             Agent.ResetPath();
             return false;
         }
 
         Agent.SetDestination(Target.transform.position);
-        zombieAnimator.SetFloat("distanceToPlayer", distToTarget);
+        ZombieAnimator.SetFloat("distanceToPlayer", distToTarget);
         return true;
     }
 
@@ -82,7 +81,7 @@ public sealed class CatchPlayer : GAction
     private bool IsAgentLost()
     {
         float distToSpawn = Vector3.Distance(transform.position, ZombieSpawnPoint);
-        if (distToSpawn > 5f) return true;
+        if (distToSpawn > 3f) return true;
         return false;
     }
 }

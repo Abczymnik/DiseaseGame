@@ -5,9 +5,9 @@ using UnityEngine.AI;
 public abstract class GAction : MonoBehaviour
 {
     public abstract string ActionName { get; }
-    public abstract string ActionType { get; }
+    public abstract ActionTypes ActionType { get; }
     public abstract string TargetTag { get; }
-    public abstract NavMeshAgent Agent { get; protected set; }
+    public NavMeshAgent Agent { get; protected set; }
 
     [field: SerializeField] public GameObject Target { get; protected set; }
     [field: SerializeField] public float Cost { get; protected set; } = 1f;
@@ -17,35 +17,37 @@ public abstract class GAction : MonoBehaviour
     [field: SerializeField] protected WorldState[] AfterEffectsVisual { get; set; }
     [field: SerializeField] public WorldStates Beliefs { get; protected set; }
 
-    public Dictionary<string, int> Preconditions { get; set; }
-    public Dictionary<string, int> Effects { get; set; }
+    public Dictionary<string, int> Preconditions { get; private set; }
+    public Dictionary<string, int> Effects { get; private set; }
 
-    protected Animator zombieAnimator;
-    public Vector3 ZombieSpawnPoint { get; private set; }
+    public Animator ZombieAnimator { get; private set; }
     public bool running = false;
 
-    public void Awake()
+    protected virtual void OnValidate()
     {
-        zombieAnimator = GetComponent<Animator>();
+        Agent = GetComponent<NavMeshAgent>();
+        ZombieAnimator = GetComponent<Animator>();
+        Target = GameObject.FindGameObjectWithTag(TargetTag);
+        Beliefs = GetComponent<GAgent>().Beliefs;
+    }
+
+    protected virtual void Awake()
+    {
         Preconditions = new Dictionary<string, int>();
         Effects = new Dictionary<string, int>();
-        if (Target == null) Target = GameObject.FindGameObjectWithTag(TargetTag);
         UpdatePreAfterEff();
-
-        ZombieSpawnPoint = transform.position;
-        Beliefs = GetComponent<GAgent>().beliefs;
     }
 
     protected void UpdatePreAfterEff()
     {
-        foreach (WorldState w in PreConditionsVisual)
+        foreach (WorldState preCondition in PreConditionsVisual)
         {
-            Preconditions.Add(w.Key, w.Value);
+            Preconditions.Add(preCondition.Key, preCondition.Value);
         }
 
-        foreach (WorldState w in AfterEffectsVisual)
+        foreach (WorldState afterEffect in AfterEffectsVisual)
         {
-            Effects.Add(w.Key, w.Value);
+            Effects.Add(afterEffect.Key, afterEffect.Value);
         }
     }
 
@@ -56,9 +58,9 @@ public abstract class GAction : MonoBehaviour
 
     public bool IsAchievableGiven(Dictionary<string, int> conditions)
     {
-        foreach (KeyValuePair<string, int> p in Preconditions)
+        foreach (KeyValuePair<string, int> precondition in Preconditions)
         {
-            if (!conditions.ContainsKey(p.Key))
+            if (!conditions.ContainsKey(precondition.Key))
             {
                 return false;
             }

@@ -6,39 +6,35 @@ using System.Linq;
 public class GAgent : MonoBehaviour
 {
     private List<GAction> actions = new List<GAction>();
-    public Dictionary<SubGoal, int> goals = new Dictionary<SubGoal, int>();
-    public WorldStates beliefs = new WorldStates();
-
+    public Dictionary<SubGoal, int> Goals { get; private set; } = new Dictionary<SubGoal, int>();
+    public WorldStates Beliefs { get; private set; } = new WorldStates();
     public GAction CurrentAction { get; private set; }
+
     private GPlanner planner;
     private Queue<GAction> actionQueue;
     private SubGoal currentGoal;
     private Coroutine decisionMakerCoroutine;
 
-    private Dictionary<string, float> refreshRateDict = new Dictionary<string, float>()
+    private float currentActionRefreshRate;
+
+    private readonly Dictionary<string, float> actionsRefreshRateDict = new Dictionary<string, float>()
     {
         {"Search", 1f},
         {"Lost", 0.5f},
-        {"Static movement", 1f},
-        {"Dynamic movement", 0f},
+        {"StaticMovement", 1f},
+        {"DynamicMovement", 0f},
         {"Attack", 0.1f}
     };
 
-    public void Start()
+    protected void Init()
     {
-        GAction[] acts = GetComponents<GAction>();
-        foreach (GAction a in acts)
+        GAction[] agentAvailableActions = GetComponents<GAction>();
+        foreach (GAction action in agentAvailableActions)
         {
-            actions.Add(a);
+            actions.Add(action);
         }
 
         decisionMakerCoroutine = StartCoroutine(DecisionMaker());
-    }
-
-    private void CompleteAction()
-    {
-        CurrentAction.running = false;
-        CurrentAction.PostPerform();
     }
 
     IEnumerator DecisionMaker()
@@ -58,9 +54,10 @@ public class GAgent : MonoBehaviour
                 {
                     actionQueue = null;
                     CurrentAction.running = false;
+                    continue;
                 }
 
-                yield return new WaitForSeconds(GetRefreshRate(CurrentAction.ActionType));
+                yield return new WaitForSeconds(currentActionRefreshRate);
 
                 continue;
             }
@@ -76,22 +73,29 @@ public class GAgent : MonoBehaviour
         }
     }
 
+    private void CompleteAction()
+    {
+        CurrentAction.running = false;
+        CurrentAction.PostPerform();
+    }
+
     private float GetRefreshRate(string actionType)
     {
-        bool hasValue = refreshRateDict.TryGetValue(actionType, out float refreshRate);
-        if (hasValue) return refreshRate;
+        if(actionsRefreshRateDict.TryGetValue(actionType, out float refreshRate))
+        {
+            return refreshRate;
+        }
         return 0f;
     }
 
     private void FindNewPlan()
     {
         planner = new GPlanner();
-
-        var sortedGoals = from entry in goals orderby entry.Value descending select entry;
+        var sortedGoals = from entry in Goals orderby entry.Value descending select entry;
 
         foreach (KeyValuePair<SubGoal, int> sg in sortedGoals)
         {
-            actionQueue = planner.Plan(actions, sg.Key.sgoals, beliefs);
+            actionQueue = planner.Plan(actions, sg.Key.SGoal, Beliefs);
             if (actionQueue != null)
             {
                 currentGoal = sg.Key;
@@ -104,14 +108,18 @@ public class GAgent : MonoBehaviour
     {
         CurrentAction = actionQueue.Dequeue();
 
-        if (CurrentAction.PrePerform()) CurrentAction.running = true;
+        if (CurrentAction.PrePerform())
+        {
+            CurrentAction.running = true;
+            currentActionRefreshRate = GetRefreshRate(CurrentAction.ActionType.ToString());
+        }
 
         else actionQueue = null;
     }
 
     private void CurrGoalAchieved()
     {
-        if (currentGoal.remove) goals.Remove(currentGoal);
+        if (currentGoal.RemoveAfter) Goals.Remove(currentGoal);
         planner = null;
     }
 

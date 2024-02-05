@@ -2,20 +2,20 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Animator))]
 public class Zombie : MonoBehaviour
 {
     [SerializeField] private HealthBar zombieHealthBar;
     [SerializeField] private GameObject note;
-    private Animator zombieAnimator;
+    [SerializeField] private Animator zombieAnimator;
 
     private UnityAction<object> onZombieDeath;
 
-    private float experiencePoints = 40f;
+    [SerializeField] private float experiencePoints = 40f;
+    [SerializeField] private float dropChance = 1f;
 
-    public float DropChance { get; private set; } = 1f;
-    public float AttackDamage { get; private set; } = 10;
+    public float AttackDamage { get; private set; } = 5;
     public bool IsDead { get; private set; }
-    public float MaxHealth { get => zombieHealthBar.MaxHealth; private set => zombieHealthBar.MaxHealth = value; }
 
     public float CurrentHealth
     {
@@ -33,21 +33,17 @@ public class Zombie : MonoBehaviour
         }
     }
 
+    private void OnValidate()
+    {
+        zombieAnimator = GetComponent<Animator>();
+        zombieHealthBar = transform.GetChild(2).GetChild(0).GetComponent<HealthBar>();
+        note = transform.GetChild(0).GetChild(0).gameObject;
+    }
+
     private void OnEnable()
     {
         onZombieDeath += OnDeath;
         EventManager.StartListening("ZombieDeath", onZombieDeath);
-    }
-
-    private void Awake()
-    {
-        zombieAnimator = GetComponent<Animator>();
-    }
-
-    private void Start()
-    {
-        if(zombieHealthBar == null) zombieHealthBar = transform.GetChild(2).GetChild(0).GetComponent<HealthBar>();
-        if(note == null) note = transform.GetChild(0).GetChild(0).gameObject;
     }
 
     public void TakeDamage(float hit)
@@ -65,7 +61,7 @@ public class Zombie : MonoBehaviour
 
     private void OnDeath(object zombieID)
     {
-        if (this.GetInstanceID() != (int)zombieID) return;
+        if (GetInstanceID() != (int)zombieID) return;
 
         IsDead = true;
         EventManager.TriggerEvent("AddExperience", experiencePoints);
@@ -83,7 +79,7 @@ public class Zombie : MonoBehaviour
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<GAgent>().enabled = false;
         transform.GetChild(2).gameObject.SetActive(false);
-        DropItem(DropChance);
+        DropItem(dropChance);
     }
 
     private void OnDisable()

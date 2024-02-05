@@ -1,24 +1,29 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class EnemyAttack : GAction
+public sealed class EnemyAttack : GAction
 {
     public override string ActionName { get => "Attack player"; }
-    public override string ActionType { get => "Attack"; }
+    public override ActionTypes ActionType { get => ActionTypes.Attack; }
     public override string TargetTag { get => "Player"; }
-    public override NavMeshAgent Agent { get; protected set; }
 
+    [SerializeField] private float zombieAttackDamage;
     private PlayerStats playerStats;
     private Coroutine attackPlayerCoroutine;
 
-    private new void Awake()
+    protected override void Awake()
     {
-        Agent = GetComponent<NavMeshAgent>();
         MaxRange = 1.2f;
         PreConditionsVisual = SetPreconditions();
         AfterEffectsVisual = SetAfterEffects();
         base.Awake();
+    }
+
+    protected override void OnValidate()
+    {
+        zombieAttackDamage = GetComponent<Zombie>().AttackDamage;
+
+        base.OnValidate();
     }
 
     private void Start()
@@ -53,7 +58,7 @@ public class EnemyAttack : GAction
 
     public override bool PrePerform()
     {
-        zombieAnimator.SetBool("attack", true);
+        ZombieAnimator.SetBool("attack", true);
         if (attackPlayerCoroutine == null && IsTargetInFront(0.75f)) attackPlayerCoroutine = StartCoroutine(ZombieAttack());
         return true;
     }
@@ -65,7 +70,7 @@ public class EnemyAttack : GAction
             StopCoroutine(attackPlayerCoroutine);
             attackPlayerCoroutine = null;
         }
-        zombieAnimator.SetBool("attack", false);
+        ZombieAnimator.SetBool("attack", false);
         return true;
     }
 
@@ -81,7 +86,7 @@ public class EnemyAttack : GAction
                 attackPlayerCoroutine = null;
             }
 
-            zombieAnimator.SetBool("attack", false);
+            ZombieAnimator.SetBool("attack", false);
             return false;
         }
         return true;
@@ -91,8 +96,8 @@ public class EnemyAttack : GAction
     {
         if(playerStats.IsDead)
         {
-            zombieAnimator.SetBool("playerIsDead", true);
-            zombieAnimator.SetBool("attack", false);
+            ZombieAnimator.SetBool("playerIsDead", true);
+            ZombieAnimator.SetBool("attack", false);
             return true;
         }
         return false;
@@ -103,9 +108,9 @@ public class EnemyAttack : GAction
         while(true)
         {
             yield return new WaitForSeconds(0.5f);
-            EventManager.TriggerEvent("DamagePlayer", 5f);
+            EventManager.TriggerEvent("DamagePlayer", zombieAttackDamage);
             yield return new WaitForSeconds(0.5f);
-            EventManager.TriggerEvent("DamagePlayer", 5f);
+            EventManager.TriggerEvent("DamagePlayer", zombieAttackDamage);
         }
     }
 }
