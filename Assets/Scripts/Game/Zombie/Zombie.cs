@@ -36,7 +36,7 @@ public class Zombie : MonoBehaviour
     private void OnValidate()
     {
         zombieAnimator = GetComponent<Animator>();
-        zombieHealthBar = transform.GetChild(2).GetChild(0).GetComponent<HealthBar>();
+        zombieHealthBar = transform.GetChild(2).GetComponent<HealthBar>();
         note = transform.GetChild(0).GetChild(0).gameObject;
     }
 
