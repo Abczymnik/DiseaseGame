@@ -1,25 +1,26 @@
 public sealed class GWorld
 {
-    private static readonly GWorld instance = new GWorld();
-    private static WorldStates world;
+    private static readonly object instanceLock = new object();
+    public WorldStates World { get; private set; }
 
-    static GWorld()
+    private static GWorld _instance;
+    public static GWorld Instance
     {
-        world = new WorldStates();
+        get
+        {
+            if (_instance == null)
+            {
+                lock (instanceLock)
+                {
+                    if (_instance == null) _instance = new GWorld();
+                }
+            }
+            return _instance;
+        }
     }
 
     private GWorld()
     {
-
-    }
-
-    public static GWorld Instance
-    {
-        get { return instance; }
-    }
-
-    public WorldStates GetWorld()
-    {
-        return world;
+        World = new WorldStates();
     }
 }

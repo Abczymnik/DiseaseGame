@@ -39,7 +39,7 @@ public class RootMotion : MonoBehaviour
         float distToTarget = Vector3.Distance(transform.position, activeGAction.Target.transform.position);
         if (distToTarget < 1.2f)
         {
-            if (IsTargetInFront(0.9f)) return;
+            if (IsTargetInFront(0.75f)) return;
 
             if (rotationCoroutine == null) rotationCoroutine = StartCoroutine(PerformRotation(distToTarget));
         }

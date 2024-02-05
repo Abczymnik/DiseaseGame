@@ -3,73 +3,53 @@ using System.Collections.Generic;
 [System.Serializable]
 public class WorldState
 {
-    public string Key { get; set; }
-    public int Value { get; set; }
+    public string Key { get; private set; }
+    public int Value { get; private set; }
 
     public WorldState(string key, int value)
     {
-        this.Key = key;
-        this.Value = value;
+        Key = key;
+        Value = value;
     }
 }
 
 public class WorldStates
 {
-    public Dictionary<string, int> states;
+    public Dictionary<string, int> States { get; private set; }
 
     public WorldStates()
     {
-        states = new Dictionary<string, int>();
+        States = new Dictionary<string, int>();
     }
 
     public bool HasState(string key)
     {
-        return states.ContainsKey(key);
+        return States.ContainsKey(key);
     }
 
     public void AddState(string key, int value)
     {
-        states.Add(key, value);
+        if (!States.ContainsKey(key)) States.Add(key, value);
     }
 
     public void ModifyState(string key, int value)
     {
-        if (states.ContainsKey(key))
+        if (States.ContainsKey(key))
         {
-            states[key] += value;
-            if (states[key] <= 0)
-            {
-                RemoveState(key);
-            }
+            States[key] += value;
+            if (States[key] <= 0) RemoveState(key);
         }
-        else
-        {
-            states.Add(key, value);
-        }
+        else States.Add(key, value);
     }
 
     public void RemoveState(string key)
     {
-        if (states.ContainsKey(key))
-        {
-            states.Remove(key);
-        }
+        if (States.ContainsKey(key)) States.Remove(key);
     }
 
     public void SetState(string key, int value)
     {
-        if(states.ContainsKey(key))
-        {
-            states[key] = value;
-        }
-        else
-        {
-            states.Add(key, value);
-        }
-    }
-
-    public Dictionary<string, int> GetStates()
-    {
-        return states;
+        if(States.ContainsKey(key)) States[key] = value;
+        else States.Add(key, value);
     }
 }
