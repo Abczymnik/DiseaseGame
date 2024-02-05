@@ -2,18 +2,19 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent), typeof(Animator), typeof(ZombieGoals))]
 public class RootMotion : MonoBehaviour
 {
-    private Animator zombieAnimator;
+    [SerializeField, HideInInspector] private Animator zombieAnimator;
+    [SerializeField, HideInInspector] private ZombieGoals zombieGoals;
+    [SerializeField, HideInInspector] private NavMeshAgent agent;
     private GAction activeGAction;
     private Coroutine rotationCoroutine;
-    private ZombieGoals zombieGoals;
-    private NavMeshAgent agent;
 
     private Vector2 zombieVelocity;
     private Vector2 smoothDeltaPosition;
 
-    private void Awake()
+    private void OnValidate()
     {
         zombieAnimator = GetComponent<Animator>();
         zombieGoals = GetComponent<ZombieGoals>();
@@ -22,7 +23,6 @@ public class RootMotion : MonoBehaviour
 
     private void Start()
     {
-        if (zombieAnimator == null) return;
         activeGAction = zombieGoals.CurrentAction;
         agent.updatePosition = false;
         agent.updateRotation = true;
@@ -32,7 +32,6 @@ public class RootMotion : MonoBehaviour
     {
         if (activeGAction == null || activeGAction.running == false)
         {
-            activeGAction = zombieGoals.CurrentAction;
             return;
         }
 

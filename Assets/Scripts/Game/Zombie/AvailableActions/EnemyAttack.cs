@@ -7,6 +7,7 @@ public sealed class EnemyAttack : GAction
     public override ActionTypes ActionType { get => ActionTypes.Attack; }
     public override string TargetTag { get => "Player"; }
 
+    [SerializeField] private float zombieAttackDamage;
     private PlayerStats playerStats;
     private Coroutine attackPlayerCoroutine;
 
@@ -16,6 +17,13 @@ public sealed class EnemyAttack : GAction
         PreConditionsVisual = SetPreconditions();
         AfterEffectsVisual = SetAfterEffects();
         base.Awake();
+    }
+
+    protected override void OnValidate()
+    {
+        zombieAttackDamage = GetComponent<Zombie>().AttackDamage;
+
+        base.OnValidate();
     }
 
     private void Start()
@@ -100,9 +108,9 @@ public sealed class EnemyAttack : GAction
         while(true)
         {
             yield return new WaitForSeconds(0.5f);
-            EventManager.TriggerEvent("DamagePlayer", 5f);
+            EventManager.TriggerEvent("DamagePlayer", zombieAttackDamage);
             yield return new WaitForSeconds(0.5f);
-            EventManager.TriggerEvent("DamagePlayer", 5f);
+            EventManager.TriggerEvent("DamagePlayer", zombieAttackDamage);
         }
     }
 }
