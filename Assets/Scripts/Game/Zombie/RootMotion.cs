@@ -32,6 +32,7 @@ public class RootMotion : MonoBehaviour
     {
         if (activeGAction == null || activeGAction.running == false)
         {
+            activeGAction = zombieGoals.CurrentAction;
             return;
         }
 
