@@ -4,20 +4,16 @@ using UnityEngine.EventSystems;
 
 public class HealthInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private HealthBar playerHealth;
+    [SerializeField] private HealthBar playerHealth;
     [SerializeField] private TMPro.TMP_Text healthText;
     [SerializeField] private Canvas healthInfoCanvas;
     private Coroutine refreshHealth;
 
-    private void Awake()
-    {
-        if (healthText == null) healthText = transform.GetChild(0).GetComponentInChildren<TMPro.TMP_Text>();
-        if (healthInfoCanvas == null) healthInfoCanvas = transform.GetChild(0).GetComponent<Canvas>();
-    }
-
-    private void Start()
+    private void OnValidate()
     {
         playerHealth = GetComponentInParent<HealthBar>();
+        healthText = transform.GetChild(0).GetComponentInChildren<TMPro.TMP_Text>();
+        healthInfoCanvas = transform.GetChild(0).GetComponent<Canvas>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
