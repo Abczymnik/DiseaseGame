@@ -122,13 +122,22 @@ public class PlayerMovement : MonoBehaviour
             while(moveInput.IsPressed())
             {
                 inputVector = moveInput.ReadValue<Vector2>();
+                Vector3 inputDirection = ConvertInputToIsometric(inputVector);
                 float tempDistToTarget = ActualMinMoveDist();
-                targetWorldPosition = transform.position + tempDistToTarget * MaxVelocity * new Vector3(inputVector.x, 0, inputVector.y);
+                targetWorldPosition = transform.position + tempDistToTarget * MaxVelocity * inputDirection;
                 CalcMovementTimers();
                 yield return new WaitForSeconds(MOVEMENT_REFRESH_RATE);
             }
             moveCoroutine = null;
         }
+    }
+
+    private Vector3 ConvertInputToIsometric(Vector2 inputVector)
+    {
+        Vector3 toConvert = new Vector3(inputVector.x, 0, inputVector.y);
+        Quaternion isometricRotation = Quaternion.Euler(0, 45.0f, 0);
+        Matrix4x4 isometricMatrix = Matrix4x4.Rotate(isometricRotation);
+        return isometricMatrix.MultiplyPoint3x4(toConvert);
     }
 
     private void CalcMovementTimers()

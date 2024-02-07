@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
-    [SerializeField] private Transform target;
-    [SerializeField] private Vector3 offset = new Vector3(-0.5f, 6, -5);
+    [SerializeField] private Transform targetToFollow;
+    [SerializeField] private Vector3 cameraOffset = new Vector3(-3.3f, 6.3f, -3.8f);
+    private Vector3 currentVelocity;
+    private const float smoothTime = 0.1f;
 
-    private void Awake()
+    private void OnValidate()
     {
-        if(target == null) target = GameObject.Find("/Player").transform;
+        targetToFollow = GameObject.FindWithTag("Player").transform;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
-        transform.position = target.position + offset;
+        Vector3 targetPosition = targetToFollow.position + cameraOffset;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime);
     }
 }
