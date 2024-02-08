@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        moveInput = PlayerUI.inputActions.Gameplay.Move;
+        moveInput = PlayerUI.Instance.InputActions.Gameplay.Move;
         MovementUIOn();
     }
 

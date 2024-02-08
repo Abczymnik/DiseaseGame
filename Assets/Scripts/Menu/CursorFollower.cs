@@ -23,7 +23,7 @@ public class CursorFollower : MonoBehaviour
 
     private void OnEnable()
     {
-        mousePosition = PlayerUI.inputActions.Menu.Pointer;
+        mousePosition = PlayerUI.Instance.InputActions.Menu.Pointer;
         mousePosition.performed += OnCursorPositionChange;
     }
 

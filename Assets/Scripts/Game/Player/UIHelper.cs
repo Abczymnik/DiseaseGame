@@ -3,20 +3,29 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-public class UIHelper : MonoBehaviour
+public sealed class UIHelper
 {
-    public static UIHelper Instance { get; private set;}
+    private static readonly object instanceLock = new object();
 
-    private void Awake()
+    private static UIHelper _instance;
+    public static UIHelper Instance
     {
-        if (Instance != null && Instance != this)
+        get
         {
-            Destroy(this);
+            if (_instance == null)
+            {
+                lock (instanceLock)
+                {
+                    if (_instance == null) _instance = new UIHelper();
+                }
+            }
+            return _instance;
         }
-        else
-        {
-            Instance = this;
-        }
+    }
+
+    private UIHelper()
+    {
+
     }
 
     public static bool IsPointerOverUI()

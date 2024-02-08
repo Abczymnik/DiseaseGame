@@ -51,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        attackInput = PlayerUI.inputActions.Gameplay.Attack;
+        attackInput = PlayerUI.Instance.InputActions.Gameplay.Attack;
         attackInput.performed += OnPlayerAttack;
     }
 

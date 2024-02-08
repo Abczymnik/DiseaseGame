@@ -8,8 +8,8 @@ public class MouseFollower : MonoBehaviour
 
     private void Awake()
     {
-        PlayerUI.SwitchActionMap(PlayerUI.inputActions.Gameplay);
-        mousePosition = PlayerUI.inputActions.Gameplay.Pointer;
+        PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.Gameplay);
+        mousePosition = PlayerUI.Instance.InputActions.Gameplay.Pointer;
         cam = Camera.main;
     }
 
