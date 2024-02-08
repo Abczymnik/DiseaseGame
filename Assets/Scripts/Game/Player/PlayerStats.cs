@@ -2,13 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Animator), typeof(PlayerMovement), typeof(PlayerAttack))]
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private HealthBar playerHealth;
     [SerializeField] private Experience playerExperience;
-    private PlayerMovement playerMovement;
-    private PlayerAttack playerAttack;
-    private Animator playerAnimator;
+    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerAttack playerAttack;
+    [SerializeField] private Animator playerAnimator;
 
     private UnityAction onPlayerDeath;
     private UnityAction<object> onLevelUp;
@@ -70,33 +71,18 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void OnValidate()
     {
-        if (playerHealth == null) playerHealth = transform.Find("Health orb").GetComponent<HealthBar>();
-        if (playerExperience == null) playerExperience = transform.Find("Experience").GetComponent<Experience>();
+        playerHealth = transform.Find("Health orb").GetComponent<HealthBar>();
+        playerExperience = transform.Find("Experience").GetComponent<Experience>();
+        playerAnimator = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>();
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     private void OnEnable()
     {
-        onPlayerDeath += OnPlayerDeath;
-        EventManager.StartListening("PlayerDeath", onPlayerDeath);
-        onLevelUp += OnLevelUp;
-        EventManager.StartListening("LevelUp", onLevelUp);
-        onPlayerDamage += OnPlayerDamage;
-        EventManager.StartListening("DamagePlayer", onPlayerDamage);
-        onPlayerExperience += OnPlayerExperience;
-        EventManager.StartListening("AddExperience", onPlayerExperience);
-    }
-
-    private void Start()
-    {
-        playerAnimator = GetComponent<Animator>();
-        playerMovement = GetComponent<PlayerMovement>();
-        playerAttack = GetComponent<PlayerAttack>();
-        MaxHealth = 100f;
-        CurrentHealth = MaxHealth;
-        MaxExp = 100f;
-        CurrentExp = 0f;
+        SetUpEvents();
     }
 
     IEnumerator RestoreHealthCoroutine()
@@ -129,9 +115,9 @@ public class PlayerStats : MonoBehaviour
         restoreHealthCoroutine = StartCoroutine(RestoreHealthCoroutine());
     }
 
-    private void OnLevelUp(object playerLevelObj)
+    private void OnLevelUp(object playerLevelData)
     {
-        int playerLevel = (int)playerLevelObj;
+        int playerLevel = (int)playerLevelData;
         MaxHealth = 100 + playerLevel * 10;
         CurrentHealth = MaxHealth;
         MaxExp = 100 * playerLevel * 10;
@@ -144,9 +130,7 @@ public class PlayerStats : MonoBehaviour
     {
         IsDead = true;
         playerAnimator.SetBool("dead", true);
-        EventManager.StopListening("LevelUp", onLevelUp);
-        EventManager.StopListening("DamagePlayer", onPlayerDamage);
-        EventManager.StopListening("AddExperience", onPlayerExperience);
+        UnsubscribeEvents();
         PlayerUI.BlockInput();
         playerMovement.enabled = false;
         playerAttack.enabled = false;
@@ -155,11 +139,26 @@ public class PlayerStats : MonoBehaviour
 
     private void OnDisable()
     {
+        UnsubscribeEvents();
+    }
+
+    private void SetUpEvents()
+    {
+        onPlayerDeath += OnPlayerDeath;
+        EventManager.StartListening("PlayerDeath", onPlayerDeath);
+        onLevelUp += OnLevelUp;
+        EventManager.StartListening("LevelUp", onLevelUp);
+        onPlayerDamage += OnPlayerDamage;
+        EventManager.StartListening("DamagePlayer", onPlayerDamage);
+        onPlayerExperience += OnPlayerExperience;
+        EventManager.StartListening("AddExperience", onPlayerExperience);
+    }
+
+    private void UnsubscribeEvents()
+    {
         EventManager.StopListening("PlayerDeath", onPlayerDeath);
         EventManager.StopListening("LevelUp", onLevelUp);
         EventManager.StopListening("DamagePlayer", onPlayerDamage);
         EventManager.StopListening("AddExperience", onPlayerExperience);
     }
 }
-
-

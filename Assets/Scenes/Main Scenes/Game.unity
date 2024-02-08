@@ -1142,6 +1142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012b08f9b8e202346844507fa2fb71c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 927938941}
   healthText: {fileID: 731490459}
   healthInfoCanvas: {fileID: 1916978819}
 --- !u!1001 &39571902
@@ -1756,6 +1757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 960618991}
 --- !u!137 &74958493
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -3174,6 +3176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b964ec3e71fd8439b62f5b2f2e99a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackAnimator: {fileID: 70662237}
+  playerMovement: {fileID: 1235855169}
+  playerStats: {fileID: 78072736}
 --- !u!1 &78072769
 GameObject:
   m_ObjectHideFlags: 0
@@ -7250,6 +7255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 787995398}
 --- !u!1 &341591011
 GameObject:
   m_ObjectHideFlags: 0
@@ -8184,6 +8190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 727623155}
 --- !u!1 &374555886
 GameObject:
   m_ObjectHideFlags: 0
@@ -18212,6 +18219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 161791989}
 --- !u!4 &887168830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2505067268323644423, guid: 87e3f3b9f86a6194a9977ad03ce4d62e, type: 3}
@@ -18987,6 +18995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 39467041}
 --- !u!225 &927938942
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -24711,6 +24720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24e8dd29ffb6fe48a8d9f4bff2c8074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerExperience: {fileID: 1436815570}
   experienceInfoCanvas: {fileID: 170929874}
   experienceText: {fileID: 615438709}
 --- !u!114 &1221489810
@@ -25223,6 +25233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e147a2c91934fdc4aa9525c58d75accf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 70662237}
+  playerController: {fileID: 1235855170}
+  playerStats: {fileID: 78072736}
 --- !u!143 &1235855170
 CharacterController:
   m_ObjectHideFlags: 0
@@ -28264,6 +28277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ec32b7d1391244db64ba38496a777a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1221489810}
 --- !u!225 &1436815571
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -30955,6 +30969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1653943325}
 --- !u!1001 &1609465981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35377,6 +35392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1397726222}
 --- !u!1 &1852803000
 GameObject:
   m_ObjectHideFlags: 0
@@ -37713,6 +37729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1233297198}
 --- !u!1001 &1962613559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39104,6 +39121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1196058777}
 --- !u!1 &2053819458
 GameObject:
   m_ObjectHideFlags: 0
@@ -39324,6 +39342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1178249886}
 --- !u!1001 &2069007713
 PrefabInstance:
   m_ObjectHideFlags: 0
