@@ -21,6 +21,7 @@ public class PlayerStats : MonoBehaviour
     public float AttackDamage { get; private set; } = 12f;
     public float AttackSpeed { get; private set; } = 1f;
     public float MovementSpeed { get; private set; } = 3.5f;
+    public float RotationSpeed { get; private set; } = 6f;
     public float TimeForHealthRefill { get; private set; } = 15f;
     public bool IsDead { get; private set; } = false;
 

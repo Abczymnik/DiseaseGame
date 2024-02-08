@@ -59,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
     {
         AttackSpeed = playerStats.AttackSpeed;
         AttackDamage = playerStats.AttackDamage;
-        rotationSpeed = playerMovement.RotationSpeed;
+        rotationSpeed = playerStats.RotationSpeed;
     }
 
     private void OnPlayerAttack(InputAction.CallbackContext _)
