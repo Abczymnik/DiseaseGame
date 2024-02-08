@@ -5,25 +5,26 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
 
+[RequireComponent(typeof(PlayerMovement), typeof(Animator), typeof(PlayerStats))]
 public class PlayerAttack : MonoBehaviour
 {
     private const float ANIMATION_LENGHT = 0.9f;
-    private const float ANIMATION_ERROR = 0.2f;
+    private const float ANIMATION_ERROR = 0.15f;
 
-    private Animator attackAnimator;
-    private PlayerMovement playerMovement;
-    private PlayerStats playerStats;
+    [SerializeField] private Animator attackAnimator;
+    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerStats playerStats;
 
     private List<Collider> enemiesHitList = new List<Collider>();
     private bool slashAvailable = true;
-    private Coroutine attackCoroutine;
-
     private float rotationSpeed;
+    private Coroutine attackCoroutine;
 
     private InputAction attackInput;
     private UnityAction<object> onLevelUp;
 
     public float AttackDamage { get; private set; }
+
     private float _attackSpeed;
     public float AttackSpeed
     {
@@ -35,6 +36,13 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    private void OnValidate()
+    {
+        attackAnimator = GetComponent<Animator>();
+        playerStats = GetComponent<PlayerStats>();
+        playerMovement = GetComponent<PlayerMovement>();
+    }
+
     private void OnEnable()
     {
         onLevelUp += OnLevelUp;
@@ -43,21 +51,18 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        attackAnimator = GetComponent<Animator>();
         attackInput = PlayerUI.inputActions.Gameplay.Attack;
         attackInput.performed += OnPlayerAttack;
     }
 
     private void Start()
     {
-        playerStats = GetComponent<PlayerStats>();
         AttackSpeed = playerStats.AttackSpeed;
         AttackDamage = playerStats.AttackDamage;
-        playerMovement = GetComponent<PlayerMovement>();
         rotationSpeed = playerMovement.RotationSpeed;
     }
 
-    private void OnPlayerAttack(InputAction.CallbackContext context)
+    private void OnPlayerAttack(InputAction.CallbackContext _)
     {
         if (!slashAvailable) return;
 
@@ -103,19 +108,6 @@ public class PlayerAttack : MonoBehaviour
         playerMovement.StopMovementForSeconds(1 / AttackSpeed + ANIMATION_ERROR);
     }
 
-    private void DrawAttackAndSlash()
-    {
-        enemiesHitList.Clear();
-        attackAnimator.SetInteger("attackType", Random.Range(1, 4));
-        attackAnimator.SetTrigger("triggerAttack");
-    }
-
-    private void RecoverAfterAttack()
-    {
-        slashAvailable = true;
-        playerMovement.MovementUIOn();
-    }
-
     private Quaternion CalcTargetRotation()
     {
         Vector2 mousePos = Mouse.current.position.ReadValue();
@@ -130,6 +122,19 @@ public class PlayerAttack : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(clickPos - transform.position);
         targetRotation.x = 0;
         return targetRotation;
+    }
+
+    private void DrawAttackAndSlash()
+    {
+        enemiesHitList.Clear();
+        attackAnimator.SetInteger("attackType", Random.Range(1, 4));
+        attackAnimator.SetTrigger("triggerAttack");
+    }
+
+    private void RecoverAfterAttack()
+    {
+        slashAvailable = true;
+        playerMovement.MovementUIOn();
     }
 
     public void EnemyHit(Collision enemyHit)
@@ -175,5 +180,6 @@ public class PlayerAttack : MonoBehaviour
     private void OnDisable()
     {
         EventManager.StopListening("LevelUp", onLevelUp);
+        attackInput.performed -= OnPlayerAttack;
     }
 }
