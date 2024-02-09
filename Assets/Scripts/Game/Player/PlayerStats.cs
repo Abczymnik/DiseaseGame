@@ -85,6 +85,12 @@ public class PlayerStats : MonoBehaviour
         SetUpEvents();
     }
 
+    private void Start()
+    {
+        MaxHealth = 100f;
+        MaxExp = 100f;
+    }
+
     IEnumerator RestoreHealthCoroutine()
     {
         yield return new WaitForSeconds(TimeForHealthRefill);
