@@ -18645,7 +18645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e94bb50e2dd06d4c83aa63b1c284292, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f3ddad7700ab8f42987929ef62e8844, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24504,8 +24504,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215045123}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0024614835}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 39467038}
@@ -24513,7 +24513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0039138794, y: 0.0020370483}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215045125
@@ -24536,7 +24536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f060359e40910a2459625a52003039c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41a026db35fa1694b91e48198e45a58d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -25633,6 +25633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a037144450ba1543bcadc26e428cf46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 1267691949}
+  inventoryPanel: {fileID: 1529468568}
+  <ItemDatabase>k__BackingField: {fileID: 1977761063}
 --- !u!225 &1267691951
 CanvasGroup:
   m_ObjectHideFlags: 0
