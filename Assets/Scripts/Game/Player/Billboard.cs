@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class Bilboard : MonoBehaviour
+public class Billboard : MonoBehaviour
 {
     [SerializeField] private Transform cameraTrans;
 
-    private void Start()
+    private void OnValidate()
     {
-        if (cameraTrans == null) cameraTrans = Camera.main.transform;
+        cameraTrans = Camera.main.transform;
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         transform.LookAt(transform.position + cameraTrans.forward);
     }

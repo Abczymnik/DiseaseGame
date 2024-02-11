@@ -23,8 +23,8 @@ public class UIItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         scrollImage = transform.GetChild(0).GetComponent<Image>();
         UpdateItem(null);
 
-        escape = PlayerUI.inputActions.NoteUI.Escape;
-        navigation = PlayerUI.inputActions.NoteUI.Navigation;
+        escape = PlayerUI.Instance.InputActions.NoteUI.Escape;
+        navigation = PlayerUI.Instance.InputActions.NoteUI.Navigation;
     }
 
     private void Start()
@@ -54,7 +54,7 @@ public class UIItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         UIHelper.EnableGUI();
         navigation.performed -= NavigationPerformed;
         escape.performed -= EscapePerformed;
-        PlayerUI.SwitchActionMap(PlayerUI.inputActions.Gameplay);
+        PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.Gameplay);
     }
 
     public void UpdateItem(Item item)
@@ -91,7 +91,7 @@ public class UIItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         dataBaseNotes.GetChild(lastEnabledNoteIndex).gameObject.SetActive(true);
         playerInventory.InventoryVisibility();
         UIHelper.DisableGUI();
-        PlayerUI.SwitchActionMap(PlayerUI.inputActions.NoteUI);
+        PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.NoteUI);
         escape.performed += EscapePerformed;
         navigation.performed += NavigationPerformed;
     }

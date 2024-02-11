@@ -4,9 +4,9 @@ public class WeaponCollider : MonoBehaviour
 {
     [SerializeField] private PlayerAttack playerAttack;
 
-    private void Start()
+    private void OnValidate()
     {
-        if (playerAttack == null) playerAttack = GameObject.Find("/Player").GetComponent<PlayerAttack>();
+        playerAttack = GameObject.Find("/Player").GetComponent<PlayerAttack>();
     }
 
     public void OnCollisionEnter(Collision collision)

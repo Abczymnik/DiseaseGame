@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
 
     private void Awake()
     {
-        inventorySwitch = PlayerUI.inputActions.Gameplay.Inventory;
+        inventorySwitch = PlayerUI.Instance.InputActions.Gameplay.Inventory;
         inventorySwitch.performed += InventoryPerformed;
     }
 

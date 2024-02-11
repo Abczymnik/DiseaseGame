@@ -33,19 +33,19 @@ public class CursorSkin : MonoBehaviour
         {
             case 0:
                 CursorSwitch.HideCursor();
-                PlayerUI.SwitchActionMap(PlayerUI.inputActions.Menu);
+                PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.Menu);
                 break;
             case 1:
                 CursorSwitch.ShowCursor();
-                PlayerUI.SwitchActionMap(PlayerUI.inputActions.Intro);
+                PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.Intro);
                 break;
             case 2:
                 CursorSwitch.ShowCursor();
-                PlayerUI.SwitchActionMap(PlayerUI.inputActions.Gameplay);
+                PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.Gameplay);
                 break;
             default:
                 CursorSwitch.ShowCursor();
-                PlayerUI.SwitchActionMap(PlayerUI.inputActions.Gameplay);
+                PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.Gameplay);
                 break;
         }
     }

@@ -4,20 +4,16 @@ using UnityEngine.EventSystems;
 
 public class ExperienceInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private Experience playerExperience;
+    [SerializeField] private Experience playerExperience;
     [SerializeField] private Canvas experienceInfoCanvas;
     [SerializeField] private TMPro.TMP_Text experienceText;
     private Coroutine refreshExp;
 
-    private void Awake()
-    {
-        if (experienceText == null) experienceText = transform.GetChild(0).GetComponentInChildren<TMPro.TMP_Text>();
-        if (experienceInfoCanvas == null) experienceInfoCanvas = transform.GetChild(0).GetComponent<Canvas>();
-    }
-
-    private void Start()
+    private void OnValidate()
     {
         playerExperience = GetComponentInParent<Experience>();
+        experienceText = transform.GetChild(0).GetComponentInChildren<TMPro.TMP_Text>();
+        experienceInfoCanvas = transform.GetChild(0).GetComponent<Canvas>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

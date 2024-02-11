@@ -5,19 +5,22 @@ using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RestartGameAfterDeath : MonoBehaviour
 {
-    private List<HDAdditionalLightData> lightsData = new List<HDAdditionalLightData>();
-    private List<float> lightIntensities = new List<float>();
-    private List<CanvasGroup> GUICanvas = new List<CanvasGroup>();
+    private HDAdditionalLightData[] lightsData;
+    private float[] lightIntensities;
+    private List<Image> GUIImages = new List<Image>();
+    private Color[] GUIImagesColor;
+
     [SerializeField] private Volume skyLightIntense;
 
     private UnityAction onPlayerDeath;
 
-    private void Awake()
+    private void OnValidate()
     {
-        if (skyLightIntense == null) skyLightIntense = GameObject.Find("/Settings/Dim Sky").GetComponent<Volume>();
+        skyLightIntense = GameObject.Find("/Settings/Dim Sky").GetComponent<Volume>();
     }
 
     private void OnEnable()
@@ -26,7 +29,7 @@ public class RestartGameAfterDeath : MonoBehaviour
         EventManager.StartListening("PlayerDeath", onPlayerDeath);
     }
 
-    IEnumerator LoadMenu()
+    IEnumerator TransitionFromGameplayToMenu()
     {
         float timer = 0;
         float timeForChanges = 5f;
@@ -35,12 +38,14 @@ public class RestartGameAfterDeath : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            foreach(CanvasGroup GUI in GUICanvas)
+            for(int i=0; i<GUIImages.Count; i++)
             {
-                GUI.alpha = Mathf.Lerp(1, 0, timer / timeForChanges);
+                Color targetColor = GUIImagesColor[i];
+                targetColor.a -= Mathf.Lerp(0, targetColor.a, timer / timeForChanges);
+                GUIImages[i].material.SetColor("_UnlitColor", targetColor);
             }
 
-            for (int i = 0; i < lightsData.Count; i++)
+            for (int i = 0; i < lightsData.Length; i++)
             {
                 lightsData[i].intensity = Mathf.Lerp(lightIntensities[i], 0, timer / timeForChanges);
             }
@@ -52,35 +57,46 @@ public class RestartGameAfterDeath : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    private void GetLights()
+    private void GetLightsData()
     {
-        GameObject[] lightsObj = GameObject.FindGameObjectsWithTag("Light");
-        foreach (GameObject light in lightsObj)
+        lightsData = FindObjectsByType<HDAdditionalLightData>(FindObjectsSortMode.None);
+        lightIntensities = new float[lightsData.Length];
+
+        for (int i = 0; i < lightsData.Length; i++)
         {
-            HDAdditionalLightData lightAddData = light.GetComponent<HDAdditionalLightData>();
-            lightsData.Add(lightAddData);
-            lightIntensities.Add(lightAddData.intensity);
+            lightIntensities[i] = lightsData[i].intensity;
         }
     }
 
-    private void GetGUICanvas()
+    private void GetGUIMaterials()
     {
-        GameObject[] GUIObj = GameObject.FindGameObjectsWithTag("GUI Element");
-        foreach(GameObject GUI in GUIObj)
+        GameObject[] GUIObjects = GameObject.FindGameObjectsWithTag("GUI Element");
+        foreach (GameObject GUIObject in GUIObjects)
         {
-            GUICanvas.Add(GUI.GetComponent<CanvasGroup>());
+            Image[] GUIComponents = GUIObject.GetComponentsInChildren<Image>();
+            GUIImages.AddRange(GUIComponents);
+        }
+
+        GUIImagesColor = new Color[GUIImages.Count];
+        for (int i=0; i<GUIImages.Count; i++)
+        {
+            GUIImagesColor[i] = GUIImages[i].material.GetColor("_UnlitColor");
         }
     }
 
     private void OnPlayerDeath()
     {
-        GetLights();
-        GetGUICanvas();
-        StartCoroutine(LoadMenu());
+        GetLightsData();
+        GetGUIMaterials();
+        StartCoroutine(TransitionFromGameplayToMenu());
     }
 
     private void OnDisable()
     {
         EventManager.StopListening("PlayerDeath", onPlayerDeath);
+        for (int i=0; i<GUIImages.Count; i++)
+        {
+            GUIImages[i].material.SetColor("_UnlitColor", GUIImagesColor[i]);
+        }
     }
 }

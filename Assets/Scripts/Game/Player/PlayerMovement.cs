@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Animator), typeof(PlayerStats), typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     private const float ACCELERATION_TIME = 0.35f;
@@ -10,25 +11,29 @@ public class PlayerMovement : MonoBehaviour
     private const float GRAVITY_FORCE = 9.8f;
     private const float SOFT_GRAVITY_PULL = 0.098f;
 
-    private Animator playerAnimator;
-    private CharacterController playerController;
+    [SerializeField] private Animator playerAnimator;
+    [SerializeField] private CharacterController playerController;
+    [SerializeField] private PlayerStats playerStats;
+
     private InputAction moveInput;
     private UnityAction<object> onLevelUp;
 
-    private PlayerStats playerStats;
-
-    private float minMove;
-    private float tToReachTarget;
-    private float actualRunTime;
-    private float tInStage;
-    private float tMidStage;
-    private float tOutStage;
-    private float tInDispl;
-    private float tOutDispl;
+    private float currentMinMove;
+    private float timeToReachTarget;
+    private float currentRunTime;
+    private float timeToAccelerate;
+    private float timeForFullSpeed;
+    private float timeToDecelerate;
+    private float timeToAccelerateDisplacement;
+    private float timeToDecelerateDisplacement;
     private Vector3 targetWorldPosition;
     private Coroutine moveCoroutine;
 
     private Coroutine rotateCoroutine;
+
+    public float MaxVelocity { get; private set; }
+    public float Acceleration { get; private set; }
+    public float RotationSpeed { get; private set; }
 
     private bool _isRunning;
     public bool IsRunning
@@ -38,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _isRunning = value;
             if (!value) Velocity = 0f; 
-            actualRunTime = 0f;
+            currentRunTime = 0f;
         }
     }
 
@@ -53,9 +58,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public float MaxVelocity { get; private set; } = 3.5f;
-    public float Acceleration { get; private set; }
-    public float RotationSpeed { get; private set; } = 6f;
+    private void OnValidate()
+    {
+        playerStats = GetComponent<PlayerStats>();
+        playerAnimator = GetComponent<Animator>();
+        playerController = GetComponent<CharacterController>();
+    }
 
     private void OnEnable()
     {
@@ -65,34 +73,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        playerAnimator = GetComponent<Animator>();
-        playerController = GetComponent<CharacterController>();
-        moveInput = PlayerUI.inputActions.Gameplay.Move;
+        moveInput = PlayerUI.Instance.InputActions.Gameplay.Move;
         MovementUIOn();
     }
 
     private void Start()
     {
-        playerStats = GetComponent<PlayerStats>();
         MaxVelocity = playerStats.MovementSpeed;
-        PlayerUI.SwitchActionMap(PlayerUI.inputActions.Gameplay);
-        minMove = 0.5f/RotationSpeed;
         Acceleration = MaxVelocity / ACCELERATION_TIME;
+        RotationSpeed = playerStats.RotationSpeed;
+        currentMinMove = 0.5f/RotationSpeed;
     }
 
     private void Update()
     {
         Movement();  
-    }
-
-    private float ActualMinMoveDist()
-    {
-        float tempMinMove = Velocity*0.5f*Velocity/Acceleration;
-        if (tempMinMove > minMove)
-        {
-            return tempMinMove;
-        }
-        return minMove;
     }
 
     private void MapInputToWorld(InputAction.CallbackContext context)
@@ -115,15 +110,17 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        else if(moveCoroutine == null) moveCoroutine = StartCoroutine(KeyboardMoveCoroutine());
+        else if (moveCoroutine == null) moveCoroutine = StartCoroutine(KeyboardMoveCoroutine());
 
         IEnumerator KeyboardMoveCoroutine()
         {
-            while(moveInput.IsPressed())
+            while (moveInput.IsPressed())
             {
                 inputVector = moveInput.ReadValue<Vector2>();
+                Vector3 inputDirection = ConvertInputToIsometric(inputVector);
                 float tempDistToTarget = ActualMinMoveDist();
-                targetWorldPosition = transform.position + tempDistToTarget * MaxVelocity * new Vector3(inputVector.x, 0, inputVector.y);
+
+                targetWorldPosition = transform.position + tempDistToTarget * MaxVelocity * inputDirection;
                 CalcMovementTimers();
                 yield return new WaitForSeconds(MOVEMENT_REFRESH_RATE);
             }
@@ -131,57 +128,50 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private float ActualMinMoveDist()
+    {
+        float tempMinMove = Velocity * 0.5f * Velocity / Acceleration;
+        if (tempMinMove > currentMinMove)
+        {
+            return tempMinMove;
+        }
+        return currentMinMove;
+    }
+
     private void CalcMovementTimers()
     {
         CalculateRotationDir();
         IsRunning = true;
         float distToTarget = Vector3.Distance(targetWorldPosition, transform.position);
-        tInStage = (-Velocity + Mathf.Sqrt(Velocity * Velocity + 2 * Acceleration * distToTarget)) / Acceleration;
+        timeToAccelerate = (-Velocity + Mathf.Sqrt(Velocity * Velocity + 2 * Acceleration * distToTarget)) / Acceleration;
 
-        float vMaxInStage = Velocity + Acceleration * tInStage;
-        if(vMaxInStage <= MaxVelocity)
+        float vMaxInStage = Velocity + Acceleration * timeToAccelerate;
+        if (vMaxInStage <= MaxVelocity)
         {
-            tMidStage = 0f;
-            tOutStage = vMaxInStage/Acceleration;
+            timeForFullSpeed = 0f;
+            timeToDecelerate = vMaxInStage / Acceleration;
         }
 
         else
         {
-            tInStage = (MaxVelocity - Velocity) / Acceleration;
-            tOutStage = ACCELERATION_TIME;
-            float inStageDist = (MaxVelocity + Velocity) * 0.5f * tInStage;
+            timeToAccelerate = (MaxVelocity - Velocity) / Acceleration;
+            timeToDecelerate = ACCELERATION_TIME;
+            float inStageDist = (MaxVelocity + Velocity) * 0.5f * timeToAccelerate;
             float outStageDist = 0.5f * Acceleration * ACCELERATION_TIME * ACCELERATION_TIME;
-            tMidStage = (distToTarget - inStageDist - outStageDist) / MaxVelocity;
+            timeForFullSpeed = (distToTarget - inStageDist - outStageDist) / MaxVelocity;
         }
 
-        tOutDispl = ACCELERATION_TIME - tOutStage;
-        tInDispl = Velocity / Acceleration;
-        tToReachTarget = tInStage + tMidStage + tOutStage;
+        timeToDecelerateDisplacement = ACCELERATION_TIME - timeToDecelerate;
+        timeToAccelerateDisplacement = Velocity / Acceleration;
+        timeToReachTarget = timeToAccelerate + timeForFullSpeed + timeToDecelerate;
     }
 
-    private float QuadEaseIn(float t) => Acceleration*t;
-
-    private float QuadEaseOut(float t)
+    private Vector3 ConvertInputToIsometric(Vector2 inputVector)
     {
-        t -= tInStage + tMidStage;
-        return MaxVelocity - (Acceleration * t);
-    }
-
-    private void CalcActualVelocity(float t)
-    {
-        if(actualRunTime <= tInStage)
-        {
-            Velocity = QuadEaseIn(t+tInDispl);
-            return;
-        }
-
-        if(actualRunTime > tInStage+tMidStage)
-        {
-            Velocity = QuadEaseOut(t+tOutDispl);
-            return;
-        }
-
-        Velocity = MaxVelocity;
+        Vector3 toConvert = new Vector3(inputVector.x, 0, inputVector.y);
+        Quaternion isometricRotation = Quaternion.Euler(0, 45.0f, 0);
+        Matrix4x4 isometricMatrix = Matrix4x4.Rotate(isometricRotation);
+        return isometricMatrix.MultiplyPoint3x4(toConvert);
     }
 
     private void Movement()
@@ -194,19 +184,44 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        actualRunTime += Time.deltaTime;
-        if (actualRunTime > tToReachTarget)
+        currentRunTime += Time.deltaTime;
+        if (currentRunTime > timeToReachTarget)
         {
             IsRunning = false;
             return;
         }
 
-        CalcActualVelocity(actualRunTime);
+        CalcActualVelocity(currentRunTime);
 
         Vector3 motionXZAxis = Velocity * transform.forward;
         Vector3 motionYAxis = playerController.isGrounded ? Vector3.down * SOFT_GRAVITY_PULL : Vector3.down * GRAVITY_FORCE;
         Vector3 completeMotion = motionXZAxis + motionYAxis;
         playerController.Move(Time.deltaTime * completeMotion);
+    }
+
+    private void CalcActualVelocity(float t)
+    {
+        if (currentRunTime <= timeToAccelerate)
+        {
+            Velocity = QuadEaseIn(t + timeToAccelerateDisplacement);
+            return;
+        }
+
+        if (currentRunTime > timeToAccelerate + timeForFullSpeed)
+        {
+            Velocity = QuadEaseOut(t + timeToDecelerateDisplacement);
+            return;
+        }
+
+        Velocity = MaxVelocity;
+    }
+
+    private float QuadEaseIn(float t) => Acceleration * t;
+
+    private float QuadEaseOut(float t)
+    {
+        t -= timeToAccelerate + timeForFullSpeed;
+        return MaxVelocity - (Acceleration * t);
     }
 
     private void CalculateRotationDir()
@@ -228,6 +243,8 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, rotationPercentage);
             yield return null;
         }
+
+        transform.rotation = targetRotation;
     }
 
     public void StopMovementForSeconds(float seconds)

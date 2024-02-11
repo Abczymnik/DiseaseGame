@@ -1,26 +1,42 @@
-using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerUI : MonoBehaviour
+public sealed class PlayerUI
 {
-    public static PlayerControls inputActions = new PlayerControls();
+    private static readonly object instanceLock = new object();
+    public PlayerControls InputActions { get; private set; }
 
-    void Start()
+    private static PlayerUI _instance;
+    public static PlayerUI Instance
     {
-        SwitchActionMap(inputActions.Gameplay);
+        get
+        {
+            if (_instance == null)
+            {
+                lock (instanceLock)
+                {
+                    if (_instance == null) _instance = new PlayerUI();
+                }
+            }
+            return _instance;
+        }
+    }
+
+    private PlayerUI()
+    {
+        InputActions = new PlayerControls();
     }
 
     public static void SwitchActionMap(InputActionMap actionMap)
     {
         if(actionMap.enabled) { return; }
 
-        inputActions.Disable();
+        Instance.InputActions.Disable();
         actionMap.Enable();
     }
 
     public static void BlockInput()
     {
-        inputActions.Disable();
+        Instance.InputActions.Disable();
     }
 }
  

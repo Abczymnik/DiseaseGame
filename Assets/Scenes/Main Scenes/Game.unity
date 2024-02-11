@@ -1142,6 +1142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012b08f9b8e202346844507fa2fb71c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 927938941}
   healthText: {fileID: 731490459}
   healthInfoCanvas: {fileID: 1916978819}
 --- !u!1001 &39571902
@@ -1756,6 +1757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 960618991}
 --- !u!137 &74958493
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2352,7 +2354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78072733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.12, y: 0, z: 12.282898}
+  m_LocalPosition: {x: 64, y: 0, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 77649855}
@@ -3160,8 +3162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ce0af7736428848b43f737ed6b832f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 927938941}
   playerExperience: {fileID: 1436815570}
+  playerMovement: {fileID: 1235855169}
+  playerAttack: {fileID: 78072737}
+  playerAnimator: {fileID: 70662237}
 --- !u!114 &78072737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3174,6 +3179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b964ec3e71fd8439b62f5b2f2e99a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackAnimator: {fileID: 70662237}
+  playerMovement: {fileID: 1235855169}
+  playerStats: {fileID: 78072736}
 --- !u!1 &78072769
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,8 +3712,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 68.52794, y: 0.272, z: 45.154167}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 68.52794, y: 0.272, z: 45.154167}
 --- !u!195 &81260137
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3742,6 +3750,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieHealthBar: {fileID: 1602969960}
   note: {fileID: 1499710122}
+  zombieAnimator: {fileID: 3568628871014299042}
+  experiencePoints: 40
+  dropChance: 1
 --- !u!54 &81260139
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3776,8 +3787,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   playerTrans: {fileID: 77649853}
   spawnerTrans: {fileID: 702955628}
 --- !u!114 &81260150
@@ -3810,7 +3821,6 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 68.52794, y: 0.272, z: 45.154167}
   running: 0
 --- !u!1 &97814961
 GameObject:
@@ -5923,6 +5933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b10ff3f8745f0a419d46ae867a8f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieAnimator: {fileID: 3568628872554903632}
+  zombieGoals: {fileID: 1594041220}
+  agent: {fileID: 1594041243}
 --- !u!114 &238083310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7245,6 +7258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 787995398}
 --- !u!1 &341591011
 GameObject:
   m_ObjectHideFlags: 0
@@ -8179,6 +8193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 727623155}
 --- !u!1 &374555886
 GameObject:
   m_ObjectHideFlags: 0
@@ -9273,6 +9288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b10ff3f8745f0a419d46ae867a8f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieAnimator: {fileID: 3568628872295498425}
+  zombieGoals: {fileID: 1219828077}
+  agent: {fileID: 1219828082}
 --- !u!114 &428271111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10020,6 +10038,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b10ff3f8745f0a419d46ae867a8f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieAnimator: {fileID: 3568628872252046412}
+  zombieGoals: {fileID: 1293707160}
+  agent: {fileID: 1293707143}
 --- !u!114 &472881394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10594,6 +10615,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieHealthBar: {fileID: 2066016231}
   note: {fileID: 1799879096}
+  zombieAnimator: {fileID: 3568628871629452065}
+  experiencePoints: 40
+  dropChance: 1
 --- !u!195 &544762090
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10634,8 +10658,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 85.69794, y: 0.05, z: 146.18417}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 85.69794, y: 0.05, z: 146.18417}
 --- !u!114 &544762100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10654,7 +10678,6 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 85.69794, y: 0.05, z: 146.18417}
   running: 0
 --- !u!114 &544762101
 MonoBehaviour:
@@ -10686,8 +10709,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   playerTrans: {fileID: 77649853}
   spawnerTrans: {fileID: 702955628}
 --- !u!1 &547298910
@@ -10879,8 +10902,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 112.44194, y: 0.05, z: 107.38416}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 112.44194, y: 0.05, z: 107.38416}
 --- !u!195 &554216173
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10917,6 +10940,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieHealthBar: {fileID: 2052335076}
   note: {fileID: 1363723635}
+  zombieAnimator: {fileID: 3568628871649423654}
+  experiencePoints: 40
+  dropChance: 1
 --- !u!114 &554216176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10935,8 +10961,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   playerTrans: {fileID: 77649853}
   spawnerTrans: {fileID: 702955628}
 --- !u!114 &554216178
@@ -10969,7 +10995,6 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 112.44194, y: 0.05, z: 107.38416}
   running: 0
 --- !u!1 &565621731
 GameObject:
@@ -13928,11 +13953,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 50
   field of view: 60
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13955,13 +13980,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715732388}
-  m_LocalRotation: {x: 0.38150373, y: 0.07248677, z: -0.030025002, w: 0.92103153}
-  m_LocalPosition: {x: 62.59, y: 6, z: 7}
+  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
+  m_LocalPosition: {x: 60.7, y: 6.3, z: 7.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 9, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!114 &715732392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14088,8 +14113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0314efb1d27dc42b5bac67e1bd72cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 77649853}
-  offset: {x: -0.5, y: 6, z: -5}
+  targetToFollow: {fileID: 77649853}
+  cameraOffset: {x: -3.3, y: 6.3, z: -3.8}
 --- !u!1 &720009974
 GameObject:
   m_ObjectHideFlags: 0
@@ -15471,7 +15496,6 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 71.52794, y: 0.05, z: 142.83417}
   running: 0
 --- !u!114 &801135941
 MonoBehaviour:
@@ -15503,8 +15527,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   playerTrans: {fileID: 77649853}
   spawnerTrans: {fileID: 702955628}
 --- !u!114 &801135961
@@ -15521,6 +15545,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieHealthBar: {fileID: 1956434519}
   note: {fileID: 498060324}
+  zombieAnimator: {fileID: 3568628871736919697}
+  experiencePoints: 40
+  dropChance: 1
 --- !u!195 &801135962
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -15561,8 +15588,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 71.52794, y: 0.05, z: 142.83417}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 71.52794, y: 0.05, z: 142.83417}
 --- !u!1 &806883478
 GameObject:
   m_ObjectHideFlags: 0
@@ -18195,6 +18222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 161791989}
 --- !u!4 &887168830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2505067268323644423, guid: 87e3f3b9f86a6194a9977ad03ce4d62e, type: 3}
@@ -18319,7 +18347,6 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 84.88794, y: 0.05, z: 143.79417}
   running: 0
 --- !u!114 &890068581
 MonoBehaviour:
@@ -18351,8 +18378,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   playerTrans: {fileID: 77649853}
   spawnerTrans: {fileID: 702955628}
 --- !u!114 &890068601
@@ -18369,6 +18396,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieHealthBar: {fileID: 1850855799}
   note: {fileID: 1138698212}
+  zombieAnimator: {fileID: 3568628871850362289}
+  experiencePoints: 40
+  dropChance: 1
 --- !u!195 &890068602
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18409,8 +18439,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 84.88794, y: 0.05, z: 143.79417}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 84.88794, y: 0.05, z: 143.79417}
 --- !u!1001 &891312119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18615,7 +18645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e94bb50e2dd06d4c83aa63b1c284292, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f3ddad7700ab8f42987929ef62e8844, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18968,6 +18998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 39467041}
 --- !u!225 &927938942
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21030,6 +21061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b10ff3f8745f0a419d46ae867a8f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieAnimator: {fileID: 3568628872812635722}
+  zombieGoals: {fileID: 1877376414}
+  agent: {fileID: 1877376385}
 --- !u!1 &1054262719
 GameObject:
   m_ObjectHideFlags: 0
@@ -24470,8 +24504,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215045123}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0024614835}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 39467038}
@@ -24479,8 +24513,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.0000038146045, y: 0}
+  m_AnchoredPosition: {x: -0.0039138794, y: 0.0020370483}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215045125
 MonoBehaviour:
@@ -24495,14 +24529,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: f01d3cacca7f8534da676eb3ecaf6eee, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f060359e40910a2459625a52003039c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41a026db35fa1694b91e48198e45a58d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -24538,7 +24572,6 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 90.66794, y: 0.15, z: 36.48417}
   running: 0
 --- !u!114 &1219828077
 MonoBehaviour:
@@ -24570,8 +24603,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   playerTrans: {fileID: 77649853}
   spawnerTrans: {fileID: 702955628}
 --- !u!114 &1219828081
@@ -24588,6 +24621,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieHealthBar: {fileID: 334075519}
   note: {fileID: 1946650035}
+  zombieAnimator: {fileID: 3568628872295498425}
+  experiencePoints: 40
+  dropChance: 1
 --- !u!195 &1219828082
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -24628,8 +24664,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 90.66794, y: 0.15, z: 36.48417}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 90.66794, y: 0.15, z: 36.48417}
 --- !u!4 &1220768711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 467684, guid: c1f58f0ed2ff6124d8a34bc65d503041, type: 3}
@@ -24687,6 +24723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24e8dd29ffb6fe48a8d9f4bff2c8074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerExperience: {fileID: 1436815570}
   experienceInfoCanvas: {fileID: 170929874}
   experienceText: {fileID: 615438709}
 --- !u!114 &1221489810
@@ -25199,6 +25236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e147a2c91934fdc4aa9525c58d75accf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 70662237}
+  playerController: {fileID: 1235855170}
+  playerStats: {fileID: 78072736}
 --- !u!143 &1235855170
 CharacterController:
   m_ObjectHideFlags: 0
@@ -25593,6 +25633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a037144450ba1543bcadc26e428cf46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 1267691949}
+  inventoryPanel: {fileID: 1529468568}
+  <ItemDatabase>k__BackingField: {fileID: 1977761063}
 --- !u!225 &1267691951
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -25909,6 +25952,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieHealthBar: {fileID: 373352586}
   note: {fileID: 1937183871}
+  zombieAnimator: {fileID: 3568628872252046412}
+  experiencePoints: 40
+  dropChance: 1
 --- !u!114 &1293707142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25927,8 +25973,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 73.03793, y: 0.05, z: 144.62418}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 73.03793, y: 0.05, z: 144.62418}
 --- !u!195 &1293707143
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -25981,7 +26027,6 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 73.03793, y: 0.05, z: 144.62418}
   running: 0
 --- !u!114 &1293707162
 MonoBehaviour:
@@ -26001,8 +26046,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   playerTrans: {fileID: 77649853}
   spawnerTrans: {fileID: 702955628}
 --- !u!1 &1294304174
@@ -28197,7 +28242,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 715732390}
   m_PlaneDistance: 0.31
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -28238,6 +28283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ec32b7d1391244db64ba38496a777a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1221489810}
 --- !u!225 &1436815571
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -28274,6 +28320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b10ff3f8745f0a419d46ae867a8f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieAnimator: {fileID: 3568628871014299042}
+  zombieGoals: {fileID: 81260150}
+  agent: {fileID: 81260137}
 --- !u!1 &1451139165
 GameObject:
   m_ObjectHideFlags: 0
@@ -30743,7 +30792,6 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 70.73794, y: 0.05, z: 146.60417}
   running: 0
 --- !u!114 &1594041222
 MonoBehaviour:
@@ -30763,8 +30811,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   playerTrans: {fileID: 77649853}
   spawnerTrans: {fileID: 702955628}
 --- !u!114 &1594041240
@@ -30781,6 +30829,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieHealthBar: {fileID: 73378966}
   note: {fileID: 1648534179}
+  zombieAnimator: {fileID: 3568628872554903632}
+  experiencePoints: 40
+  dropChance: 1
 --- !u!114 &1594041242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30799,8 +30850,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 70.73794, y: 0.05, z: 146.60417}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 70.73794, y: 0.05, z: 146.60417}
 --- !u!195 &1594041243
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -30924,6 +30975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1653943325}
 --- !u!1001 &1609465981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31146,7 +31198,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616849270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8.6, y: 0.08, z: 1}
   m_Children: []
   m_Father: {fileID: 724212548}
@@ -31154,7 +31206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.8, y: 4.8}
+  m_AnchoredPosition: {x: -3, y: 5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616849272
@@ -31487,7 +31539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.2, y: -4.8}
+  m_AnchoredPosition: {x: -4.2, y: -5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1641610387
@@ -32598,6 +32650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b10ff3f8745f0a419d46ae867a8f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieAnimator: {fileID: 3568628871850362289}
+  zombieGoals: {fileID: 890068581}
+  agent: {fileID: 890068602}
 --- !u!114 &1681826063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35343,6 +35398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1397726222}
 --- !u!1 &1852803000
 GameObject:
   m_ObjectHideFlags: 0
@@ -36027,8 +36083,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 113.01294, y: 0.05, z: 111.79217}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 113.01294, y: 0.05, z: 111.79217}
 --- !u!195 &1877376385
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -36065,6 +36121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombieHealthBar: {fileID: 884667024}
   note: {fileID: 285000323}
+  zombieAnimator: {fileID: 3568628872812635722}
+  experiencePoints: 40
+  dropChance: 1
 --- !u!114 &1877376412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36083,8 +36142,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   running: 0
+  <ZombieSpawnPoint>k__BackingField: {x: 0, y: 0, z: 0}
   playerTrans: {fileID: 77649853}
   spawnerTrans: {fileID: 702955628}
 --- !u!114 &1877376414
@@ -36117,7 +36176,6 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 113.01294, y: 0.05, z: 111.79217}
   running: 0
 --- !u!1 &1879951137
 GameObject:
@@ -36173,6 +36231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b10ff3f8745f0a419d46ae867a8f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieAnimator: {fileID: 3568628871649423654}
+  zombieGoals: {fileID: 554216178}
+  agent: {fileID: 554216173}
 --- !u!4 &1885559573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8234447036675239852, guid: 950685266f7098c488ddda4842c8725a, type: 3}
@@ -36416,6 +36477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b10ff3f8745f0a419d46ae867a8f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieAnimator: {fileID: 3568628871629452065}
+  zombieGoals: {fileID: 544762101}
+  agent: {fileID: 544762090}
 --- !u!114 &1900779423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37671,6 +37735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1233297198}
 --- !u!1001 &1962613559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39062,6 +39127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1196058777}
 --- !u!1 &2053819458
 GameObject:
   m_ObjectHideFlags: 0
@@ -39282,6 +39348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e3711dfb29b547958dff6fccdabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 1178249886}
 --- !u!1001 &2069007713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40045,6 +40112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b10ff3f8745f0a419d46ae867a8f559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieAnimator: {fileID: 3568628871736919697}
+  zombieGoals: {fileID: 801135941}
+  agent: {fileID: 801135962}
 --- !u!114 &2129895983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49620,8 +49690,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 113.01294, y: 0.05, z: 111.79217}
   running: 0
+  zombieAttackDamage: 5
 --- !u!1 &4803014352319157651
 GameObject:
   m_ObjectHideFlags: 0
@@ -49668,8 +49738,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 70.73794, y: 0.05, z: 146.60417}
   running: 0
+  zombieAttackDamage: 5
 --- !u!1 &4803014352620310927
 GameObject:
   m_ObjectHideFlags: 0
@@ -49716,8 +49786,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 73.03793, y: 0.05, z: 144.62418}
   running: 0
+  zombieAttackDamage: 5
 --- !u!1 &4803014352680529786
 GameObject:
   m_ObjectHideFlags: 0
@@ -49764,8 +49834,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 90.66794, y: 0.15, z: 36.48417}
   running: 0
+  zombieAttackDamage: 5
 --- !u!1 &4803014353023953010
 GameObject:
   m_ObjectHideFlags: 0
@@ -49812,8 +49882,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 84.88794, y: 0.05, z: 143.79417}
   running: 0
+  zombieAttackDamage: 5
 --- !u!1 &4803014353137003346
 GameObject:
   m_ObjectHideFlags: 0
@@ -49860,8 +49930,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 71.52794, y: 0.05, z: 142.83417}
   running: 0
+  zombieAttackDamage: 5
 --- !u!1 &4803014353348288226
 GameObject:
   m_ObjectHideFlags: 0
@@ -49908,8 +49978,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 85.69794, y: 0.05, z: 146.18417}
   running: 0
+  zombieAttackDamage: 5
 --- !u!1 &4803014353359838437
 GameObject:
   m_ObjectHideFlags: 0
@@ -49956,8 +50026,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 112.44194, y: 0.05, z: 107.38416}
   running: 0
+  zombieAttackDamage: 5
 --- !u!1 &4803014353823651937
 GameObject:
   m_ObjectHideFlags: 0
@@ -50004,8 +50074,8 @@ MonoBehaviour:
   <MaxRange>k__BackingField: 1.5
   <PreConditionsVisual>k__BackingField: []
   <AfterEffectsVisual>k__BackingField: []
-  <ZombieSpawnPoint>k__BackingField: {x: 68.52794, y: 0.272, z: 45.154167}
   running: 0
+  zombieAttackDamage: 5
 --- !u!4 &4872485736020066573
 Transform:
   m_ObjectHideFlags: 0

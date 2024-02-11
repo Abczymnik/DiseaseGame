@@ -31,7 +31,7 @@ public class Intro : MonoBehaviour
 
     private void OnEnable()
     {
-        skip = PlayerUI.inputActions.Intro.Skip;
+        skip = PlayerUI.Instance.InputActions.Intro.Skip;
     }
 
     public IEnumerator Start()

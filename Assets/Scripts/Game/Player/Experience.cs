@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Experience : MonoBehaviour
 {
-    private Slider slider;
+    [SerializeField] private Slider slider;
 
     private float _maxExp;
     public float MaxExp
@@ -27,7 +27,7 @@ public class Experience : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void OnValidate()
     {
         slider = transform.GetComponentInChildren<Slider>();
     }

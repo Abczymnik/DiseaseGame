@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    private Slider slider;
+    [SerializeField] private Slider slider;
 
     private float _maxHealth = 100f;
     public float MaxHealth
@@ -27,7 +27,7 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void OnValidate()
     {
         slider = transform.GetComponentInChildren<Slider>();
     }
