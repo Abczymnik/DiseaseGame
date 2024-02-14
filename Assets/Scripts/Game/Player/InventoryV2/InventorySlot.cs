@@ -45,4 +45,10 @@ public class InventorySlot
         if (StackSize + amountToAdd > ItemData.MaxStackSize) return false;
         return true;
     }
+
+    public void UpdateInventorySlot(InventoryTestItem itemData, int amount)
+    {
+        ItemData = itemData;
+        StackSize = amount;
+    }
 }

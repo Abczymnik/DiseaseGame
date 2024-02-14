@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class InventorySystem
 {
     [field: SerializeField] public List<InventorySlot> InventorySlots { get; private set; }
+
+    private UnityAction<object> onInventorySlotChanged;
 
     public InventorySystem(int size)
     {
@@ -17,8 +20,51 @@ public class InventorySystem
         }
     }
 
-    public void AddToInventory(InventoryTestItem itemToAdd, int amoutToAdd)
+    public void AddToInventory(InventoryTestItem itemToAdd, int amountToAdd)
     {
-        InventorySlots[0] = new InventorySlot(itemToAdd, amoutToAdd);
+        if(ContainsItem(itemToAdd, out List<InventorySlot> inventorySlots))
+        {
+            foreach(InventorySlot inventorySlot in inventorySlots)
+            {
+                if(inventorySlot.RoomLeftInStack(amountToAdd))
+                {
+                    inventorySlot.AddToStack(amountToAdd);
+                    //EventTrigger slotChanged
+                    return;
+                }
+            }
+        }
+
+        if(HasFreeSlot(out InventorySlot freeSlot))
+        {
+            freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
+            //EventTrigger slotChanged
+        }
+    }
+
+    public bool ContainsItem(InventoryTestItem itemToAdd, out List<InventorySlot> inventorySlots)
+    {
+        inventorySlots = new List<InventorySlot>();
+        foreach(InventorySlot inventorySlot in InventorySlots)
+        {
+            if (inventorySlot.ItemData == itemToAdd) inventorySlots.Add(inventorySlot);
+        }
+
+        if (inventorySlots.Count > 0) return true;
+        return false;
+    }
+
+    public bool HasFreeSlot(out InventorySlot freeSlot)
+    {
+        foreach(InventorySlot inventorySlot in InventorySlots)
+        {
+            if (inventorySlot.ItemData == null)
+            {
+                freeSlot = inventorySlot;
+                return true;
+            }
+        }
+        freeSlot = null;
+        return false;
     }
 }

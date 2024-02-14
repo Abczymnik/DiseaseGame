@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class TestItemPickUp : MonoBehaviour
 {
-    public float PickUpRange = 2f;
     public InventoryTestItem itemData;
 
     public Collider thisCollider;
