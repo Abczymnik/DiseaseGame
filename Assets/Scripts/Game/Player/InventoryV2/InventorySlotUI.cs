@@ -4,12 +4,20 @@ using UnityEngine.UI;
 
 public class InventorySlotUI : MonoBehaviour
 {
-    [SerializeField] private Image itemSprite; //Assigned in editor
-    [SerializeField] private TextMeshProUGUI itemCount; //Assigned in editor
+    [SerializeField] private Image itemSprite;
+    [SerializeField] private TextMeshProUGUI itemCount;
     [field: SerializeField] public InventorySlot InventorySlot { get; private set; }
+    [field: SerializeField] public InventoryDisplay ParentDisplay { get; private set; }
+
+    private void OnValidate()
+    {
+        itemCount = GetComponentInChildren<TextMeshProUGUI>();
+        itemSprite = transform.GetChild(0).GetComponent<Image>();
+    }
 
     private void Awake()
     {
+        ParentDisplay = transform.parent.GetComponent<InventoryDisplay>();
         ClearSlot();
     }
 
@@ -23,7 +31,7 @@ public class InventorySlotUI : MonoBehaviour
     {
         if (slot.ItemData != null)
         {
-            itemSprite.sprite = slot.ItemData.Icon;
+            itemSprite.material = slot.ItemData.Icon;
             itemSprite.color = Color.white;
 
             if (slot.StackSize > 1) itemCount.text = slot.StackSize.ToString();
@@ -41,8 +49,12 @@ public class InventorySlotUI : MonoBehaviour
     {
         if (this.InventorySlot == null) this.InventorySlot.ClearSlot();
 
-        itemSprite.sprite = null;
         itemSprite.color = Color.clear;
         itemCount.text = "";
+    }
+
+    public void OnUISlotClick()
+    {
+        ParentDisplay.SlotClicked(this);
     }
 }

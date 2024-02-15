@@ -8,7 +8,7 @@ public class InventorySystem
 {
     [field: SerializeField] public List<InventorySlot> InventorySlots { get; private set; }
 
-    private UnityAction<object> onInventorySlotChanged;
+    public UnityAction<InventorySlot> onInventorySlotChanged;
 
     public InventorySystem(int size)
     {
@@ -29,7 +29,7 @@ public class InventorySystem
                 if(inventorySlot.RoomLeftInStack(amountToAdd))
                 {
                     inventorySlot.AddToStack(amountToAdd);
-                    //EventTrigger slotChanged
+                    onInventorySlotChanged?.Invoke(inventorySlot);
                     return;
                 }
             }
@@ -38,7 +38,7 @@ public class InventorySystem
         if(HasFreeSlot(out InventorySlot freeSlot))
         {
             freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
-            //EventTrigger slotChanged
+            onInventorySlotChanged?.Invoke(freeSlot);
         }
     }
 
