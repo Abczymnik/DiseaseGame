@@ -34,10 +34,19 @@ public sealed class UIHelper
         pointerCurrentPosition.position = Mouse.current.position.ReadValue();
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerCurrentPosition, results);
+        return results.Count > 0;
+    }
 
-        foreach(RaycastResult result in results)
+    public static bool IsPointerOverUI(string tag)
+    {
+        PointerEventData pointerCurrentPosition = new PointerEventData(EventSystem.current);
+        pointerCurrentPosition.position = Mouse.current.position.ReadValue();
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerCurrentPosition, results);
+
+        foreach (RaycastResult result in results)
         {
-            if (result.gameObject.layer == 5) return true;
+            if (result.gameObject.CompareTag(tag)) return true;
         }
 
         return false;

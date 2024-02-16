@@ -23,6 +23,17 @@ public class InventorySlot
         StackSize = -1;
     }
 
+    public void AssignItem(InventorySlot inventorySlot)
+    {
+        if (ItemData == inventorySlot.ItemData) AddToStack(inventorySlot.StackSize);
+        else
+        {
+            ItemData = inventorySlot.ItemData;
+            StackSize = 0;
+            AddToStack(inventorySlot.StackSize);
+        }
+    }
+
     public void AddToStack(int amount)
     {
         StackSize += amount;
