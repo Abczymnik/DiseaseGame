@@ -48,7 +48,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
 
     public void ClearSlot()
     {
-        if (this.InventorySlot == null) this.InventorySlot.ClearSlot();
+        if (this.InventorySlot != null) this.InventorySlot.ClearSlot();
 
         itemSprite.color = Color.clear;
         itemCount.text = "";

@@ -10,6 +10,7 @@ TagManager:
   - GUI Element
   - Spawn point
   - Menu Buttons
+  - InventoryUI
   layers:
   - Default
   - TransparentFX

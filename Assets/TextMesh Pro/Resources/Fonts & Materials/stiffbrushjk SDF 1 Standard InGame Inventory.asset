@@ -2444,7 +2444,7 @@ Material:
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _MaskEdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 0.60784316, g: 0.60784316, b: 0.60784316, a: 1}
-    - _OutlineColor1: {r: 1, g: 1, b: 1, a: 0.08627451}
+    - _OutlineColor1: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor2: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor3: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineOffset1: {r: 0, g: 0, b: 0, a: 0}
@@ -2456,7 +2456,7 @@ Material:
     - _Softness: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 0, g: 0, b: 0, a: 1}
-    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
+    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.49803922}
     - _UnderlayOffset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!28 &8617773095283802164

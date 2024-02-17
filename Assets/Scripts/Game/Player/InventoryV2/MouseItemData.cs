@@ -11,12 +11,8 @@ public class MouseItemData : MonoBehaviour
     [field: SerializeField] public TextMeshProUGUI ItemCount { get; private set; }
     [field: SerializeField] public InventorySlot InventorySlot { get; private set; }
 
-    private Camera mainCamera;
-    private Vector2 mousePosition;
-
     private void OnValidate()
     {
-        mainCamera = Camera.main;
         ItemSprite = GetComponentInChildren<Image>();
         ItemCount = GetComponentInChildren<TextMeshProUGUI>();
     }
@@ -47,9 +43,7 @@ public class MouseItemData : MonoBehaviour
     {
         if(InventorySlot.ItemData != null)
         {
-            mousePosition = Mouse.current.position.ReadValue();
-            transform.localPosition = mousePosition;
-            //transform.LookAt(transform.position + mainCamera.transform.forward);
+            transform.localPosition = Mouse.current.position.ReadValue();
 
             if(Mouse.current.leftButton.wasPressedThisFrame && !UIHelper.IsPointerOverUI("InventoryUI"))
             {
