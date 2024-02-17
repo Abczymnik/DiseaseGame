@@ -27,14 +27,24 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     public void SlotClicked(InventorySlotUI clickedSlotUI)
     {
+        bool isLeftShiftPressed = Keyboard.current.leftShiftKey.isPressed;
+
         if(clickedSlotUI.InventorySlot.ItemData != null && mouseInventoryItem.InventorySlot.ItemData == null)
         {
-            mouseInventoryItem.UpdateMouseSlot(clickedSlotUI.InventorySlot);
-            clickedSlotUI.ClearSlot();
-            return;
+            if(isLeftShiftPressed && clickedSlotUI.InventorySlot.SplitStack(out InventorySlot halfStackSlot))
+            {
+                mouseInventoryItem.UpdateMouseSlot(halfStackSlot);
+                clickedSlotUI.UpdateUISlot();
+            }
+
+            else
+            {
+                mouseInventoryItem.UpdateMouseSlot(clickedSlotUI.InventorySlot);
+                clickedSlotUI.ClearSlot();
+            }
         }
 
-        if (clickedSlotUI.InventorySlot.ItemData == null && mouseInventoryItem.InventorySlot.ItemData != null)
+        else if (clickedSlotUI.InventorySlot.ItemData == null && mouseInventoryItem.InventorySlot.ItemData != null)
         {
             clickedSlotUI.InventorySlot.AssignItem(mouseInventoryItem.InventorySlot);
             clickedSlotUI.UpdateUISlot();
@@ -42,7 +52,7 @@ public abstract class InventoryDisplay : MonoBehaviour
             mouseInventoryItem.ClearSlot();
         }
 
-        if (clickedSlotUI.InventorySlot.ItemData != null && mouseInventoryItem.InventorySlot.ItemData != null)
+        else if (clickedSlotUI.InventorySlot.ItemData != null && mouseInventoryItem.InventorySlot.ItemData != null)
         {
             bool itemsAreEqual = clickedSlotUI.InventorySlot.ItemData == mouseInventoryItem.InventorySlot.ItemData;
             bool enoughSpaceToMerge = clickedSlotUI.InventorySlot.RoomLeftInStack(mouseInventoryItem.InventorySlot.StackSize, out int roomLeft);
