@@ -10,6 +10,11 @@ public abstract class InventoryDisplay : MonoBehaviour
     public InventorySystem InventorySystem { get; protected set; }
     public Dictionary<InventorySlotUI, InventorySlot> SlotDictionary { get; protected set; }
 
+    private void OnValidate()
+    {
+        mouseInventoryItem = FindAnyObjectByType<MouseItemData>();
+    }
+
     protected virtual void Start()
     {
 
