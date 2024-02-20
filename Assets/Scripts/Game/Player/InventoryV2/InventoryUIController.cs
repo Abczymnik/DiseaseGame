@@ -5,11 +5,13 @@ using UnityEngine.InputSystem;
 
 public class InventoryUIController : MonoBehaviour
 {
-    [SerializeField] private DynamicInventoryDisplay inventoryPanel;
+    [SerializeField] private DynamicInventoryDisplay chestInventoryPanel;
+    [SerializeField] private StaticInventoryDisplay playerInventoryPanel;
 
     private void OnValidate()
     {
-        inventoryPanel = transform.GetComponentInChildren<DynamicInventoryDisplay>();
+        playerInventoryPanel = transform.GetComponentInChildren<StaticInventoryDisplay>();
+        chestInventoryPanel = transform.GetComponentInChildren<DynamicInventoryDisplay>();
     }
 
     private void OnEnable()
@@ -19,18 +21,20 @@ public class InventoryUIController : MonoBehaviour
 
     private void Awake()
     {
-        inventoryPanel.gameObject.SetActive(false);
+        chestInventoryPanel.gameObject.SetActive(false);
+        playerInventoryPanel.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (inventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) inventoryPanel.gameObject.SetActive(false);
+        if (chestInventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) chestInventoryPanel.gameObject.SetActive(false);
+        if (Keyboard.current.iKey.wasPressedThisFrame) playerInventoryPanel.gameObject.SetActive(!playerInventoryPanel.gameObject.activeInHierarchy);
     }
 
     private void DisplayInventory(InventorySystem inventoryToDisplay)
     {
-        inventoryPanel.gameObject.SetActive(true);
-        inventoryPanel.RefreshDynamicInventory(inventoryToDisplay);
+        chestInventoryPanel.gameObject.SetActive(true);
+        chestInventoryPanel.RefreshDynamicInventory(inventoryToDisplay);
     }
 
     private void OnDisable()

@@ -10,7 +10,7 @@ public abstract class InventoryDisplay : MonoBehaviour
     public InventorySystem InventorySystem { get; protected set; }
     public Dictionary<InventorySlotUI, InventorySlot> SlotDictionary { get; protected set; }
 
-    private void OnValidate()
+    protected virtual void OnValidate()
     {
         mouseInventoryItem = FindAnyObjectByType<MouseItemData>();
     }
@@ -20,7 +20,7 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     }
 
-    public abstract void AssignSlot(InventorySystem inventoryToDisplay);
+    public abstract void AssignSlots(InventorySystem inventoryToDisplay);
 
     protected virtual void UpdateSlot(InventorySlot updatedSlot)
     {
@@ -60,7 +60,7 @@ public abstract class InventoryDisplay : MonoBehaviour
         else if (clickedSlotUI.InventorySlot.ItemData != null && mouseInventoryItem.InventorySlot.ItemData != null)
         {
             bool itemsAreEqual = clickedSlotUI.InventorySlot.ItemData == mouseInventoryItem.InventorySlot.ItemData;
-            bool enoughSpaceToMerge = clickedSlotUI.InventorySlot.RoomLeftInStack(mouseInventoryItem.InventorySlot.StackSize, out int roomLeft);
+            bool enoughSpaceToMerge = clickedSlotUI.InventorySlot.IsEnoughRoomAvailable(mouseInventoryItem.InventorySlot.StackSize, out int roomLeft);
 
             if (itemsAreEqual && enoughSpaceToMerge)
             {

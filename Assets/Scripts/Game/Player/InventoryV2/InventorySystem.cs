@@ -26,7 +26,7 @@ public class InventorySystem
         {
             foreach(InventorySlot inventorySlot in inventorySlots)
             {
-                if(inventorySlot.RoomLeftInStack(amountToAdd))
+                if(inventorySlot.IsEnoughRoomAvailable(amountToAdd))
                 {
                     inventorySlot.AddToStack(amountToAdd);
                     onInventorySlotChanged?.Invoke(inventorySlot);

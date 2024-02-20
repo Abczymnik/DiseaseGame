@@ -3331,8 +3331,8 @@ GameObject:
   - component: {fileID: 1235855169}
   - component: {fileID: 78072737}
   - component: {fileID: 78072734}
-  - component: {fileID: 78072738}
   - component: {fileID: 78072739}
+  - component: {fileID: 78072738}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -3417,11 +3417,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 78072733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e723117101c4ae4aa296af593537ba5, type: 3}
+  m_Script: {fileID: 11500000, guid: 11843b162cd5190478730514d7a332f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySize: 10
-  <InventorySystem>k__BackingField:
+  basicInventorySize: 12
+  <BasicInventorySytem>k__BackingField:
+    <InventorySlots>k__BackingField: []
+  playerInventorySize: 48
+  <PlayerInventorySystem>k__BackingField:
     <InventorySlots>k__BackingField: []
 --- !u!114 &78072739
 MonoBehaviour:
@@ -10878,7 +10881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46c60a94c26af24e9970de6d07addbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 1253835250}
+  chestInventoryPanel: {fileID: 1253835250}
+  playerInventoryPanel: {fileID: 1235871074}
 --- !u!1001 &488044098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15319,8 +15323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b9c2be668e570448f19801737d0413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySize: 10
-  <InventorySystem>k__BackingField:
+  basicInventorySize: 12
+  <BasicInventorySytem>k__BackingField:
     <InventorySlots>k__BackingField: []
 --- !u!65 &696150160
 BoxCollider:
@@ -29103,7 +29107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseInventoryItem: {fileID: 1702581259}
-  inventoryHolder: {fileID: 78072738}
+  playerInventoryHolder: {fileID: 78072738}
   slots:
   - {fileID: 1942094658}
   - {fileID: 80721843}
@@ -29342,17 +29346,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253835248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.9364605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 485009333}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 120.23721, y: -1.9364586}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1253835250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29384,13 +29388,13 @@ MonoBehaviour:
     m_Right: 5
     m_Top: 5
     m_Bottom: 5
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 50, y: 50}
   m_Spacing: {x: 5, y: 5}
   m_Constraint: 1
-  m_ConstraintCount: 10
+  m_ConstraintCount: 6
 --- !u!114 &1253835252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29417,7 +29421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: d402204128e30454b978e9381820023a, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -29425,7 +29429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

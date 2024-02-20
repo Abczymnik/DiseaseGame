@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class StaticInventoryDisplay : InventoryDisplay
 {
-    [SerializeField] private InventoryHolder inventoryHolder;
+    [SerializeField] private PlayerInventoryHolder playerInventoryHolder;
     [SerializeField] private InventorySlotUI[] slots;
+
+    protected override void OnValidate()
+    {
+        base.OnValidate();
+
+        playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
+    }
 
     protected override void Start()
     {
-        base.Start();
-
-        if (inventoryHolder != null)
+        if (playerInventoryHolder != null)
         {
-            this.InventorySystem = inventoryHolder.InventorySystem;
+            this.InventorySystem = playerInventoryHolder.PlayerInventorySystem;
             this.InventorySystem.onInventorySlotChanged += UpdateSlot;
         }
         else Debug.Log("No inventory");
 
-        AssignSlot(this.InventorySystem);
+        AssignSlots(this.InventorySystem);
     }
 
-    public override void AssignSlot(InventorySystem inventoryToDisplay)
+    public override void AssignSlots(InventorySystem inventoryToDisplay)
     {
         SlotDictionary = new Dictionary<InventorySlotUI, InventorySlot>();
 

@@ -16,10 +16,10 @@ public class TestItemPickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var inventory = other.transform.GetComponent<InventoryHolder>();
+        var inventory = other.transform.GetComponent<PlayerInventoryHolder>();
         if (!inventory) return;
 
-        inventory.InventorySystem.AddToInventory(itemData, 1);
+        inventory.PlayerInventorySystem.AddToInventory(itemData, 1);
         Destroy(this.gameObject);
     }
 }

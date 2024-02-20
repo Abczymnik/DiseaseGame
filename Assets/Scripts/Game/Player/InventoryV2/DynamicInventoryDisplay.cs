@@ -15,10 +15,10 @@ public class DynamicInventoryDisplay : InventoryDisplay
     {
         ClearSlots();
         this.InventorySystem = inventoryToDisplay;
-        AssignSlot(inventoryToDisplay);
+        AssignSlots(inventoryToDisplay);
     }
 
-    public override void AssignSlot(InventorySystem inventoryToDisplay)
+    public override void AssignSlots(InventorySystem inventoryToDisplay)
     {
         SlotDictionary = new Dictionary<InventorySlotUI, InventorySlot>();
 
