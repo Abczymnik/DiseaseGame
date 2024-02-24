@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,19 +13,14 @@ public class StaticInventoryDisplay : InventoryDisplay
         playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
     }
 
-    protected override void Start()
+    private void Start()
     {
-        if (playerInventoryHolder != null)
-        {
-            this.InventorySystem = playerInventoryHolder.PlayerInventorySystem;
-            this.InventorySystem.onInventorySlotChanged += UpdateSlot;
-        }
-        else Debug.Log("No inventory");
-
+        this.InventorySystem = playerInventoryHolder.PlayerInventorySystem;
+        this.InventorySystem.onInventorySlotChanged += UpdateSlot;
         AssignSlots(this.InventorySystem);
     }
 
-    public override void AssignSlots(InventorySystem inventoryToDisplay)
+    protected override void AssignSlots(InventorySystem inventoryToDisplay)
     {
         SlotDictionary = new Dictionary<InventorySlotUI, InventorySlot>();
 

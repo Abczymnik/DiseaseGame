@@ -11544,7 +11544,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 9abc47b6e3c8d174bbd397ca77f2209e, type: 2}
-  thisCollider: {fileID: 524266785}
 --- !u!65 &524266785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12986,7 +12985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 9abc47b6e3c8d174bbd397ca77f2209e, type: 2}
-  thisCollider: {fileID: 599993124}
 --- !u!65 &599993124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14803,7 +14801,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 9abc47b6e3c8d174bbd397ca77f2209e, type: 2}
-  thisCollider: {fileID: 675570395}
 --- !u!65 &675570395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15358,7 +15355,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8a018c93b8bc77d44b405c284669b0af, type: 2}
+  - {fileID: -3033667219593020291, guid: 5c3a756b28711f0439c33377f4d11e18, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15807,7 +15804,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 1a2e3ae43a3c34e4590d5557134c0dd4, type: 2}
-  thisCollider: {fileID: 712439012}
 --- !u!65 &712439012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20872,7 +20868,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 9abc47b6e3c8d174bbd397ca77f2209e, type: 2}
-  thisCollider: {fileID: 882883856}
 --- !u!65 &882883856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28089,7 +28084,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 1a2e3ae43a3c34e4590d5557134c0dd4, type: 2}
-  thisCollider: {fileID: 1214884539}
 --- !u!65 &1214884539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31282,7 +31276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 1a2e3ae43a3c34e4590d5557134c0dd4, type: 2}
-  thisCollider: {fileID: 1347456109}
 --- !u!65 &1347456109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35153,7 +35146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 1a2e3ae43a3c34e4590d5557134c0dd4, type: 2}
-  thisCollider: {fileID: 1536397698}
 --- !u!65 &1536397698
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36529,7 +36521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData: {fileID: 11400000, guid: 9abc47b6e3c8d174bbd397ca77f2209e, type: 2}
-  thisCollider: {fileID: 1603873677}
 --- !u!65 &1603873677
 BoxCollider:
   m_ObjectHideFlags: 0

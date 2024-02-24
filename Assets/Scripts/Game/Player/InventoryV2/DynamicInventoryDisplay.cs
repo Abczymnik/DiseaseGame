@@ -1,15 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DynamicInventoryDisplay : InventoryDisplay
 {
-    [SerializeField] protected InventorySlotUI slotPrefab;
-
-    protected override void Start()
-    {
-        base.Start();
-    }
+    [SerializeField] private InventorySlotUI slotPrefab;
 
     public void RefreshDynamicInventory(InventorySystem inventoryToDisplay)
     {
@@ -18,7 +12,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
         AssignSlots(inventoryToDisplay);
     }
 
-    public override void AssignSlots(InventorySystem inventoryToDisplay)
+    protected override void AssignSlots(InventorySystem inventoryToDisplay)
     {
         SlotDictionary = new Dictionary<InventorySlotUI, InventorySlot>();
 
@@ -33,7 +27,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
         }
     }
 
-    public void ClearSlots()
+    private void ClearSlots()
     {
         for (int i = transform.childCount-1; i>=0; i--)
         {

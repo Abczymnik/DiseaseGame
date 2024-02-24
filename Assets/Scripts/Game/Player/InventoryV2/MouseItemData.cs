@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,10 +10,18 @@ public class MouseItemData : MonoBehaviour
     [field: SerializeField] public TextMeshProUGUI ItemCount { get; private set; }
     [field: SerializeField] public InventorySlot InventorySlot { get; private set; }
 
+    private InputAction mouseLeftButtonInput;
+
     private void OnValidate()
     {
         ItemSprite = GetComponentInChildren<Image>();
         ItemCount = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    private void OnEnable()
+    {
+        mouseLeftButtonInput = PlayerUI.Instance.InputActions.Gameplay.Select;
+        mouseLeftButtonInput.performed += OnLeftButtonPress;
     }
 
     private void Awake()
@@ -23,8 +30,14 @@ public class MouseItemData : MonoBehaviour
         ItemCount.text = "";
     }
 
+    private void OnLeftButtonPress(InputAction.CallbackContext _)
+    {
+        if (!UIHelper.IsPointerOverUI("InventoryUI")) ClearSlot();
+    }
+
     public void UpdateMouseSlot(InventorySlot inventorySlot)
     {
+        StartCoroutine(LateUpdateCoroutine());
         this.InventorySlot.AssignItem(inventorySlot);
         ItemSprite.material = inventorySlot.ItemData.Icon;
         ItemCount.text = inventorySlot.StackSize.ToString();
@@ -33,25 +46,26 @@ public class MouseItemData : MonoBehaviour
 
     public void ClearSlot()
     {
+        StopCoroutine(LateUpdateCoroutine());
         this.InventorySlot.ClearSlot();
         ItemCount.text = "";
         ItemSprite.color = Color.clear;
         ItemSprite.material = null;
     }
 
-    private void LateUpdate()
+    private IEnumerator LateUpdateCoroutine()
     {
-        if(InventorySlot.ItemData != null)
+        transform.localPosition = Mouse.current.position.ReadValue();
+        while (true)
         {
-            transform.localPosition = Mouse.current.position.ReadValue();
+            yield return new WaitForEndOfFrame();
 
-            if(Mouse.current.leftButton.wasPressedThisFrame && !UIHelper.IsPointerOverUI("InventoryUI"))
-            {
-                ClearSlot();
-            }
+            transform.localPosition = Mouse.current.position.ReadValue();
         }
     }
 
+    private void OnDisable()
+    {
+        mouseLeftButtonInput.performed -= OnLeftButtonPress;
+    }
 }
-
-

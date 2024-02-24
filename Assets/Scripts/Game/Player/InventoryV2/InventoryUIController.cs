@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +5,9 @@ public class InventoryUIController : MonoBehaviour
 {
     [SerializeField] private DynamicInventoryDisplay chestInventoryPanel;
     [SerializeField] private StaticInventoryDisplay playerInventoryPanel;
+
+    private InputAction inventoryToggleInput;
+    private InputAction escapeFromInventoriesInput;
 
     private void OnValidate()
     {
@@ -17,6 +18,10 @@ public class InventoryUIController : MonoBehaviour
     private void OnEnable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayInventory;
+        inventoryToggleInput = PlayerUI.Instance.InputActions.Gameplay.Inventory;
+        inventoryToggleInput.performed += OnToggleInventoryInput;
+        escapeFromInventoriesInput = PlayerUI.Instance.InputActions.Gameplay.Back;
+        escapeFromInventoriesInput.performed += OnEscapeFromInventoriesInput;
     }
 
     private void Awake()
@@ -25,10 +30,15 @@ public class InventoryUIController : MonoBehaviour
         playerInventoryPanel.gameObject.SetActive(false);
     }
 
-    private void Update()
+    private void OnEscapeFromInventoriesInput(InputAction.CallbackContext _)
     {
-        if (chestInventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) chestInventoryPanel.gameObject.SetActive(false);
-        if (Keyboard.current.iKey.wasPressedThisFrame) playerInventoryPanel.gameObject.SetActive(!playerInventoryPanel.gameObject.activeInHierarchy);
+        playerInventoryPanel.gameObject.SetActive(false);
+        chestInventoryPanel.gameObject.SetActive(false);
+    }
+
+    private void OnToggleInventoryInput(InputAction.CallbackContext _)
+    {
+        playerInventoryPanel.gameObject.SetActive(!playerInventoryPanel.gameObject.activeInHierarchy);
     }
 
     private void DisplayInventory(InventorySystem inventoryToDisplay)
@@ -40,5 +50,7 @@ public class InventoryUIController : MonoBehaviour
     private void OnDisable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested -= DisplayInventory;
+        inventoryToggleInput.performed -= OnToggleInventoryInput;
+        escapeFromInventoriesInput.performed -= OnEscapeFromInventoriesInput;
     }
 }

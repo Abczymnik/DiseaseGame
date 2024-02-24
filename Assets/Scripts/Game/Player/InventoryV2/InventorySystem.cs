@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -42,7 +41,7 @@ public class InventorySystem
         }
     }
 
-    public bool ContainsItem(InventoryTestItem itemToAdd, out List<InventorySlot> inventorySlots)
+    private bool ContainsItem(InventoryTestItem itemToAdd, out List<InventorySlot> inventorySlots)
     {
         inventorySlots = new List<InventorySlot>();
         foreach(InventorySlot inventorySlot in InventorySlots)
@@ -54,7 +53,7 @@ public class InventorySystem
         return false;
     }
 
-    public bool HasFreeSlot(out InventorySlot freeSlot)
+    private bool HasFreeSlot(out InventorySlot freeSlot)
     {
         foreach(InventorySlot inventorySlot in InventorySlots)
         {

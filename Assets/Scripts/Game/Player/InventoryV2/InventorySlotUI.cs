@@ -12,8 +12,8 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
 
     private void OnValidate()
     {
-        itemCount = GetComponentInChildren<TextMeshProUGUI>();
         itemSprite = transform.GetChild(0).GetComponent<Image>();
+        itemCount = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     private void Awake()

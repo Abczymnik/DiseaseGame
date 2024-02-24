@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public abstract class InventoryDisplay : MonoBehaviour
@@ -15,12 +14,7 @@ public abstract class InventoryDisplay : MonoBehaviour
         mouseInventoryItem = FindAnyObjectByType<MouseItemData>();
     }
 
-    protected virtual void Start()
-    {
-
-    }
-
-    public abstract void AssignSlots(InventorySystem inventoryToDisplay);
+    protected abstract void AssignSlots(InventorySystem inventoryToDisplay);
 
     protected virtual void UpdateSlot(InventorySlot updatedSlot)
     {
@@ -89,7 +83,7 @@ public abstract class InventoryDisplay : MonoBehaviour
         }
     }
 
-    public void SwapSlots(InventorySlotUI clickeSlotUI)
+    private void SwapSlots(InventorySlotUI clickeSlotUI)
     {
         InventorySlot clonedSlot = new InventorySlot(mouseInventoryItem.InventorySlot.ItemData, mouseInventoryItem.InventorySlot.StackSize);
         mouseInventoryItem.ClearSlot();

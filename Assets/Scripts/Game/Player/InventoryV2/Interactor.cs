@@ -1,25 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Interactor : MonoBehaviour
 {
-    public Transform InteractionPoint;
-    public LayerMask InteractionLayer;
-    public float InteractionPointRadius = 1f;
+    [field:SerializeField] public Transform InteractionPoint { get; private set; }
+    [SerializeField] private LayerMask interactionLayer;
+    private float InteractionPointRadius = 1f;
     public bool IsInteracting { get; private set; }
 
-    private void Update()
-    {
-        var colliders = Physics.OverlapSphere(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
+    private InputAction interactionInput;
 
-        if(Keyboard.current.eKey.wasPressedThisFrame)
+    private void OnValidate()
+    {
+        InteractionPoint = transform.Find("InteractionPoint");
+        interactionLayer = LayerMask.GetMask("Interactable");
+    }
+
+    private void OnEnable()
+    {
+        interactionInput = PlayerUI.Instance.InputActions.Gameplay.Use;
+        interactionInput.performed += OnInteractionWish;
+    }
+
+    private void OnInteractionWish(InputAction.CallbackContext _)
+    {
+        Collider[] colliders = Physics.OverlapSphere(InteractionPoint.position, InteractionPointRadius, interactionLayer);
+
+        for (int i = 0; i < colliders.Length; i++)
         {
-            for (int i = 0; i < colliders.Length; i++)
+            if (colliders[i].TryGetComponent(out IInteractable interactable))
             {
-                var interactable = colliders[i].GetComponent<IInteractable>();
-                if (interactable != null) StartInteraction(interactable);
+                StartInteraction(interactable);
             }
         }
     }
@@ -33,5 +44,10 @@ public class Interactor : MonoBehaviour
     private void EndInteraction()
     {
         IsInteracting = false;
+    }
+
+    private void OnDisable()
+    {
+        interactionInput.performed -= OnInteractionWish;
     }
 }
