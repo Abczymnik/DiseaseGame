@@ -1,14 +1,20 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
+public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private Image itemSprite;
     [SerializeField] private TextMeshProUGUI itemCount;
     [field: SerializeField] public InventorySlot InventorySlot { get; private set; }
     [field: SerializeField] public InventoryDisplay ParentDisplay { get; private set; }
+
+    private Coroutine mouseInputHandlerCoroutine;
+    private float requiredHoldButtonTime = 0.25f;
+    private float currentHoldButtonTime;
+
 
     private void OnValidate()
     {
@@ -54,8 +60,36 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
         itemCount.text = "";
     }
 
-    public void OnPointerClick(PointerEventData _)
+    public void OnPointerDown(PointerEventData _)
     {
+        if (ParentDisplay.MouseInventoryItem.InventorySlot.ItemData != null) ParentDisplay.SlotClicked(this);
+        else
+        {
+            if (mouseInputHandlerCoroutine != null) StopCoroutine(mouseInputHandlerCoroutine);
+            mouseInputHandlerCoroutine = StartCoroutine(MouseHoldButtonCoroutine());
+        }
+    }
+
+    public void OnPointerUp(PointerEventData _)
+    {
+        if (mouseInputHandlerCoroutine != null)
+        {
+            StopCoroutine(mouseInputHandlerCoroutine);
+            mouseInputHandlerCoroutine = null;
+        }
+    }
+
+    private IEnumerator MouseHoldButtonCoroutine()
+    {
+        currentHoldButtonTime = 0f;
+        while(currentHoldButtonTime < requiredHoldButtonTime)
+        {
+            currentHoldButtonTime += Time.deltaTime;
+            yield return null;
+        }
+
         ParentDisplay.SlotClicked(this);
+        currentHoldButtonTime = 0f;
+        mouseInputHandlerCoroutine = null;
     }
 }

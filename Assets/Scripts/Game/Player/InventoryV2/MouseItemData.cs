@@ -32,7 +32,7 @@ public class MouseItemData : MonoBehaviour
 
     private void OnLeftButtonPress(InputAction.CallbackContext _)
     {
-        if (!UIHelper.IsPointerOverUI("InventoryUI")) ClearSlot();
+        if (InventorySlot.ItemData != null && !UIHelper.IsPointerOverUI("InventoryUI")) ClearSlot();
     }
 
     public void UpdateMouseSlot(InventorySlot inventorySlot)

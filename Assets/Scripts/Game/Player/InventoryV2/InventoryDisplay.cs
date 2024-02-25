@@ -4,14 +4,14 @@ using UnityEngine.InputSystem;
 
 public abstract class InventoryDisplay : MonoBehaviour
 {
-    [SerializeField] private MouseItemData mouseInventoryItem;
+    [field: SerializeField] public MouseItemData MouseInventoryItem { get; private set; }
 
     public InventorySystem InventorySystem { get; protected set; }
     public Dictionary<InventorySlotUI, InventorySlot> SlotDictionary { get; protected set; }
 
     protected virtual void OnValidate()
     {
-        mouseInventoryItem = FindAnyObjectByType<MouseItemData>();
+        MouseInventoryItem = FindAnyObjectByType<MouseItemData>();
     }
 
     protected abstract void AssignSlots(InventorySystem inventoryToDisplay);
@@ -26,42 +26,42 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     public void SlotClicked(InventorySlotUI clickedSlotUI)
     {
-        bool isLeftShiftPressed = Keyboard.current.leftShiftKey.isPressed;
-
-        if(clickedSlotUI.InventorySlot.ItemData != null && mouseInventoryItem.InventorySlot.ItemData == null)
+        if(clickedSlotUI.InventorySlot.ItemData != null && MouseInventoryItem.InventorySlot.ItemData == null)
         {
-            if(isLeftShiftPressed && clickedSlotUI.InventorySlot.SplitStack(out InventorySlot halfStackSlot))
+            bool isLeftShiftPressed = Keyboard.current.leftShiftKey.isPressed;
+
+            if (isLeftShiftPressed && clickedSlotUI.InventorySlot.SplitStack(out InventorySlot halfStackSlot))
             {
-                mouseInventoryItem.UpdateMouseSlot(halfStackSlot);
+                MouseInventoryItem.UpdateMouseSlot(halfStackSlot);
                 clickedSlotUI.UpdateUISlot();
             }
 
             else
             {
-                mouseInventoryItem.UpdateMouseSlot(clickedSlotUI.InventorySlot);
+                MouseInventoryItem.UpdateMouseSlot(clickedSlotUI.InventorySlot);
                 clickedSlotUI.ClearSlot();
             }
         }
 
-        else if (clickedSlotUI.InventorySlot.ItemData == null && mouseInventoryItem.InventorySlot.ItemData != null)
+        else if (clickedSlotUI.InventorySlot.ItemData == null && MouseInventoryItem.InventorySlot.ItemData != null)
         {
-            clickedSlotUI.InventorySlot.AssignItem(mouseInventoryItem.InventorySlot);
+            clickedSlotUI.InventorySlot.AssignItem(MouseInventoryItem.InventorySlot);
             clickedSlotUI.UpdateUISlot();
 
-            mouseInventoryItem.ClearSlot();
+            MouseInventoryItem.ClearSlot();
         }
 
-        else if (clickedSlotUI.InventorySlot.ItemData != null && mouseInventoryItem.InventorySlot.ItemData != null)
+        else if (clickedSlotUI.InventorySlot.ItemData != null && MouseInventoryItem.InventorySlot.ItemData != null)
         {
-            bool itemsAreEqual = clickedSlotUI.InventorySlot.ItemData == mouseInventoryItem.InventorySlot.ItemData;
-            bool enoughSpaceToMerge = clickedSlotUI.InventorySlot.IsEnoughRoomAvailable(mouseInventoryItem.InventorySlot.StackSize, out int roomLeft);
+            bool itemsAreEqual = clickedSlotUI.InventorySlot.ItemData == MouseInventoryItem.InventorySlot.ItemData;
+            bool enoughSpaceToMerge = clickedSlotUI.InventorySlot.IsEnoughRoomAvailable(MouseInventoryItem.InventorySlot.StackSize, out int roomLeft);
 
             if (itemsAreEqual && enoughSpaceToMerge)
             {
-                clickedSlotUI.InventorySlot.AddToStack(mouseInventoryItem.InventorySlot.StackSize);
+                clickedSlotUI.InventorySlot.AddToStack(MouseInventoryItem.InventorySlot.StackSize);
                 clickedSlotUI.UpdateUISlot();
 
-                mouseInventoryItem.ClearSlot();
+                MouseInventoryItem.ClearSlot();
             }
 
             else if(itemsAreEqual && !enoughSpaceToMerge)
@@ -69,13 +69,13 @@ public abstract class InventoryDisplay : MonoBehaviour
                 if (roomLeft == 0) SwapSlots(clickedSlotUI);
                 else
                 {
-                    int leftOnMouse = mouseInventoryItem.InventorySlot.StackSize - roomLeft;
+                    int leftOnMouse = MouseInventoryItem.InventorySlot.StackSize - roomLeft;
                     clickedSlotUI.InventorySlot.AddToStack(roomLeft);
                     clickedSlotUI.UpdateUISlot();
 
-                    InventorySlot newItemOnMouse = new InventorySlot(mouseInventoryItem.InventorySlot.ItemData, leftOnMouse);
-                    mouseInventoryItem.ClearSlot();
-                    mouseInventoryItem.UpdateMouseSlot(newItemOnMouse);
+                    InventorySlot newItemOnMouse = new InventorySlot(MouseInventoryItem.InventorySlot.ItemData, leftOnMouse);
+                    MouseInventoryItem.ClearSlot();
+                    MouseInventoryItem.UpdateMouseSlot(newItemOnMouse);
                 }
             }
 
@@ -85,10 +85,10 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     private void SwapSlots(InventorySlotUI clickeSlotUI)
     {
-        InventorySlot clonedSlot = new InventorySlot(mouseInventoryItem.InventorySlot.ItemData, mouseInventoryItem.InventorySlot.StackSize);
-        mouseInventoryItem.ClearSlot();
+        InventorySlot clonedSlot = new InventorySlot(MouseInventoryItem.InventorySlot.ItemData, MouseInventoryItem.InventorySlot.StackSize);
+        MouseInventoryItem.ClearSlot();
 
-        mouseInventoryItem.UpdateMouseSlot(clickeSlotUI.InventorySlot);
+        MouseInventoryItem.UpdateMouseSlot(clickeSlotUI.InventorySlot);
 
         clickeSlotUI.ClearSlot();
         clickeSlotUI.InventorySlot.AssignItem(clonedSlot);
