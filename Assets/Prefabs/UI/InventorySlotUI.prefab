@@ -96,6 +96,7 @@ MonoBehaviour:
     <ItemData>k__BackingField: {fileID: 0}
     <StackSize>k__BackingField: -1
   <ParentDisplay>k__BackingField: {fileID: 0}
+  testDataBase: {fileID: 0}
 --- !u!1 &6000632885324192449
 GameObject:
   m_ObjectHideFlags: 0
