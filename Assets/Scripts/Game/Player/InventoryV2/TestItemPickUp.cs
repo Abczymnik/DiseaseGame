@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class TestItemPickUp : MonoBehaviour
 {
-    [SerializeField] private InventoryTestItem itemData;
+    [SerializeField] private BaseItem itemData;
 
     private void OnTriggerEnter(Collider other)
     {

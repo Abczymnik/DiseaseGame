@@ -2,18 +2,25 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
     [SerializeField] private Image itemSprite;
     [SerializeField] private TextMeshProUGUI itemCount;
     [field: SerializeField] public InventorySlot InventorySlot { get; private set; }
     [field: SerializeField] public InventoryDisplay ParentDisplay { get; private set; }
+    [SerializeField] private Transform testDataBase; //Referenced in editor
 
-    private Coroutine mouseInputHandlerCoroutine;
+    private Coroutine mouseHoldButtonCoroutine;
     private float requiredHoldButtonTime = 0.25f;
     private float currentHoldButtonTime;
+
+    private Coroutine checkForDoubleClickCoroutine;
+    private float requiredDoubleClickTime = 0.2f;
+    private float currentDoubleClickTime;
+    private bool doubleClickCandidate;
 
 
     private void OnValidate()
@@ -65,24 +72,66 @@ public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         if (ParentDisplay.MouseInventoryItem.InventorySlot.ItemData != null) ParentDisplay.SlotClicked(this);
         else
         {
-            if (mouseInputHandlerCoroutine != null) StopCoroutine(mouseInputHandlerCoroutine);
-            mouseInputHandlerCoroutine = StartCoroutine(MouseHoldButtonCoroutine());
+            if (this.InventorySlot == null) return;
+
+            if (doubleClickCandidate) HandleDoubleClick();
+
+            else CheckForHoldButton();
         }
+    }
+
+    private void HandleDoubleClick()
+    {
+        this.StopCoroutine(ref checkForDoubleClickCoroutine);
+
+        this.StopCoroutine(ref mouseHoldButtonCoroutine);
+
+        doubleClickCandidate = false;
+        Debug.Log("Double click!");
     }
 
     public void OnPointerUp(PointerEventData _)
     {
-        if (mouseInputHandlerCoroutine != null)
+        if (mouseHoldButtonCoroutine != null)
         {
-            StopCoroutine(mouseInputHandlerCoroutine);
-            mouseInputHandlerCoroutine = null;
+            WaitForSecondClick();
+
+            this.StopCoroutine(ref mouseHoldButtonCoroutine);
         }
+    }
+
+    private void WaitForSecondClick()
+    {
+        this.StopCoroutine(ref checkForDoubleClickCoroutine);
+        checkForDoubleClickCoroutine = StartCoroutine(CheckForDoubleClick());
+    }
+
+    private IEnumerator CheckForDoubleClick()
+    {
+        currentDoubleClickTime = 0f;
+        doubleClickCandidate = true;
+        while (currentDoubleClickTime < requiredDoubleClickTime)
+        {
+            currentDoubleClickTime += Time.deltaTime;
+            yield return null;
+        }
+
+        Debug.Log("Single Click");
+        HandleSingleClick();
+        doubleClickCandidate = false;
+        checkForDoubleClickCoroutine = null;
+    }
+
+    private void CheckForHoldButton()
+    {
+        this.StopCoroutine(ref mouseHoldButtonCoroutine);
+        mouseHoldButtonCoroutine = StartCoroutine(MouseHoldButtonCoroutine());
     }
 
     private IEnumerator MouseHoldButtonCoroutine()
     {
         currentHoldButtonTime = 0f;
-        while(currentHoldButtonTime < requiredHoldButtonTime)
+        while (currentHoldButtonTime < requiredHoldButtonTime)
         {
             currentHoldButtonTime += Time.deltaTime;
             yield return null;
@@ -90,6 +139,30 @@ public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
         ParentDisplay.SlotClicked(this);
         currentHoldButtonTime = 0f;
-        mouseInputHandlerCoroutine = null;
+        doubleClickCandidate = false;
+        mouseHoldButtonCoroutine = null;
+    }
+
+    private void HandleSingleClick()
+    {
+        if(this.InventorySlot.ItemData is NoteItem noteItem)
+        {
+            ParentDisplay.MouseInventoryItem.Tooltip.SwitchTooltip(noteItem);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData _)
+    {
+        if (this.InventorySlot.ItemData == null) return;
+        ParentDisplay.MouseInventoryItem.Tooltip.ClearTooltip();
+    }
+
+    private void StopCoroutine(ref Coroutine coroutine)
+    {
+        if(coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null;
+        }
     }
 }

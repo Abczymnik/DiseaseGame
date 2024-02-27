@@ -11,6 +11,7 @@ TagManager:
   - Spawn point
   - Menu Buttons
   - InventoryUI
+  - ItemsDatabase
   layers:
   - Default
   - TransparentFX

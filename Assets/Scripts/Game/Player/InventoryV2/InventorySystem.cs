@@ -19,7 +19,7 @@ public class InventorySystem
         }
     }
 
-    public void AddToInventory(InventoryTestItem itemToAdd, int amountToAdd)
+    public void AddToInventory(BaseItem itemToAdd, int amountToAdd)
     {
         if(ContainsItem(itemToAdd, out List<InventorySlot> inventorySlots))
         {
@@ -41,7 +41,7 @@ public class InventorySystem
         }
     }
 
-    private bool ContainsItem(InventoryTestItem itemToAdd, out List<InventorySlot> inventorySlots)
+    private bool ContainsItem(BaseItem itemToAdd, out List<InventorySlot> inventorySlots)
     {
         inventorySlots = new List<InventorySlot>();
         foreach(InventorySlot inventorySlot in InventorySlots)

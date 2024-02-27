@@ -9,13 +9,15 @@ public class MouseItemData : MonoBehaviour
     [field: SerializeField] public Image ItemSprite { get; private set; }
     [field: SerializeField] public TextMeshProUGUI ItemCount { get; private set; }
     [field: SerializeField] public InventorySlot InventorySlot { get; private set; }
+    [field: SerializeField] public InventoryTooltip Tooltip { get; private set; }
 
     private InputAction mouseLeftButtonInput;
 
     private void OnValidate()
     {
-        ItemSprite = GetComponentInChildren<Image>();
-        ItemCount = GetComponentInChildren<TextMeshProUGUI>();
+        ItemSprite = transform.GetChild(0).GetComponent<Image>();
+        ItemCount = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        Tooltip = transform.GetComponentInChildren<InventoryTooltip>();
     }
 
     private void OnEnable()
@@ -30,6 +32,11 @@ public class MouseItemData : MonoBehaviour
         ItemCount.text = "";
     }
 
+    private void LateUpdate()
+    {
+        transform.localPosition = Mouse.current.position.ReadValue();
+    }
+
     private void OnLeftButtonPress(InputAction.CallbackContext _)
     {
         if (InventorySlot.ItemData != null && !UIHelper.IsPointerOverUI("InventoryUI")) ClearSlot();
@@ -37,31 +44,18 @@ public class MouseItemData : MonoBehaviour
 
     public void UpdateMouseSlot(InventorySlot inventorySlot)
     {
-        StartCoroutine(LateUpdateCoroutine());
         this.InventorySlot.AssignItem(inventorySlot);
         ItemSprite.material = inventorySlot.ItemData.Icon;
-        ItemCount.text = inventorySlot.StackSize.ToString();
+        if(inventorySlot.StackSize > 1) ItemCount.text = inventorySlot.StackSize.ToString();
         ItemSprite.color = Color.white;
     }
 
     public void ClearSlot()
     {
-        StopCoroutine(LateUpdateCoroutine());
         this.InventorySlot.ClearSlot();
         ItemCount.text = "";
         ItemSprite.color = Color.clear;
         ItemSprite.material = null;
-    }
-
-    private IEnumerator LateUpdateCoroutine()
-    {
-        transform.localPosition = Mouse.current.position.ReadValue();
-        while (true)
-        {
-            yield return new WaitForEndOfFrame();
-
-            transform.localPosition = Mouse.current.position.ReadValue();
-        }
     }
 
     private void OnDisable()
