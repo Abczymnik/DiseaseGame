@@ -2,7 +2,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
@@ -11,7 +10,6 @@ public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     [SerializeField] private TextMeshProUGUI itemCount;
     [field: SerializeField] public InventorySlot InventorySlot { get; private set; }
     [field: SerializeField] public InventoryDisplay ParentDisplay { get; private set; }
-    [SerializeField] private Transform testDataBase; //Referenced in editor
 
     private Coroutine mouseHoldButtonCoroutine;
     private float requiredHoldButtonTime = 0.25f;
@@ -69,10 +67,10 @@ public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     public void OnPointerDown(PointerEventData _)
     {
-        if (ParentDisplay.MouseInventoryItem.InventorySlot.ItemData != null) ParentDisplay.SlotClicked(this);
+        if (ParentDisplay.MouseInventoryItem.InventorySlot.ItemData != null) ParentDisplay.SlotSelected(this);
         else
         {
-            if (this.InventorySlot == null) return;
+            if (this.InventorySlot.ItemData == null) return;
 
             if (doubleClickCandidate) HandleDoubleClick();
 
@@ -87,7 +85,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         this.StopCoroutine(ref mouseHoldButtonCoroutine);
 
         doubleClickCandidate = false;
-        Debug.Log("Double click!");
+        ParentDisplay.UseItem(this);
     }
 
     public void OnPointerUp(PointerEventData _)
@@ -116,7 +114,6 @@ public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             yield return null;
         }
 
-        Debug.Log("Single Click");
         HandleSingleClick();
         doubleClickCandidate = false;
         checkForDoubleClickCoroutine = null;
@@ -137,7 +134,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             yield return null;
         }
 
-        ParentDisplay.SlotClicked(this);
+        ParentDisplay.SlotSelected(this);
         currentHoldButtonTime = 0f;
         doubleClickCandidate = false;
         mouseHoldButtonCoroutine = null;
@@ -145,16 +142,13 @@ public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     private void HandleSingleClick()
     {
-        if(this.InventorySlot.ItemData is NoteItem noteItem)
-        {
-            ParentDisplay.MouseInventoryItem.Tooltip.SwitchTooltip(noteItem);
-        }
+        ParentDisplay.SwitchTooltip(this);
     }
 
     public void OnPointerExit(PointerEventData _)
     {
         if (this.InventorySlot.ItemData == null) return;
-        ParentDisplay.MouseInventoryItem.Tooltip.ClearTooltip();
+        ParentDisplay.ClearTooltip();
     }
 
     private void StopCoroutine(ref Coroutine coroutine)

@@ -5,11 +5,14 @@ public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private PlayerInventoryHolder playerInventoryHolder;
     [SerializeField] private InventorySlotUI[] slots;
+    [SerializeField] private Transform noteDatabase;
+    [field: SerializeField] public NoteItem NoteOnScreen { get; private set; }
 
     protected override void OnValidate()
     {
         base.OnValidate();
 
+        noteDatabase = GameObject.FindGameObjectWithTag("ItemDatabase").transform.GetChild(0);
         playerInventoryHolder = FindAnyObjectByType<PlayerInventoryHolder>();
     }
 
@@ -29,5 +32,28 @@ public class StaticInventoryDisplay : InventoryDisplay
             SlotDictionary.Add(slots[i], this.InventorySystem.InventorySlots[i]);
             slots[i].Init(this.InventorySystem.InventorySlots[i]);
         }
+    }
+
+    public override void UseItem(InventorySlotUI selectedSlotUI)
+    {
+        if (selectedSlotUI.InventorySlot.ItemData is NoteItem noteItem)
+        {
+            PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.NoteUI);
+            noteDatabase.GetChild(noteItem.ID + 1).gameObject.SetActive(true);
+            NoteOnScreen = noteItem;
+            UIHelper.HideInventory();
+            UIHelper.DisableGUI();
+            noteDatabase.gameObject.SetActive(true);
+        }
+    }
+
+    public void HideCurrentNote()
+    {
+        noteDatabase.gameObject.SetActive(false);
+        noteDatabase.GetChild(NoteOnScreen.ID + 1).gameObject.SetActive(false);
+        UIHelper.ShowInventory();
+        UIHelper.EnableGUI();
+        NoteOnScreen = null;
+        PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.Gameplay);
     }
 }

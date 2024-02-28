@@ -27,6 +27,12 @@ public class DynamicInventoryDisplay : InventoryDisplay
         }
     }
 
+    public override void UseItem(InventorySlotUI selectedSlotUI)
+    {
+        MouseInventoryItem.UpdateMouseSlot(selectedSlotUI.InventorySlot);
+        selectedSlotUI.ClearSlot();
+    }
+
     private void ClearSlots()
     {
         for (int i = transform.childCount-1; i>=0; i--)

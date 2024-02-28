@@ -69,4 +69,16 @@ public sealed class UIHelper
             GUI.GetComponent<Canvas>().enabled = true;
         }
     }
+
+    public static void ShowInventory()
+    {
+        GameObject inventory = GameObject.FindGameObjectWithTag("Inventory");
+        inventory.GetComponent<Canvas>().enabled = true;
+    }
+
+    public static void HideInventory()
+    {
+        GameObject inventory = GameObject.FindGameObjectWithTag("Inventory");
+        inventory.GetComponent<Canvas>().enabled = false;
+    }
 }
