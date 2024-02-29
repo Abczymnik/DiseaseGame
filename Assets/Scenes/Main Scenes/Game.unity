@@ -29502,7 +29502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MouseInventoryItem>k__BackingField: {fileID: 1702581259}
   playerInventoryHolder: {fileID: 78072738}
-  slots:
+  <Slots>k__BackingField:
   - {fileID: 1942094658}
   - {fileID: 80721843}
   - {fileID: 261854417}
@@ -29551,6 +29551,8 @@ MonoBehaviour:
   - {fileID: 1478709207}
   - {fileID: 302619550}
   - {fileID: 1014225013}
+  noteDatabase: {fileID: 687967379}
+  <NoteOnScreen>k__BackingField: {fileID: 0}
 --- !u!1 &1239978387
 GameObject:
   m_ObjectHideFlags: 0

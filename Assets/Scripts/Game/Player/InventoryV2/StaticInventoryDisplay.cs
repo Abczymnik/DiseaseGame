@@ -4,7 +4,7 @@ using UnityEngine;
 public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private PlayerInventoryHolder playerInventoryHolder;
-    [SerializeField] private InventorySlotUI[] slots;
+    [field: SerializeField] public InventorySlotUI[] Slots { get; private set; }
     [SerializeField] private Transform noteDatabase;
     [field: SerializeField] public NoteItem NoteOnScreen { get; private set; }
 
@@ -29,8 +29,8 @@ public class StaticInventoryDisplay : InventoryDisplay
 
         for(int i=0; i < this.InventorySystem.InventorySlots.Count; i++)
         {
-            SlotDictionary.Add(slots[i], this.InventorySystem.InventorySlots[i]);
-            slots[i].Init(this.InventorySystem.InventorySlots[i]);
+            SlotDictionary.Add(Slots[i], this.InventorySystem.InventorySlots[i]);
+            Slots[i].Init(this.InventorySystem.InventorySlots[i]);
         }
     }
 

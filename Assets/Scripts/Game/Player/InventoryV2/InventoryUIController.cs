@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,9 +7,10 @@ public class InventoryUIController : MonoBehaviour
     [SerializeField] private DynamicInventoryDisplay chestInventoryPanel;
     [SerializeField] private StaticInventoryDisplay playerInventoryPanel;
 
-    private InputAction inventoryToggleInput;
+    private InputAction inventoryToggle;
     private InputAction escapeFromNoteDisplay;
     private InputAction escapeFromInventories;
+    private InputAction swipeNote;
 
     private void OnValidate()
     {
@@ -19,11 +21,13 @@ public class InventoryUIController : MonoBehaviour
     private void OnEnable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayInventory;
-        inventoryToggleInput = PlayerUI.Instance.InputActions.Gameplay.Inventory;
-        inventoryToggleInput.performed += OnToggleInventoryInput;
+        inventoryToggle = PlayerUI.Instance.InputActions.Gameplay.Inventory;
+        inventoryToggle.performed += OnToggleInventory;
         escapeFromInventories = PlayerUI.Instance.InputActions.Gameplay.Back;
         escapeFromNoteDisplay = PlayerUI.Instance.InputActions.NoteUI.Escape;
         escapeFromNoteDisplay.performed += OnEscapeFromNoteDisplay;
+        swipeNote = PlayerUI.Instance.InputActions.NoteUI.Navigation;
+        swipeNote.performed += OnNoteSwipe;
     }
 
     private void Awake()
@@ -32,7 +36,7 @@ public class InventoryUIController : MonoBehaviour
         playerInventoryPanel.gameObject.SetActive(false);
     }
 
-    private void OnToggleInventoryInput(InputAction.CallbackContext _)
+    private void OnToggleInventory(InputAction.CallbackContext _)
     {
         if (playerInventoryPanel.gameObject.activeInHierarchy)
         {
@@ -61,6 +65,54 @@ public class InventoryUIController : MonoBehaviour
         PlayerUI.SwitchActionMap(PlayerUI.Instance.InputActions.Gameplay);
     }
 
+    private void OnNoteSwipe(InputAction.CallbackContext context)
+    {
+        Debug.Log("Event");
+        int currentNoteIndexOnPanel = FindIndexCurrentNote();
+        bool swipeToRight = context.ReadValue<float>() > 0;
+
+        if (swipeToRight)
+        {
+            //Debug.Log("Right");
+            for(int i = currentNoteIndexOnPanel; i < playerInventoryPanel.Slots.Length; i++)
+            {
+                if (playerInventoryPanel.Slots[i].InventorySlot.ItemData == null) continue;
+                else
+                {
+                    playerInventoryPanel.HideCurrentNote();
+                    playerInventoryPanel.UseItem(playerInventoryPanel.Slots[i]);
+                }
+            }
+        }
+        else
+        {
+            //Debug.Log("Left");
+            for (int i = currentNoteIndexOnPanel; i >= 0; i--)
+            {
+                if (playerInventoryPanel.Slots[i].InventorySlot.ItemData == null) continue;
+                else
+                {
+                    playerInventoryPanel.HideCurrentNote();
+                    playerInventoryPanel.UseItem(playerInventoryPanel.Slots[i]);
+                }
+            }
+        }
+    }
+
+    private int FindIndexCurrentNote()
+    {
+        for (int i = 0; i < playerInventoryPanel.Slots.Length; i++)
+        {
+            if (playerInventoryPanel.Slots[i].InventorySlot.ItemData == null) continue;
+
+            if (playerInventoryPanel.Slots[i].InventorySlot.ItemData.ID == playerInventoryPanel.NoteOnScreen.ID)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
+
     private void DisplayInventory(InventorySystem inventoryToDisplay)
     {
         chestInventoryPanel.gameObject.SetActive(true);
@@ -70,7 +122,7 @@ public class InventoryUIController : MonoBehaviour
     private void OnDisable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested -= DisplayInventory;
-        inventoryToggleInput.performed -= OnToggleInventoryInput;
+        inventoryToggle.performed -= OnToggleInventory;
         escapeFromNoteDisplay.performed -= OnEscapeFromNoteDisplay;
         escapeFromInventories.performed -= OnEscapeFromInventories;
     }
