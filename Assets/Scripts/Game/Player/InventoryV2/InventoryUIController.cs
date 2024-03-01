@@ -67,13 +67,11 @@ public class InventoryUIController : MonoBehaviour
 
     private void OnNoteSwipe(InputAction.CallbackContext context)
     {
-        Debug.Log("Event");
         int currentNoteIndexOnPanel = FindIndexCurrentNote();
         bool swipeToRight = context.ReadValue<float>() > 0;
 
         if (swipeToRight)
         {
-            //Debug.Log("Right");
             for(int i = currentNoteIndexOnPanel; i < playerInventoryPanel.Slots.Length; i++)
             {
                 if (playerInventoryPanel.Slots[i].InventorySlot.ItemData == null) continue;
@@ -86,7 +84,6 @@ public class InventoryUIController : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Left");
             for (int i = currentNoteIndexOnPanel; i >= 0; i--)
             {
                 if (playerInventoryPanel.Slots[i].InventorySlot.ItemData == null) continue;

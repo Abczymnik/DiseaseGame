@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Zombie : MonoBehaviour
 {
     [SerializeField] private HealthBar zombieHealthBar;
-    [SerializeField] private GameObject note;
+    [SerializeField] private GameObject loot;
     [SerializeField] private Animator zombieAnimator;
 
     private UnityAction<object> onZombieDeath;
@@ -36,8 +36,8 @@ public class Zombie : MonoBehaviour
     private void OnValidate()
     {
         zombieAnimator = GetComponent<Animator>();
-        zombieHealthBar = transform.GetChild(2).GetComponent<HealthBar>();
-        note = transform.GetChild(0).GetChild(0).gameObject;
+        zombieHealthBar = transform.GetChild(3).GetComponent<HealthBar>();
+        loot = transform.GetChild(0).gameObject;
     }
 
     private void OnEnable()
@@ -55,8 +55,7 @@ public class Zombie : MonoBehaviour
     {
         float drop = Random.Range(0, 1f);
         if (drop > chance) return;
-        EventManager.TriggerEvent("NewNoteOnMap");
-        note.SetActive(true);
+        loot.SetActive(true);
     }
 
     private void OnDeath(object zombieID)
@@ -78,7 +77,7 @@ public class Zombie : MonoBehaviour
         GetComponent<ZombieGoals>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<GAgent>().enabled = false;
-        transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(3).gameObject.SetActive(false);
         DropItem(dropChance);
     }
 

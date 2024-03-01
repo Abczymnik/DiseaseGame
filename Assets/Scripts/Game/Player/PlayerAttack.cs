@@ -142,7 +142,7 @@ public class PlayerAttack : MonoBehaviour
         if (enemiesHitList.Contains(enemyHit.collider)) return;
 
         enemiesHitList.Add(enemyHit.collider);
-        enemyHit.gameObject.GetComponent<Zombie>().TakeDamage(AttackDamage);
+        if (enemyHit.gameObject.TryGetComponent(out Zombie zombie)) zombie.TakeDamage(AttackDamage);
 
         Vector3 effectPos = enemyHit.contacts[0].point;
         Vector3 effectDir = new Vector3(enemyHit.contacts[0].normal.x, 0, enemyHit.contacts[0].normal.z);
