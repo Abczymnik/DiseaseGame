@@ -10,6 +10,9 @@ TagManager:
   - GUI Element
   - Spawn point
   - Menu Buttons
+  - InventoryUI
+  - ItemDatabase
+  - Inventory
   layers:
   - Default
   - TransparentFX
@@ -17,12 +20,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - Building
   - Enemy
-  - 
+  - Interactable
   - 
   - Weapon
   - 

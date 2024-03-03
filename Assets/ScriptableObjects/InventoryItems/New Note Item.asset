@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d56b1fced1368449a3f36c24ad7a645, type: 3}
+  m_Name: New Note Item
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 0
+  <ItemName>k__BackingField: Notatka
+  <MaxStackSize>k__BackingField: 1
+  <Description>k__BackingField: "Pocz\u0105tek cz.1"
+  <Icon>k__BackingField: {fileID: 2100000, guid: e5231ab798acda04a96ee6b368bfb166, type: 2}
