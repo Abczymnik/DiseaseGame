@@ -2584,6 +2584,7 @@ Transform:
   - {fileID: 927938940}
   - {fileID: 1436815569}
   - {fileID: 1267691948}
+  - {fileID: 1341638678}
   - {fileID: 122772880}
   - {fileID: 1777551496}
   m_Father: {fileID: 0}
@@ -4634,7 +4635,7 @@ Transform:
   - {fileID: 4308328}
   - {fileID: 77649873}
   m_Father: {fileID: 77649853}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &127186566
 GameObject:
@@ -30269,7 +30270,7 @@ GameObject:
   - component: {fileID: 1267691949}
   - component: {fileID: 1267691951}
   m_Layer: 5
-  m_Name: Inventory
+  m_Name: OldInventory
   m_TagString: GUI Element
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31556,7 +31557,7 @@ GameObject:
   - component: {fileID: 1341638676}
   - component: {fileID: 1341638675}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: NewInventory
   m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31635,8 +31636,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 485009333}
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 77649853}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -39058,7 +39059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1658741584}
   m_Layer: 0
-  m_Name: TestNewInventory
+  m_Name: TestItemsInv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39071,7 +39072,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658741583}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 64.20914, y: -0.991014, z: 11.388622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -41731,7 +41732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 77649853}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1781634472
 PrefabInstance:

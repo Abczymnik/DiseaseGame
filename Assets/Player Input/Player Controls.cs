@@ -611,12 +611,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Navigation"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""eca0274c-1fdc-4047-941a-a86e6b36f3b9"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [

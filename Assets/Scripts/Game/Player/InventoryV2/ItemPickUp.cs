@@ -21,6 +21,7 @@ public class ItemPickUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if(other.TryGetComponent(out PlayerInventoryHolder inventory))
         {
             inventory.PlayerInventorySystem.AddToInventory(itemData, 1);
+            CursorSwitch.SwitchSkin(CursorName.Standard);
             Destroy(this.gameObject);
         }
     }

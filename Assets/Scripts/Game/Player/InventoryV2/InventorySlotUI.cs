@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
+public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler, IPointerEnterHandler
 {
     [SerializeField] private Image itemSprite;
     [SerializeField] private TextMeshProUGUI itemCount;
@@ -148,7 +148,14 @@ public class InventorySlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public void OnPointerExit(PointerEventData _)
     {
         if (this.InventorySlot.ItemData == null) return;
+        CursorSwitch.SwitchSkin(CursorName.Standard);
         ParentDisplay.ClearTooltip();
+    }
+
+    public void OnPointerEnter(PointerEventData _)
+    {
+        if (this.InventorySlot.ItemData == null) return;
+        CursorSwitch.SwitchSkin(CursorName.Note);
     }
 
     private void StopCoroutine(ref Coroutine coroutine)

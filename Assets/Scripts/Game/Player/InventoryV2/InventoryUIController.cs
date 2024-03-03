@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -43,6 +42,7 @@ public class InventoryUIController : MonoBehaviour
             playerInventoryPanel.MouseInventoryItem.Tooltip.ClearTooltip();
             playerInventoryPanel.gameObject.SetActive(false);
             escapeFromInventories.performed -= OnEscapeFromInventories;
+            CursorSwitch.SwitchSkin(CursorName.Standard);
         }
         else
         {
@@ -56,6 +56,7 @@ public class InventoryUIController : MonoBehaviour
         playerInventoryPanel.MouseInventoryItem.Tooltip.ClearTooltip();
         playerInventoryPanel.gameObject.SetActive(false);
         chestInventoryPanel.gameObject.SetActive(false);
+        CursorSwitch.SwitchSkin(CursorName.Standard);
     }
 
     private void OnEscapeFromNoteDisplay(InputAction.CallbackContext _)
@@ -72,25 +73,27 @@ public class InventoryUIController : MonoBehaviour
 
         if (swipeToRight)
         {
-            for(int i = currentNoteIndexOnPanel; i < playerInventoryPanel.Slots.Length; i++)
+            for(int i = currentNoteIndexOnPanel + 1; i < playerInventoryPanel.Slots.Length; i++)
             {
                 if (playerInventoryPanel.Slots[i].InventorySlot.ItemData == null) continue;
                 else
                 {
                     playerInventoryPanel.HideCurrentNote();
                     playerInventoryPanel.UseItem(playerInventoryPanel.Slots[i]);
+                    return;
                 }
             }
         }
         else
         {
-            for (int i = currentNoteIndexOnPanel; i >= 0; i--)
+            for (int i = currentNoteIndexOnPanel - 1; i >= 0; i--)
             {
                 if (playerInventoryPanel.Slots[i].InventorySlot.ItemData == null) continue;
                 else
                 {
                     playerInventoryPanel.HideCurrentNote();
                     playerInventoryPanel.UseItem(playerInventoryPanel.Slots[i]);
+                    return;
                 }
             }
         }
