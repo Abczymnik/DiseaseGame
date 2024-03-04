@@ -139,6 +139,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void EnemyHit(Collision enemyHit)
     {
+        if (attackAnimator.GetBool("attack") == false) return;
         if (enemiesHitList.Contains(enemyHit.collider)) return;
 
         enemiesHitList.Add(enemyHit.collider);
