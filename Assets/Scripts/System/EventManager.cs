@@ -8,15 +8,15 @@ public class TypedEvent : UnityEvent<object> { }
 
 public class EventManager : MonoBehaviour
 {
-    private Dictionary<string, UnityEvent> eventDict;
-    private Dictionary<string, TypedEvent> typedEventDict;
+    private Dictionary<int, UnityEvent> eventDict;
+    private Dictionary<int, TypedEvent> typedEventDict;
 
     private static EventManager eventManager;
     public static EventManager Instance
     {
         get
         {
-            if(!eventManager)
+            if (!eventManager)
             {
                 eventManager = FindAnyObjectByType(typeof(EventManager)) as EventManager;
 
@@ -34,13 +34,13 @@ public class EventManager : MonoBehaviour
 
     private void Init()
     {
-        if (eventDict == null) eventDict = new Dictionary<string, UnityEvent>();
-        if (typedEventDict == null) typedEventDict = new Dictionary<string, TypedEvent>();
+        if (eventDict == null) eventDict = new Dictionary<int, UnityEvent>();
+        if (typedEventDict == null) typedEventDict = new Dictionary<int, TypedEvent>();
     }
 
-    public static void StartListening(string eventName, UnityAction listener)
+    public static void StartListening(UnityEventName eventName, UnityAction listener)
     {
-        if (Instance.eventDict.TryGetValue(eventName, out UnityEvent thisEvent))
+        if (Instance.eventDict.TryGetValue((int)eventName, out UnityEvent thisEvent))
         {
             thisEvent.AddListener(listener);
         }
@@ -48,13 +48,13 @@ public class EventManager : MonoBehaviour
         {
             thisEvent = new UnityEvent();
             thisEvent.AddListener(listener);
-            Instance.eventDict.Add(eventName, thisEvent);
+            Instance.eventDict.Add((int)eventName, thisEvent);
         }
     }
 
-    public static void StartListening(string eventName, UnityAction<object> listener)
+    public static void StartListening(TypedEventName eventName, UnityAction<object> listener)
     {
-        if (Instance.typedEventDict.TryGetValue(eventName, out TypedEvent thisEvent))
+        if (Instance.typedEventDict.TryGetValue((int)eventName, out TypedEvent thisEvent))
         {
             thisEvent.AddListener(listener);
         }
@@ -62,41 +62,41 @@ public class EventManager : MonoBehaviour
         {
             thisEvent = new TypedEvent();
             thisEvent.AddListener(listener);
-            Instance.typedEventDict.Add(eventName, thisEvent);
+            Instance.typedEventDict.Add((int)eventName, thisEvent);
         }
     }
 
-    public static void StopListening(string eventName, UnityAction listener)
+    public static void StopListening(UnityEventName eventName, UnityAction listener)
     {
         if (eventManager == null) return;
 
-        if (Instance.eventDict.TryGetValue(eventName, out UnityEvent thisEvent))
+        if (Instance.eventDict.TryGetValue((int)eventName, out UnityEvent thisEvent))
         {
             thisEvent.RemoveListener(listener);
         }
     }
 
-    public static void StopListening(string eventName, UnityAction<object> listener)
+    public static void StopListening(TypedEventName eventName, UnityAction<object> listener)
     {
         if (eventManager == null) return;
 
-        if (Instance.typedEventDict.TryGetValue(eventName, out TypedEvent thisEvent))
+        if (Instance.typedEventDict.TryGetValue((int)eventName, out TypedEvent thisEvent))
         {
             thisEvent.RemoveListener(listener);
         }
     }
 
-    public static void TriggerEvent(string eventName)
+    public static void TriggerEvent(UnityEventName eventName)
     {
-        if(Instance.eventDict.TryGetValue(eventName, out UnityEvent thisEvent))
+        if (Instance.eventDict.TryGetValue((int)eventName, out UnityEvent thisEvent))
         {
             thisEvent.Invoke();
         }
     }
 
-    public static void TriggerEvent(string eventName, object data)
+    public static void TriggerEvent(TypedEventName eventName, object data)
     {
-        if (Instance.typedEventDict.TryGetValue(eventName, out TypedEvent thisEvent))
+        if (Instance.typedEventDict.TryGetValue((int)eventName, out TypedEvent thisEvent))
         {
             thisEvent.Invoke(data);
         }

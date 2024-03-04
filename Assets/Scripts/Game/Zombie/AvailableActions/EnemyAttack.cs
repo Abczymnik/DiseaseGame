@@ -108,9 +108,9 @@ public sealed class EnemyAttack : GAction
         while(true)
         {
             yield return new WaitForSeconds(0.5f);
-            EventManager.TriggerEvent("DamagePlayer", zombieAttackDamage);
+            EventManager.TriggerEvent(TypedEventName.DamagePlayer, zombieAttackDamage);
             yield return new WaitForSeconds(0.5f);
-            EventManager.TriggerEvent("DamagePlayer", zombieAttackDamage);
+            EventManager.TriggerEvent(TypedEventName.DamagePlayer, zombieAttackDamage);
         }
     }
 }

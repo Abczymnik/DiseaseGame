@@ -18,7 +18,7 @@ public class PlayerStats : MonoBehaviour
 
     private Coroutine restoreHealthCoroutine;
 
-    public int PlayerLevel { get; private set; } = 1;
+    public int PlayerLevel { get; private set; } = 0;
     public float AttackDamage { get; private set; } = 12f;
     public float AttackSpeed { get; private set; } = 1f;
     public float MovementSpeed { get; private set; } = 3.5f;
@@ -37,7 +37,7 @@ public class PlayerStats : MonoBehaviour
             if(value <= 0)
             {
                 playerHealth.CurrentHealth = 0;
-                EventManager.TriggerEvent("PlayerDeath");
+                EventManager.TriggerEvent(UnityEventName.PlayerDeath);
                 return;
             }
 
@@ -62,7 +62,7 @@ public class PlayerStats : MonoBehaviour
                 }
 
                 PlayerLevel += levelsToAdd;
-                EventManager.TriggerEvent("LevelUp", PlayerLevel);
+                EventManager.TriggerEvent(TypedEventName.LevelUp, PlayerLevel);
                 playerExperience.CurrentExp = playerExpPoints;
                 return;
             }
@@ -124,12 +124,12 @@ public class PlayerStats : MonoBehaviour
     private void OnLevelUp(object playerLevelData)
     {
         int playerLevel = (int)playerLevelData;
-        MaxHealth = 100 + playerLevel * 10;
+        MaxHealth += playerLevel * 10;
         CurrentHealth = MaxHealth;
-        MaxExp = 100 * playerLevel * 10;
-        AttackDamage = 12f + playerLevel * 2;
-        AttackSpeed += 1f + playerLevel * 0.1f;
-        MovementSpeed += 3.5f + playerLevel * 0.2f;
+        MaxExp += playerLevel * 100;
+        AttackDamage += playerLevel * 2;
+        AttackSpeed += playerLevel * 0.1f;
+        MovementSpeed += playerLevel * 0.2f;
     }
 
     private void OnPlayerDeath()
@@ -151,20 +151,20 @@ public class PlayerStats : MonoBehaviour
     private void SetUpEvents()
     {
         onPlayerDeath += OnPlayerDeath;
-        EventManager.StartListening("PlayerDeath", onPlayerDeath);
+        EventManager.StartListening(UnityEventName.PlayerDeath, onPlayerDeath);
         onLevelUp += OnLevelUp;
-        EventManager.StartListening("LevelUp", onLevelUp);
+        EventManager.StartListening(TypedEventName.LevelUp, onLevelUp);
         onPlayerDamage += OnPlayerDamage;
-        EventManager.StartListening("DamagePlayer", onPlayerDamage);
+        EventManager.StartListening(TypedEventName.DamagePlayer, onPlayerDamage);
         onPlayerExperience += OnPlayerExperience;
-        EventManager.StartListening("AddExperience", onPlayerExperience);
+        EventManager.StartListening(TypedEventName.AddExperience, onPlayerExperience);
     }
 
     private void UnsubscribeEvents()
     {
-        EventManager.StopListening("PlayerDeath", onPlayerDeath);
-        EventManager.StopListening("LevelUp", onLevelUp);
-        EventManager.StopListening("DamagePlayer", onPlayerDamage);
-        EventManager.StopListening("AddExperience", onPlayerExperience);
+        EventManager.StopListening(UnityEventName.PlayerDeath, onPlayerDeath);
+        EventManager.StopListening(TypedEventName.LevelUp, onLevelUp);
+        EventManager.StopListening(TypedEventName.DamagePlayer, onPlayerDamage);
+        EventManager.StopListening(TypedEventName.AddExperience, onPlayerExperience);
     }
 }

@@ -25,7 +25,7 @@ public class SceneLoader : MonoBehaviour
     private void OnEnable()
     {
         onLevelChange += OnLevelChange;
-        EventManager.StartListening("ChangeLevel", onLevelChange);
+        EventManager.StartListening(UnityEventName.ChangeLevel, onLevelChange);
     }
 
     private void Awake()
@@ -141,6 +141,6 @@ public class SceneLoader : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.StopListening("ChangeLevel", onLevelChange);
+        EventManager.StopListening(UnityEventName.ChangeLevel, onLevelChange);
     }
 }

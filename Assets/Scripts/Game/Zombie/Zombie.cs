@@ -25,7 +25,7 @@ public class Zombie : MonoBehaviour
             if (value <= 0)
             {
                 zombieHealthBar.CurrentHealth = 0;
-                EventManager.TriggerEvent("ZombieDeath", this.GetInstanceID());
+                EventManager.TriggerEvent(TypedEventName.ZombieDeath, this.GetInstanceID());
                 return;
             }
 
@@ -43,7 +43,7 @@ public class Zombie : MonoBehaviour
     private void OnEnable()
     {
         onZombieDeath += OnDeath;
-        EventManager.StartListening("ZombieDeath", onZombieDeath);
+        EventManager.StartListening(TypedEventName.ZombieDeath, onZombieDeath);
     }
 
     public void TakeDamage(float hit)
@@ -63,7 +63,7 @@ public class Zombie : MonoBehaviour
         if (GetInstanceID() != (int)zombieID) return;
 
         IsDead = true;
-        EventManager.TriggerEvent("AddExperience", experiencePoints);
+        EventManager.TriggerEvent(TypedEventName.AddExperience, experiencePoints);
         zombieAnimator.SetBool("attack", false);
         zombieAnimator.SetInteger("deadType", Random.Range(0, 2));
         zombieAnimator.SetBool("dead", true);
@@ -83,6 +83,6 @@ public class Zombie : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.StopListening("ZombieDeath", onZombieDeath);
+        EventManager.StopListening(TypedEventName.ZombieDeath, onZombieDeath);
     }
 }

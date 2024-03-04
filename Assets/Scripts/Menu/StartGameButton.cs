@@ -5,7 +5,7 @@ public class StartGameButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        EventManager.TriggerEvent("ChangeLevel");
+        EventManager.TriggerEvent(UnityEventName.ChangeLevel);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

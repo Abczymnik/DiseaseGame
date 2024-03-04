@@ -1,18 +1,10 @@
 using UnityEngine;
 
-public enum QuestType
-{
-    Collect,
-    Kill,
-    Destroy,
-    Reach
-}
-
 [CreateAssetMenu(menuName = "ScriptableObjects/Quest")]
 public class QuestData : ScriptableObject
 {
     [field: SerializeField] public QuestType Type { get; private set; }
-    [field: SerializeField] public string Name { get; private set; }
+    [field: SerializeField] public QuestName Name { get; private set; }
     [field: SerializeField] public int LevelRequirement { get; private set; }
     [field: SerializeField] public int ExperienceReward { get; private set; }
     [field: SerializeField] public string Target { get; private set; }

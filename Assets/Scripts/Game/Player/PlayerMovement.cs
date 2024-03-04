@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         onLevelUp += OnLevelUp;
-        EventManager.StartListening("LevelUp", onLevelUp);
+        EventManager.StartListening(TypedEventName.LevelUp, onLevelUp);
     }
 
     private void Awake()
@@ -294,6 +294,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnDisable()
     {
         MovementUIOff();
-        EventManager.StopListening("LevelUp", onLevelUp);
+        EventManager.StopListening(TypedEventName.LevelUp, onLevelUp);
     }
 }

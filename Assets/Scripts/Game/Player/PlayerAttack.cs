@@ -46,7 +46,7 @@ public class PlayerAttack : MonoBehaviour
     private void OnEnable()
     {
         onLevelUp += OnLevelUp;
-        EventManager.StartListening("LevelUp", onLevelUp);
+        EventManager.StartListening(TypedEventName.LevelUp, onLevelUp);
     }
 
     private void Awake()
@@ -179,7 +179,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.StopListening("LevelUp", onLevelUp);
+        EventManager.StopListening(TypedEventName.LevelUp, onLevelUp);
         attackInput.performed -= OnPlayerAttack;
     }
 }

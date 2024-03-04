@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
     private void OnEnable()
     {
         onNewNoteOnMap += OnNewNoteOnMap;
-        EventManager.StartListening("NewNoteOnMap", onNewNoteOnMap);
+        //EventManager.StartListening("NewNoteOnMap", onNewNoteOnMap);
     }
 
     private void Start()
@@ -120,6 +120,6 @@ public class Inventory : MonoBehaviour
     private void OnDisable()
     {
         inventorySwitch.performed -= InventoryPerformed;
-        EventManager.StopListening("NewNoteOnMap", onNewNoteOnMap);
+        //EventManager.StopListening("NewNoteOnMap", onNewNoteOnMap);
     }
 }

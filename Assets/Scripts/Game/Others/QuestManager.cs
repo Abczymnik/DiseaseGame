@@ -17,9 +17,9 @@ public class QuestManager : MonoBehaviour
     {
         onActiveQuestsComplete += OnQuestComplete;
         onLevelUp += OnAvailabilityRefresh;
-        EventManager.StartListening("LevelUp", onLevelUp);
+        EventManager.StartListening(TypedEventName.LevelUp, onLevelUp);
         onNewQuest += OnNewQuest;
-        EventManager.StartListening("NewQuest", onNewQuest);
+        EventManager.StartListening(TypedEventName.NewQuest, onNewQuest);
     }
 
     private void Start()
@@ -44,7 +44,7 @@ public class QuestManager : MonoBehaviour
         {
             ActiveQuests.Add(quest);
             AvailableQuests.Remove(quest);
-            EventManager.StartListening(quest.Name, onActiveQuestsComplete);
+            //EventManager.StartListening(quest.Name, onActiveQuestsComplete);
             Debug.Log(quest.StartDialogue);
         }
     }
@@ -68,8 +68,8 @@ public class QuestManager : MonoBehaviour
         if(ActiveQuests.Contains(quest))
         {
             ActiveQuests.Remove(quest);
-            EventManager.TriggerEvent("AddExperience", quest.ExperienceReward);
-            EventManager.StopListening(quest.name, onActiveQuestsComplete);
+            EventManager.TriggerEvent(TypedEventName.AddExperience, quest.ExperienceReward);
+            //EventManager.StopListening(quest.name, onActiveQuestsComplete);
             Debug.Log(quest.EndDialogue);
 
             if (quest.IsRepeatable) AvailableQuests.Add(quest);
@@ -81,10 +81,10 @@ public class QuestManager : MonoBehaviour
     {
         foreach(QuestData quest in ActiveQuests)
         {
-            EventManager.StopListening(quest.Name, onActiveQuestsComplete);
+            //EventManager.StopListening(quest.Name, onActiveQuestsComplete);
         }
 
-        EventManager.StopListening("LevelUp", onLevelUp);
-        EventManager.StopListening("NewQuest", onNewQuest);
+        EventManager.StopListening(TypedEventName.LevelUp, onLevelUp);
+        EventManager.StopListening(TypedEventName.NewQuest, onNewQuest);
     }
 }

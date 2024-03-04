@@ -7,8 +7,9 @@ public abstract class GAction : MonoBehaviour
     public abstract string ActionName { get; }
     public abstract ActionTypes ActionType { get; }
     public abstract string TargetTag { get; }
-    public NavMeshAgent Agent { get; protected set; }
 
+    [field: SerializeField] public NavMeshAgent Agent { get; protected set; }
+    [field: SerializeField] public Animator ZombieAnimator { get; private set; }
     [field: SerializeField] public GameObject Target { get; protected set; }
     [field: SerializeField] public float Cost { get; protected set; } = 1f;
     [field: SerializeField] public float MinRange { get; protected set; } = 1.5f;
@@ -20,7 +21,6 @@ public abstract class GAction : MonoBehaviour
     public Dictionary<string, int> Preconditions { get; private set; }
     public Dictionary<string, int> Effects { get; private set; }
 
-    public Animator ZombieAnimator { get; private set; }
     public bool running = false;
 
     protected virtual void OnValidate()

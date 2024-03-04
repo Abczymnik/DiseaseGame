@@ -26,7 +26,7 @@ public class RestartGameAfterDeath : MonoBehaviour
     private void OnEnable()
     {
         onPlayerDeath += OnPlayerDeath;
-        EventManager.StartListening("PlayerDeath", onPlayerDeath);
+        EventManager.StartListening(UnityEventName.PlayerDeath, onPlayerDeath);
     }
 
     IEnumerator TransitionFromGameplayToMenu()
@@ -93,7 +93,7 @@ public class RestartGameAfterDeath : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.StopListening("PlayerDeath", onPlayerDeath);
+        EventManager.StopListening(UnityEventName.PlayerDeath, onPlayerDeath);
         for (int i=0; i<GUIImages.Count; i++)
         {
             GUIImages[i].material.SetColor("_UnlitColor", GUIImagesColor[i]);
