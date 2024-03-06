@@ -3,72 +3,130 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.UI;
 
 public class GameSceneLoader : MonoBehaviour
-{
-    private List<HDAdditionalLightData> lightsData = new List<HDAdditionalLightData>();
-    private List<float> lightIntensities = new List<float>();
-    private List<CanvasGroup> GUICanvas = new List<CanvasGroup>();
+{ 
     [SerializeField] private Volume skyLightIntense;
+
+    private HDAdditionalLightData[] lightsData;
+    private float[] lightIntensities;
+    private List<Image> GUIImages = new List<Image>();
+    private Color[] GUIImagesColor;
+
+    private void OnValidate()
+    {
+        skyLightIntense = GameObject.Find("/Settings/Dim Sky").GetComponent<Volume>();
+    }
+
+    private void Awake()
+    {
+        GetLights();
+        TurnOffLights();
+        GetGUIMaterials();
+        TurnOffGUI();
+    }
 
     private void Start()
     {
-        CursorSwitch.SwitchSkin(CursorName.Standard);
-        if(skyLightIntense == null) skyLightIntense = GameObject.Find("/Settings/Dim Sky").GetComponent<Volume>();
-        StartGameScene();
+        StartCoroutine(LoadSceneLights());
+        StartCoroutine(DelayedLoadGUI());
     }
 
-    private void StartGameScene()
-    {
-        GetLights();
-        GetGUICanvas();
-        StartCoroutine(LoadScene());
-    }
-
-    IEnumerator LoadScene()
+    IEnumerator LoadSceneLights()
     {
         float timer = 0;
-        float speed = 2f;
+        float timeForChanges = 3f;
 
-        while (timer < speed)
+        while(timer < timeForChanges)
         {
             timer += Time.deltaTime;
 
-            foreach (CanvasGroup GUI in GUICanvas)
+            for (int i = 0; i < lightsData.Length; i++)
             {
-                GUI.alpha = Mathf.Lerp(0, 1, timer / speed);
+                lightsData[i].intensity = Mathf.Lerp(0, lightIntensities[i], timer / timeForChanges);
             }
 
-            for (int i = 0; i < lightsData.Count; i++)
-            {
-                lightsData[i].intensity = Mathf.Lerp(0, lightIntensities[i], timer / speed);
-            }
+            skyLightIntense.weight = Mathf.Lerp(1, 0, timer / timeForChanges);
 
-            skyLightIntense.weight = Mathf.Lerp(1, 0, timer / speed);
+            yield return null;
+        }
+    }
+
+    IEnumerator DelayedLoadGUI()
+    {
+        yield return new WaitForSeconds(1);
+
+        float timer = 0;
+        float timeForChanges = 3f;
+
+        while (timer < timeForChanges)
+        {
+            timer += Time.deltaTime;
+
+            for (int i = 0; i < GUIImages.Count; i++)
+            {
+                Color targetColor = GUIImagesColor[i];
+                targetColor.a = Mathf.Lerp(0, targetColor.a, timer / timeForChanges);
+                GUIImages[i].material.SetColor("_UnlitColor", targetColor);
+            }
 
             yield return null;
         }
 
-        CursorSwitch.SwitchSkin(CursorName.Standard);
+        OnDisable();
     }
 
     private void GetLights()
     {
-        GameObject[] lightsObj = GameObject.FindGameObjectsWithTag("Light");
-        foreach (GameObject light in lightsObj)
+        lightsData = FindObjectsByType<HDAdditionalLightData>(FindObjectsSortMode.None);
+        lightIntensities = new float[lightsData.Length];
+
+        for (int i = 0; i < lightsData.Length; i++)
         {
-            HDAdditionalLightData lightAddData = light.GetComponent<HDAdditionalLightData>();
-            lightsData.Add(lightAddData);
-            lightIntensities.Add(lightAddData.intensity);
+            lightIntensities[i] = lightsData[i].intensity;
         }
     }
 
-    private void GetGUICanvas()
+    private void TurnOffLights()
     {
-        GameObject[] GUIObj = GameObject.FindGameObjectsWithTag("GUI Element");
-        foreach (GameObject GUI in GUIObj)
+        foreach (HDAdditionalLightData light in lightsData)
         {
-            GUICanvas.Add(GUI.GetComponent<CanvasGroup>());
+            light.intensity = 0f;
+        }
+    }
+
+    private void GetGUIMaterials()
+    {
+        GameObject[] GUIObjects = GameObject.FindGameObjectsWithTag("GUI Element");
+        foreach (GameObject GUIObject in GUIObjects)
+        {
+            Image[] GUIComponents = GUIObject.GetComponentsInChildren<Image>();
+            GUIImages.AddRange(GUIComponents);
+        }
+
+        GUIImagesColor = new Color[GUIImages.Count];
+        for (int i = 0; i < GUIImages.Count; i++)
+        {
+            GUIImagesColor[i] = GUIImages[i].material.GetColor("_UnlitColor");
+        }
+    }
+
+    private void TurnOffGUI()
+    {
+        for (int i = 0; i < GUIImages.Count; i++)
+        {
+            Color targetColor = GUIImagesColor[i];
+            targetColor.a = 0;
+            GUIImages[i].material.SetColor("_UnlitColor", targetColor);
+        }
+    }
+
+    private void OnDisable()
+    {
+        for (int i = 0; i < GUIImages.Count; i++)
+        {
+            GUIImages[i].material.SetColor("_UnlitColor", GUIImagesColor[i]);
         }
     }
 }

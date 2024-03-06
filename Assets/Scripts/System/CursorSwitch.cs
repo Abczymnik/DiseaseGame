@@ -1,12 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CursorSwitch : MonoBehaviour
 { 
     public static CursorSwitch Instance { get; private set; }
     [field: SerializeField] public List<CursorTypeData> CursorTypeDatas { get; private set; } 
-    private SpriteRenderer spriteRend;
+    [SerializeField] private Image cursorImage;
     private CursorName actualSkinName;
+
+    private void OnValidate()
+    {
+        cursorImage = GetComponentInChildren<Image>();
+    }
 
     private void Awake()
     {
@@ -19,13 +25,7 @@ public class CursorSwitch : MonoBehaviour
         {
             Instance = this;
             Cursor.visible = false;
-            SetSpriteRenderer();
         } 
-    }
-    
-    private void SetSpriteRenderer() 
-    { 
-        spriteRend = GetComponent<SpriteRenderer>(); 
     }
     
     public static void SwitchSkin(CursorName cursorSkinName) 
@@ -36,8 +36,7 @@ public class CursorSwitch : MonoBehaviour
         {
             if (cursor.CursorName == cursorSkinName.ToString())
             {
-                Instance.spriteRend.sprite = cursor.CursorSprite;
-                Instance.spriteRend.material.mainTexture = cursor.CursorTexture;
+                Instance.cursorImage.material = cursor.CursorSkin;
                 Instance.actualSkinName = cursorSkinName;
                 return;
             }
@@ -46,13 +45,13 @@ public class CursorSwitch : MonoBehaviour
 
     public static void HideCursor()
     {
-        if (Instance.spriteRend == null) return;
-        Instance.spriteRend.enabled = false; 
+        if (Instance.cursorImage == null) return;
+        Instance.cursorImage.color = Color.clear;
     } 
     
     public static void ShowCursor() 
-    { 
-        if (Instance.spriteRend == null) return;
-        Instance.spriteRend.enabled = true;
+    {
+        if (Instance.cursorImage == null) return;
+        Instance.cursorImage.color = Color.white;
     } 
 }

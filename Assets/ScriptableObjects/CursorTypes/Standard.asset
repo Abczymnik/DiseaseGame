@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Standard
   m_EditorClassIdentifier: 
   <CursorName>k__BackingField: Standard
-  <CursorSprite>k__BackingField: {fileID: 21300000, guid: 0b86e86e49c39584ca92724a2cc3a501, type: 3}
-  <CursorTexture>k__BackingField: {fileID: 2800000, guid: 0b86e86e49c39584ca92724a2cc3a501, type: 3}
+  <CursorSkin>k__BackingField: {fileID: 2100000, guid: 38042ce08ff4d5447a8302f57e2507b0, type: 2}

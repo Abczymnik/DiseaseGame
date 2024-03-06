@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
 
+[RequireComponent(typeof(HDAdditionalLightData))]
 public class CampFireIntense : MonoBehaviour
 {
-    private HDAdditionalLightData lightData;
+    [SerializeField] private HDAdditionalLightData lightData;
 
-    void Start()
+    private void OnValidate()
     {
         lightData = GetComponent<HDAdditionalLightData>();
     }
 
-    void Update()
+    private void Update()
     {
         lightData.intensity = 12 + Mathf.PingPong(Time.time * 8, 4);
     }

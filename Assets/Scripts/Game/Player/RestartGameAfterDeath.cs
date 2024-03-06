@@ -41,7 +41,7 @@ public class RestartGameAfterDeath : MonoBehaviour
             for(int i=0; i<GUIImages.Count; i++)
             {
                 Color targetColor = GUIImagesColor[i];
-                targetColor.a -= Mathf.Lerp(0, targetColor.a, timer / timeForChanges);
+                targetColor.a = Mathf.Lerp(0, targetColor.a, timer / timeForChanges);
                 GUIImages[i].material.SetColor("_UnlitColor", targetColor);
             }
 

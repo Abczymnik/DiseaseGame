@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Attack
   m_EditorClassIdentifier: 
   <CursorName>k__BackingField: Attack
-  <CursorSprite>k__BackingField: {fileID: 21300000, guid: 24d21e256b498a944a00e2527ed7618c, type: 3}
-  <CursorTexture>k__BackingField: {fileID: 2800000, guid: 24d21e256b498a944a00e2527ed7618c, type: 3}
+  <CursorSkin>k__BackingField: {fileID: 2100000, guid: 69c5e4ee60df72f458a9a93738778bbd, type: 2}

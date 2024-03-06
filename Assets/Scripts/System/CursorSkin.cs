@@ -4,12 +4,11 @@ using UnityEngine.InputSystem;
 
 public class CursorSkin : MonoBehaviour
 {
-    private Vector2 mousePosition;
-    private Camera cam;
+    [SerializeField] private RectTransform rectTransform;
 
-    private void Awake()
+    private void OnValidate()
     {
-        DontDestroyOnLoad(gameObject);
+        rectTransform = GetComponent<RectTransform>();
     }
 
     private void OnEnable()
@@ -19,15 +18,13 @@ public class CursorSkin : MonoBehaviour
 
     private void LateUpdate()
     {
-        mousePosition = Mouse.current.position.ReadValue();
-        transform.position = cam.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 1));
-        transform.LookAt(transform.position + cam.transform.forward);
+        rectTransform.anchoredPosition = Mouse.current.position.ReadValue();
     }
 
     private void OnActiveSceneChange(Scene _, Scene next)
     {
         int sceneIndex = next.buildIndex;
-        cam = Camera.main;
+        transform.parent.GetComponent<Canvas>().worldCamera = Camera.main;
 
         switch (sceneIndex)
         {
