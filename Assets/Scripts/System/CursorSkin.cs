@@ -1,14 +1,19 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class CursorSkin : MonoBehaviour
 {
     [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private CanvasScaler scaler;
+    private float screenWidthScalar;
+    private float screenHeightScalar;
 
     private void OnValidate()
     {
         rectTransform = GetComponent<RectTransform>();
+        scaler = GetComponentInParent<CanvasScaler>();
     }
 
     private void OnEnable()
@@ -16,9 +21,16 @@ public class CursorSkin : MonoBehaviour
         SceneManager.activeSceneChanged += OnActiveSceneChange;
     }
 
+    private void Start()
+    {
+        screenWidthScalar = scaler.referenceResolution.x / Screen.width;
+        screenHeightScalar = scaler.referenceResolution.y / Screen.height;
+    }
+
     private void LateUpdate()
     {
-        rectTransform.anchoredPosition = Mouse.current.position.ReadValue();
+        Vector2 mousePosition = Mouse.current.position.ReadValue();
+        rectTransform.anchoredPosition = new Vector2(mousePosition.x * screenWidthScalar, mousePosition.y * screenHeightScalar);
     }
 
     private void OnActiveSceneChange(Scene _, Scene next)

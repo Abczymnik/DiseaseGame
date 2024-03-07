@@ -10,6 +10,11 @@ public class MouseItemData : MonoBehaviour
     [field: SerializeField] public InventorySlot InventorySlot { get; private set; }
     [field: SerializeField] public InventoryTooltip Tooltip { get; private set; }
 
+    [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private CanvasScaler scaler;
+    private float screenWidthScalar;
+    private float screenHeightScalar;
+
     private InputAction mouseLeftButtonInput;
 
     private void OnValidate()
@@ -17,6 +22,9 @@ public class MouseItemData : MonoBehaviour
         ItemSprite = transform.GetChild(0).GetComponent<Image>();
         ItemCount = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         Tooltip = transform.GetComponentInChildren<InventoryTooltip>();
+
+        rectTransform = GetComponent<RectTransform>();
+        scaler = GetComponentInParent<CanvasScaler>();
     }
 
     private void OnEnable()
@@ -29,11 +37,14 @@ public class MouseItemData : MonoBehaviour
     {
         ItemSprite.color = Color.clear;
         ItemCount.text = "";
+        screenWidthScalar = scaler.referenceResolution.x / Screen.width;
+        screenHeightScalar = scaler.referenceResolution.y / Screen.height;
     }
 
     private void LateUpdate()
     {
-        transform.localPosition = Mouse.current.position.ReadValue();
+        Vector2 mousePosition = Mouse.current.position.ReadValue();
+        rectTransform.anchoredPosition = new Vector2(mousePosition.x * screenWidthScalar, mousePosition.y * screenHeightScalar);
     }
 
     private void OnLeftButtonPress(InputAction.CallbackContext _)

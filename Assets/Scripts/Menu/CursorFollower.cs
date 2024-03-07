@@ -29,7 +29,7 @@ public class CursorFollower : MonoBehaviour
 
     private void Start()
     {
-        screenResolution = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
+        screenResolution = new Vector2(Screen.width, Screen.height);
         LastCursorPosition = screenResolution * 0.5f;
     }
 
