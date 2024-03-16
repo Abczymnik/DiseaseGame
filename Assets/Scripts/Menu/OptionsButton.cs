@@ -1,14 +1,41 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OptionsButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
+[RequireComponent(typeof(CanvasGroup))]
+public class OptionsButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IDimmable
 {
-    private CanvasGroup[] buttonsArray;
+    [SerializeField, HideInInspector] private CanvasGroup[] mainButtonsCanvas;
+    [SerializeField] private CanvasGroup thisCanvas;
 
-    private void Start()
+    [field: SerializeField] public float OriginalDim { get; set; }
+
+    private void OnValidate()
     {
-        buttonsArray = transform.parent.GetComponentsInChildren<CanvasGroup>();
+        thisCanvas = GetComponent<CanvasGroup>();
+        OriginalDim = thisCanvas.alpha;
+        mainButtonsCanvas = transform.parent.GetComponentsInChildren<CanvasGroup>();
     }
+
+    private void OnEnable()
+    {
+        AnnounceEnable();
+    }
+
+    public void AnnounceEnable()
+    {
+        EventManager.TriggerEvent(TypedEventName.NewDimmable, this);
+    }
+
+    public void Dim(float dimPercentage)
+    {
+        thisCanvas.alpha = OriginalDim - OriginalDim * dimPercentage;
+    }
+
+    public float CurrentDim()
+    {
+        return OriginalDim - thisCanvas.alpha / OriginalDim;
+    }
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -18,11 +45,11 @@ public class OptionsButton : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     private void DisableMainButtons()
     {
-        foreach(CanvasGroup button in buttonsArray)
+        foreach(CanvasGroup buttonCanvas in mainButtonsCanvas)
         {
-            button.alpha = 0;
-            button.interactable = false;
-            button.blocksRaycasts = false;
+            buttonCanvas.alpha = 0;
+            buttonCanvas.interactable = false;
+            buttonCanvas.blocksRaycasts = false;
         }
     }
 
@@ -34,5 +61,15 @@ public class OptionsButton : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     public void OnPointerEnter(PointerEventData eventData)
     {
         CursorSwitch.ShowCursor();
+    }
+    
+    public void AnnounceDisable()
+    {
+        EventManager.TriggerEvent(TypedEventName.RemoveDimmable, this);
+    }
+
+    private void OnDisable()
+    {
+        AnnounceDisable();
     }
 }

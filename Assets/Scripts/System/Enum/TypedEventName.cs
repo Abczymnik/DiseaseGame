@@ -5,5 +5,6 @@ public enum TypedEventName
     AddExperience,
     DamagePlayer,
     ZombieDeath,
-
+    NewDimmable,
+    RemoveDimmable
 }

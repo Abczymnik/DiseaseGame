@@ -3,11 +3,11 @@ using UnityEngine.EventSystems;
 
 public class ReturnFromOptions : MonoBehaviour, IPointerClickHandler
 {
-    private CanvasGroup[] buttonsArray;
+    [SerializeField] private CanvasGroup[] mainButtonsCanvas;
 
-    private void Start()
+    private void OnValidate()
     {
-        buttonsArray = transform.root.GetComponentsInChildren<CanvasGroup>();
+        mainButtonsCanvas = transform.root.GetComponentsInChildren<CanvasGroup>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -24,11 +24,11 @@ public class ReturnFromOptions : MonoBehaviour, IPointerClickHandler
 
     private void EnableMainButtons()
     {
-        foreach (CanvasGroup button in buttonsArray)
+        foreach (CanvasGroup buttonCanvas in mainButtonsCanvas)
         {
-            button.alpha = 1;
-            button.interactable = true;
-            button.blocksRaycasts = true;
+            buttonCanvas.alpha = 1;
+            buttonCanvas.interactable = true;
+            buttonCanvas.blocksRaycasts = true;
         }
     }
 }
