@@ -34,16 +34,19 @@ public sealed class SceneLoaderManager : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        StartCoroutine(WaitBeforeSceneChange(3f, currentSceneIndex + 1));
-        SceneDeactivationTransition();
-
         switch (currentSceneIndex)
         {
             case 0:
+                StartCoroutine(WaitBeforeSceneChange(3f, currentSceneIndex + 1));
+                SceneDeactivationTransition();
                 EnableLoadingSlider();
                 StartCoroutine(FakeLoadingSlider(3f));
                 break;
+            case 1:
+                break;
             default:
+                StartCoroutine(WaitBeforeSceneChange(3f, currentSceneIndex + 1));
+                SceneDeactivationTransition();
                 break;
         }
     }
@@ -61,7 +64,6 @@ public sealed class SceneLoaderManager : MonoBehaviour
             case 1:
                 EventManager.TriggerEvent(UnityEventName.DisableOptionsByDefault);
                 DisableAndResetLoadingSlider();
-                SceneActivationTransition();
                 break;
             default:
                 EventManager.TriggerEvent(UnityEventName.DisableOptionsByDefault);
