@@ -75,7 +75,7 @@ public sealed class EnvironmentManager: MonoBehaviour
             dimmablesStartDim[i] = dimmables[i].CurrentDim();
         }
 
-        while (timer < timeForChanges)
+        while (timer <= timeForChanges)
         {
             timer += Time.deltaTime;
             for(int i=0; i<dimmables.Count; i++)

@@ -404,6 +404,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Options",
+                    "type": "Button",
+                    "id": "aed3b35d-4d2c-4eb4-826d-12dd866655c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -569,6 +578,17 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c35e55b5-5dca-4950-b33e-9248c1b5cfd5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Options",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

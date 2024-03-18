@@ -7,12 +7,12 @@ public class OptionsButton : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     [SerializeField, HideInInspector] private CanvasGroup[] mainButtonsCanvas;
     [SerializeField] private CanvasGroup thisCanvas;
 
-    [field: SerializeField] public float OriginalDim { get; set; }
+    [field: SerializeField] public float OriginalDimmableValue { get; set; }
 
     private void OnValidate()
     {
         thisCanvas = GetComponent<CanvasGroup>();
-        OriginalDim = thisCanvas.alpha;
+        OriginalDimmableValue = thisCanvas.alpha;
         mainButtonsCanvas = transform.parent.GetComponentsInChildren<CanvasGroup>();
     }
 
@@ -28,14 +28,13 @@ public class OptionsButton : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     public void Dim(float dimPercentage)
     {
-        thisCanvas.alpha = OriginalDim - OriginalDim * dimPercentage;
+        thisCanvas.alpha = OriginalDimmableValue - OriginalDimmableValue * dimPercentage;
     }
 
     public float CurrentDim()
     {
-        return OriginalDim - thisCanvas.alpha / OriginalDim;
+        return 1 - thisCanvas.alpha / OriginalDimmableValue;
     }
-
 
     public void OnPointerClick(PointerEventData eventData)
     {

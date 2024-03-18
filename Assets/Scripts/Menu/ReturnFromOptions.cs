@@ -26,9 +26,14 @@ public class ReturnFromOptions : MonoBehaviour, IPointerClickHandler
     {
         foreach (CanvasGroup buttonCanvas in mainButtonsCanvas)
         {
-            buttonCanvas.alpha = 1;
             buttonCanvas.interactable = true;
             buttonCanvas.blocksRaycasts = true;
+
+            if (buttonCanvas.TryGetComponent(out IDimmable dimmableButton))
+            {
+                buttonCanvas.alpha = dimmableButton.OriginalDimmableValue;
+            }
+            else buttonCanvas.alpha = 1;
         }
     }
 }

@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 public class ExitGameButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IDimmable
 {
     [SerializeField] private CanvasGroup thisCanvas;
-    [field: SerializeField] public float OriginalDim { get; set; }
+    [field: SerializeField] public float OriginalDimmableValue { get; set; }
 
     private void OnValidate()
     {
         thisCanvas = GetComponent<CanvasGroup>();
-        OriginalDim = thisCanvas.alpha;
+        OriginalDimmableValue = thisCanvas.alpha;
     }
 
     private void OnEnable()
@@ -25,12 +25,12 @@ public class ExitGameButton : MonoBehaviour, IPointerClickHandler, IPointerEnter
 
     public void Dim(float dimPercentage)
     {
-        thisCanvas.alpha = OriginalDim - OriginalDim * dimPercentage;
+        thisCanvas.alpha = OriginalDimmableValue - OriginalDimmableValue * dimPercentage;
     }
 
     public float CurrentDim()
     {
-        return OriginalDim - thisCanvas.alpha / OriginalDim;
+        return 1 - thisCanvas.alpha / OriginalDimmableValue;
     }
 
     public void OnPointerClick(PointerEventData eventData)

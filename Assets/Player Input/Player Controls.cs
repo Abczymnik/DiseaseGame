@@ -426,6 +426,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Options"",
+                    ""type"": ""Button"",
+                    ""id"": ""aed3b35d-4d2c-4eb4-826d-12dd866655c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -591,6 +600,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c35e55b5-5dca-4950-b33e-9248c1b5cfd5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Options"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -759,6 +779,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_Select = m_Gameplay.FindAction("Select", throwIfNotFound: true);
         m_Gameplay_Use = m_Gameplay.FindAction("Use", throwIfNotFound: true);
+        m_Gameplay_Options = m_Gameplay.FindAction("Options", throwIfNotFound: true);
         // Note UI
         m_NoteUI = asset.FindActionMap("Note UI", throwIfNotFound: true);
         m_NoteUI_Escape = m_NoteUI.FindAction("Escape", throwIfNotFound: true);
@@ -987,6 +1008,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_Select;
     private readonly InputAction m_Gameplay_Use;
+    private readonly InputAction m_Gameplay_Options;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -998,6 +1020,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Gameplay_Attack;
         public InputAction @Select => m_Wrapper.m_Gameplay_Select;
         public InputAction @Use => m_Wrapper.m_Gameplay_Use;
+        public InputAction @Options => m_Wrapper.m_Gameplay_Options;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1028,6 +1051,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Use.started += instance.OnUse;
             @Use.performed += instance.OnUse;
             @Use.canceled += instance.OnUse;
+            @Options.started += instance.OnOptions;
+            @Options.performed += instance.OnOptions;
+            @Options.canceled += instance.OnOptions;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -1053,6 +1079,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Use.started -= instance.OnUse;
             @Use.performed -= instance.OnUse;
             @Use.canceled -= instance.OnUse;
+            @Options.started -= instance.OnOptions;
+            @Options.performed -= instance.OnOptions;
+            @Options.canceled -= instance.OnOptions;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1167,6 +1196,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
         void OnUse(InputAction.CallbackContext context);
+        void OnOptions(InputAction.CallbackContext context);
     }
     public interface INoteUIActions
     {

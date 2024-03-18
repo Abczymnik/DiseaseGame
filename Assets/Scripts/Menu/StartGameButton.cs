@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 public class StartGameButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IDimmable
 {
     [SerializeField] private CanvasGroup thisCanvas;
-    [field: SerializeField] public float OriginalDim { get; set; }
+    [field: SerializeField] public float OriginalDimmableValue { get; set; }
 
     private void OnValidate()
     {
         thisCanvas = GetComponent<CanvasGroup>();
-        OriginalDim = thisCanvas.alpha;
+        OriginalDimmableValue = thisCanvas.alpha;
     }
 
     private void OnEnable()
@@ -25,17 +25,17 @@ public class StartGameButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void Dim(float dimPercentage)
     {
-        thisCanvas.alpha = OriginalDim - OriginalDim * dimPercentage;
+        thisCanvas.alpha = OriginalDimmableValue - OriginalDimmableValue * dimPercentage;
     }
 
     public float CurrentDim()
     {
-        return OriginalDim - thisCanvas.alpha / OriginalDim;
+        return 1 - thisCanvas.alpha / OriginalDimmableValue;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        EventManager.TriggerEvent(UnityEventName.ChangeLevel);
+        EventManager.TriggerEvent(UnityEventName.NextSceneWish);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

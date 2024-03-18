@@ -1,6 +1,7 @@
 public enum UnityEventName
 {
     PlayerDeath,
-    ChangeLevel,
-
+    NextSceneWish,
+    OptionsVisibleByDefault,
+    DisableOptionsByDefault
 }

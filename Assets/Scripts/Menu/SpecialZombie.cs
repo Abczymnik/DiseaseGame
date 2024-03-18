@@ -8,7 +8,7 @@ public class SpecialZombie : BasicZombie
     private void OnEnable()
     {
         onLevelChange += OnLevelChange;
-        EventManager.StartListening(UnityEventName.ChangeLevel, onLevelChange);
+        EventManager.StartListening(UnityEventName.NextSceneWish, onLevelChange);
     }
 
     private void OnLevelChange()
@@ -20,6 +20,6 @@ public class SpecialZombie : BasicZombie
 
     private void OnDisable()
     {
-        EventManager.StopListening(UnityEventName.ChangeLevel, onLevelChange);
+        EventManager.StopListening(UnityEventName.NextSceneWish, onLevelChange);
     }
 }
