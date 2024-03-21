@@ -729,6 +729,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Options"",
+            ""id"": ""400e1506-4890-4160-9f48-2c95763988d9"",
+            ""actions"": [
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""394f9722-cd43-411b-9875-0765786cdc4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""85534d1e-dc38-4fed-8604-553b0733cf10"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -784,6 +812,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_NoteUI = asset.FindActionMap("Note UI", throwIfNotFound: true);
         m_NoteUI_Escape = m_NoteUI.FindAction("Escape", throwIfNotFound: true);
         m_NoteUI_Navigation = m_NoteUI.FindAction("Navigation", throwIfNotFound: true);
+        // Options
+        m_Options = asset.FindActionMap("Options", throwIfNotFound: true);
+        m_Options_Escape = m_Options.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1153,6 +1184,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public NoteUIActions @NoteUI => new NoteUIActions(this);
+
+    // Options
+    private readonly InputActionMap m_Options;
+    private List<IOptionsActions> m_OptionsActionsCallbackInterfaces = new List<IOptionsActions>();
+    private readonly InputAction m_Options_Escape;
+    public struct OptionsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public OptionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Escape => m_Wrapper.m_Options_Escape;
+        public InputActionMap Get() { return m_Wrapper.m_Options; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(OptionsActions set) { return set.Get(); }
+        public void AddCallbacks(IOptionsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_OptionsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_OptionsActionsCallbackInterfaces.Add(instance);
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
+        }
+
+        private void UnregisterCallbacks(IOptionsActions instance)
+        {
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
+        }
+
+        public void RemoveCallbacks(IOptionsActions instance)
+        {
+            if (m_Wrapper.m_OptionsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IOptionsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_OptionsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_OptionsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public OptionsActions @Options => new OptionsActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -1202,5 +1279,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnEscape(InputAction.CallbackContext context);
         void OnNavigation(InputAction.CallbackContext context);
+    }
+    public interface IOptionsActions
+    {
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

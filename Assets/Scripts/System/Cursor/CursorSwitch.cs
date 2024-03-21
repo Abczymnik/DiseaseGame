@@ -3,11 +3,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CursorSwitch : MonoBehaviour
-{ 
+{
     public static CursorSwitch Instance { get; private set; }
-    [field: SerializeField] public List<CursorTypeData> CursorTypeDatas { get; private set; } 
+    [field: SerializeField] public List<CursorTypeData> CursorTypeDatas { get; private set; }
     [SerializeField] private Image cursorImage;
     private CursorName actualSkinName;
+    private bool isLocked;
 
     private void OnValidate()
     {
@@ -25,14 +26,14 @@ public class CursorSwitch : MonoBehaviour
         {
             Instance = this;
             Cursor.visible = false;
-        } 
+        }
     }
-    
-    public static void SwitchSkin(CursorName cursorSkinName) 
-    { 
+
+    public static void SwitchSkin(CursorName cursorSkinName)
+    {
         if (cursorSkinName == Instance.actualSkinName) return;
 
-        foreach(CursorTypeData cursor in Instance.CursorTypeDatas) 
+        foreach (CursorTypeData cursor in Instance.CursorTypeDatas)
         {
             if (cursor.CursorName == cursorSkinName.ToString())
             {
@@ -45,13 +46,19 @@ public class CursorSwitch : MonoBehaviour
 
     public static void HideCursor()
     {
-        if (Instance.cursorImage == null) return;
+
+        if (Instance.cursorImage == null || Instance.isLocked) return;
         Instance.cursorImage.color = Color.clear;
-    } 
-    
-    public static void ShowCursor() 
+    }
+
+    public static void ShowCursor()
     {
-        if (Instance.cursorImage == null) return;
+        if (Instance.cursorImage == null || Instance.isLocked) return;
         Instance.cursorImage.color = Color.white;
-    } 
+    }
+
+    public static void LockCursorVisibility(bool active)
+    {
+        Instance.isLocked = active;
+    }
 }
