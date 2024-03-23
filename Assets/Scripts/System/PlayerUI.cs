@@ -38,5 +38,10 @@ public sealed class PlayerUI
     {
         Instance.InputActions.Disable();
     }
+
+    public static void EnableInput()
+    {
+        Instance.InputActions.Enable();
+    }
 }
  

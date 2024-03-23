@@ -9,7 +9,7 @@ public sealed class SceneLoaderManager : MonoBehaviour
     public static SceneLoaderManager Instance { get; private set; }
 
     [SerializeField] private Slider loadingSlider; //inactive -> referenced in editor
-    private UnityAction onNextSceneWish;
+    private UnityAction<object> onChangeSceneWish;
 
     private void Awake()
     {
@@ -25,27 +25,27 @@ public sealed class SceneLoaderManager : MonoBehaviour
 
     private void OnEnable()
     {
-        onNextSceneWish += OnNextSceneWish;
-        EventManager.StartListening(UnityEventName.NextSceneWish, onNextSceneWish);
+        onChangeSceneWish += OnChangeSceneWish;
+        EventManager.StartListening(TypedEventName.ChangeSceneWish, onChangeSceneWish);
         SceneManager.activeSceneChanged += OnActiveSceneChange;
     }
 
-    private void OnNextSceneWish()
+    private void OnChangeSceneWish(object changeSceneWishData)
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int wishSceneindex = (int)changeSceneWishData;
 
-        switch (currentSceneIndex)
+        switch (wishSceneindex)
         {
-            case 0:
-                StartCoroutine(WaitBeforeSceneChange(3f, currentSceneIndex + 1));
+            case 1:
+                StartCoroutine(WaitBeforeSceneChange(3f, wishSceneindex));
                 SceneDeactivationTransition();
                 EnableLoadingSlider();
                 StartCoroutine(FakeLoadingSlider(3f));
                 break;
-            case 1:
+            case 2:
                 break;
             default:
-                StartCoroutine(WaitBeforeSceneChange(3f, currentSceneIndex + 1));
+                StartCoroutine(WaitBeforeSceneChange(3f, wishSceneindex));
                 SceneDeactivationTransition();
                 break;
         }
@@ -119,6 +119,6 @@ public sealed class SceneLoaderManager : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManager.StopListening(UnityEventName.NextSceneWish, onNextSceneWish);
+        EventManager.StopListening(TypedEventName.ChangeSceneWish, onChangeSceneWish);
     }
 }

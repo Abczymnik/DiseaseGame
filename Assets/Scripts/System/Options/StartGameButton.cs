@@ -35,7 +35,7 @@ public class StartGameButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        EventManager.TriggerEvent(UnityEventName.NextSceneWish);
+        EventManager.TriggerEvent(TypedEventName.ChangeSceneWish, 1);
     }
 
     public void OnPointerEnter(PointerEventData eventData)

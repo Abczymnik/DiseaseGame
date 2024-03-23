@@ -4,22 +4,29 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class OptionsHolder : MonoBehaviour
 {
     [SerializeField] private Canvas optionsCanvas;
+    [SerializeField] private Button[] mainButtons;
     [SerializeField] private TMP_FontAsset menuFont; //Referenced in editor
-    [SerializeField] private TMP_FontAsset inGameFont; //Referenced in editor
+    [SerializeField] private TMP_FontAsset inGameFontStandardSize; //Referenced in editor
+    [SerializeField] private TMP_FontAsset inGameFontSmallSize; //Referenced in editor
     [SerializeField] private Volume backgroundBlur;
 
     private InputAction optionsEnable;
     private InputAction optionsDisable;
     private UnityAction onVisibleOptionsByDefault;
     private UnityAction onDisableOptionsByDefault;
+    private UnityAction<object> onChangeSceneWish;
+
+    private const float SMALL_FONT_SIZE = 24f;
 
     private void OnValidate()
     {
         optionsCanvas = GetComponent<Canvas>();
+        mainButtons = GetComponentsInChildren<Button>();
         backgroundBlur = GetComponentInChildren<Volume>(true);
     }
 
@@ -62,8 +69,34 @@ public class OptionsHolder : MonoBehaviour
         optionsCanvas.enabled = false;
     }
 
+    private void OnChangeSceneWish(object _)
+    {
+        BlurBackground(false);
+        DisableButtonsInteraction();
+    }
+
+    private void EnableButtonsInteraction()
+    {
+        foreach (var button in mainButtons)
+        {
+            button.GetComponent<CanvasGroup>().blocksRaycasts = true;
+            button.interactable = true;
+        }
+    }
+
+    private void DisableButtonsInteraction()
+    {
+        foreach(var button in mainButtons)
+        {
+            button.GetComponent<CanvasGroup>().blocksRaycasts = false;
+            button.interactable = false;
+        }
+    }
+
     private void OnActiveSceneChange(Scene _, Scene next)
     {
+        BlurBackground(false);
+        EnableButtonsInteraction();
         optionsCanvas.worldCamera = Camera.main;
         int newtSceneIndex = next.buildIndex;
 
@@ -75,7 +108,7 @@ public class OptionsHolder : MonoBehaviour
             case 1:
                 break;
             default:
-                ChangeFontAsset(inGameFont);
+                ChangeFontAsset(inGameFontStandardSize);
                 break;
         }
     }
@@ -85,7 +118,12 @@ public class OptionsHolder : MonoBehaviour
         TextMeshProUGUI[] optionsTextComponents = GetComponentsInChildren<TextMeshProUGUI>(true);
         foreach (var textComponent in optionsTextComponents)
         {
-            textComponent.font = font;
+            if(font == menuFont) textComponent.font = font;
+            else
+            {
+                if (textComponent.fontSize > SMALL_FONT_SIZE) textComponent.font = font;
+                else textComponent.font = inGameFontSmallSize;
+            }
         }
     }
 
@@ -114,6 +152,8 @@ public class OptionsHolder : MonoBehaviour
         EventManager.StartListening(UnityEventName.OptionsVisibleByDefault, onVisibleOptionsByDefault);
         onDisableOptionsByDefault += OnDisableOptionsByDefault;
         EventManager.StartListening(UnityEventName.DisableOptionsByDefault, onDisableOptionsByDefault);
+        onChangeSceneWish += OnChangeSceneWish;
+        EventManager.StartListening(TypedEventName.ChangeSceneWish, onChangeSceneWish);
         SceneManager.activeSceneChanged += OnActiveSceneChange;
     }
 
@@ -123,6 +163,7 @@ public class OptionsHolder : MonoBehaviour
         optionsDisable.performed -= OnOptionsDisable;
         EventManager.StopListening(UnityEventName.OptionsVisibleByDefault, onVisibleOptionsByDefault);
         EventManager.StopListening(UnityEventName.DisableOptionsByDefault, onDisableOptionsByDefault);
+        EventManager.StopListening(TypedEventName.ChangeSceneWish, onChangeSceneWish);
         SceneManager.activeSceneChanged -= OnActiveSceneChange;
     }
 }

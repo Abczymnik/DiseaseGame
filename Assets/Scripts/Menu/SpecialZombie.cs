@@ -3,15 +3,15 @@ using UnityEngine.Events;
 
 public class SpecialZombie : BasicZombie
 {
-    private UnityAction onLevelChange;
+    private UnityAction<object> onChangeSceneWish;
 
     private void OnEnable()
     {
-        onLevelChange += OnLevelChange;
-        EventManager.StartListening(UnityEventName.NextSceneWish, onLevelChange);
+        onChangeSceneWish += OnChangeLevelWish;
+        EventManager.StartListening(TypedEventName.ChangeSceneWish, onChangeSceneWish);
     }
 
-    private void OnLevelChange()
+    private void OnChangeLevelWish(object _)
     {
         ZombieAnimator.SetBool("move", true);
         ZombieAnimator.SetFloat("distanceToPlayer", 6f);
@@ -20,6 +20,6 @@ public class SpecialZombie : BasicZombie
 
     private void OnDisable()
     {
-        EventManager.StopListening(UnityEventName.NextSceneWish, onLevelChange);
+        EventManager.StopListening(TypedEventName.ChangeSceneWish, onChangeSceneWish);
     }
 }

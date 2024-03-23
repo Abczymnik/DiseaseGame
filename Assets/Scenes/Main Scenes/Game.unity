@@ -26182,7 +26182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyLightIntense: {fileID: 1070465388}
-  <OriginalDimmableValue>k__BackingField: 0
+  <OriginalDimmableValue>k__BackingField: 1
 --- !u!114 &1075021593 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3138497416753177735, guid: 00d35867528bf0e42a6702f5b5e2124c, type: 3}
@@ -48384,7 +48384,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043890346}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 082bb8deb30bef8449e03709b438a878, type: 3}
   m_Name: 

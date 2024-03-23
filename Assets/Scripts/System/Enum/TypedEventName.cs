@@ -6,5 +6,6 @@ public enum TypedEventName
     DamagePlayer,
     ZombieDeath,
     NewDimmable,
-    RemoveDimmable
+    RemoveDimmable,
+    ChangeSceneWish
 }
