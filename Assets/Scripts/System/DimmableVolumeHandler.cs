@@ -3,13 +3,18 @@ using UnityEngine.Rendering;
 
 public class DimmableVolumeHandler : MonoBehaviour, IDimmable
 {
-    [SerializeField, HideInInspector] private Volume skyLightIntense;
+    [SerializeField, HideInInspector] private Volume volumeIntense;
     [field: SerializeField] public float OriginalDimmableValue { get; set; }
 
     private void OnValidate()
     {
-        skyLightIntense = GetComponent<Volume>();
-        OriginalDimmableValue = skyLightIntense.weight;
+        volumeIntense = GetComponent<Volume>();
+        OriginalDimmableValue = volumeIntense.CompareTag("DimmableSky") ? 1 : volumeIntense.weight;
+    }
+
+    private void Awake()
+    {
+        volumeIntense.weight = OriginalDimmableValue;
     }
 
     private void OnEnable()
@@ -24,12 +29,12 @@ public class DimmableVolumeHandler : MonoBehaviour, IDimmable
 
     public void Dim(float dimPercentage)
     {
-        skyLightIntense.weight = OriginalDimmableValue * dimPercentage;
+        volumeIntense.weight = OriginalDimmableValue * dimPercentage;
     }
 
     public float CurrentDim()
     {
-        return skyLightIntense.weight / OriginalDimmableValue;
+        return volumeIntense.weight / OriginalDimmableValue;
     }
 
     public void AnnounceDisable()

@@ -13,6 +13,7 @@ TagManager:
   - InventoryUI
   - ItemDatabase
   - Inventory
+  - DimmableSky
   layers:
   - Default
   - TransparentFX

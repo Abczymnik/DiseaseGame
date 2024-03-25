@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.08919132, g: 0.104926586, b: 0.1343121, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26133,7 +26133,7 @@ GameObject:
   - component: {fileID: 1070465389}
   m_Layer: 0
   m_Name: Dim Sky
-  m_TagString: Untagged
+  m_TagString: DimmableSky
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26167,7 +26167,7 @@ MonoBehaviour:
   isGlobal: 1
   priority: 2
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: 30a072e6f8fa05d4e82d9638ae964085, type: 2}
 --- !u!114 &1070465389
 MonoBehaviour:
@@ -26181,7 +26181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6851bc5417e84c643a61ee14c5d25c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skyLightIntense: {fileID: 1070465388}
+  volumeIntense: {fileID: 1070465388}
   <OriginalDimmableValue>k__BackingField: 1
 --- !u!114 &1075021593 stripped
 MonoBehaviour:
