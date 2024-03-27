@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,6 +26,7 @@ public class CursorFollower : MonoBehaviour
     {
         mousePosition = PlayerUI.Instance.InputActions.Menu.Pointer;
         mousePosition.performed += OnCursorPositionChange;
+        ScreenResolutionManager.onScreenResolutionChange += OnScreenResolutionChange;
     }
 
     private void Start()
@@ -50,6 +52,18 @@ public class CursorFollower : MonoBehaviour
         float zValue = cursorPosition.y * (SCENE_MAX_Z - SCENE_MIN_Z) / screenResolution.y + SCENE_MIN_Z;
 
         return new Vector3(xValue, yValue, zValue);
+    }
+
+    public void OnScreenResolutionChange(ScreenResolution newScreenResolution)
+    {
+        StartCoroutine(WaitForNextFrameAndLoadNewResolution(newScreenResolution));
+    }
+
+    private IEnumerator WaitForNextFrameAndLoadNewResolution(ScreenResolution newScreenResolution)
+    {
+        yield return null;
+
+        screenResolution = new Vector2(newScreenResolution.width, newScreenResolution.height);
     }
 
     private void OnCursorPositionChange(InputAction.CallbackContext context)

@@ -5781,6 +5781,10 @@ PrefabInstance:
       propertyPath: scaler
       value: 
       objectReference: {fileID: 1606106069}
+    - target: {fileID: 5054043806504188958, guid: d02b3a84777054044b737612385d2bc1, type: 3}
+      propertyPath: testerDisplay
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8835801998566274387, guid: d02b3a84777054044b737612385d2bc1, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -5827,7 +5831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8835801999219062264, guid: d02b3a84777054044b737612385d2bc1, type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8835801999219062266, guid: d02b3a84777054044b737612385d2bc1, type: 3}
       propertyPath: m_Name

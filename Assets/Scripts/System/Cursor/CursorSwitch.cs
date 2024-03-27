@@ -46,7 +46,6 @@ public class CursorSwitch : MonoBehaviour
 
     public static void HideCursor()
     {
-
         if (Instance.cursorImage == null || Instance.isLocked) return;
         Instance.cursorImage.color = Color.clear;
     }

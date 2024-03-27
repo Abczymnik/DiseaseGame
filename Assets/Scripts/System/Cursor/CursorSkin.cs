@@ -2,6 +2,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections;
 
 public class CursorSkin : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class CursorSkin : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.activeSceneChanged += OnActiveSceneChange;
+        ScreenResolutionManager.onScreenResolutionChange += OnScreenResolutionChange;
     }
 
     private void Start()
@@ -31,6 +33,19 @@ public class CursorSkin : MonoBehaviour
     {
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         rectTransform.anchoredPosition = new Vector2(mousePosition.x * screenWidthScalar, mousePosition.y * screenHeightScalar);
+    }
+
+    public void OnScreenResolutionChange(ScreenResolution newScreenResolution)
+    {
+        StartCoroutine(WaitForNextFrameAndSetScreenScalars(newScreenResolution));
+    }
+
+    private IEnumerator WaitForNextFrameAndSetScreenScalars(ScreenResolution newScreenResolution)
+    {
+        yield return null;
+
+        screenWidthScalar = scaler.referenceResolution.x / newScreenResolution.width;
+        screenHeightScalar = scaler.referenceResolution.y / newScreenResolution.height;
     }
 
     private void OnActiveSceneChange(Scene _, Scene next)

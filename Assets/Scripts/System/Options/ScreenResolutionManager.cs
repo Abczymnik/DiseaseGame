@@ -1,6 +1,9 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
+[Serializable]
 public struct ScreenResolution
 {
     public readonly int width;
@@ -18,6 +21,8 @@ public class ScreenResolutionManager : MonoBehaviour
     [SerializeField] private TMP_Dropdown thisDropdown;
     public ScreenResolution[] AvailableResolutions { get; private set; }
 
+    public static UnityAction<ScreenResolution> onScreenResolutionChange;
+
     private void OnValidate()
     {
         thisDropdown = GetComponent<TMP_Dropdown>();
@@ -26,11 +31,26 @@ public class ScreenResolutionManager : MonoBehaviour
     private void Awake()
     {
         SetBackendAvailableScreenResolutions();
+        SetResolutionLabel();
     }
 
     public void SetScreenResolution(int resolutionIndex)
     {
         Screen.SetResolution(AvailableResolutions[resolutionIndex].width, AvailableResolutions[resolutionIndex].height, true);
+        onScreenResolutionChange?.Invoke(AvailableResolutions[resolutionIndex]);
+    }
+
+    private void SetResolutionLabel()
+    {
+        for(int i=0; i<AvailableResolutions.Length; i++)
+        {
+            if(Screen.width == AvailableResolutions[i].width && Screen.height == AvailableResolutions[i].height)
+            {
+                thisDropdown.value = i;
+                thisDropdown.captionText.text = thisDropdown.options[i].text;
+                return;
+            }
+        }
     }
 
     private void SetBackendAvailableScreenResolutions()
