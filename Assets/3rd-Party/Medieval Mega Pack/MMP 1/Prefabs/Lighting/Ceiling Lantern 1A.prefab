@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 4886685082756104}
   - component: {fileID: 108758710814649186}
   - component: {fileID: 7521467547245547741}
+  - component: {fileID: 5153502477225142682}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -432,3 +433,17 @@ MonoBehaviour:
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0
   m_AreaLightEmissiveMeshLayer: -1
+--- !u!114 &5153502477225142682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896945918212096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289b79c241815d74090e646e2c258445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisLight: {fileID: 7521467547245547741}
+  <OriginalDimmableValue>k__BackingField: 600

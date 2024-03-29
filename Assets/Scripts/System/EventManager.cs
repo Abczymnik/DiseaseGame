@@ -1,41 +1,47 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
 public class TypedEvent : UnityEvent<object> { }
 
-public class EventManager : MonoBehaviour
+public sealed class EventManager
 {
+    private static readonly object instanceLock = new object();
+
     private Dictionary<int, UnityEvent> eventDict;
     private Dictionary<int, TypedEvent> typedEventDict;
 
-    private static EventManager eventManager;
+    private static EventManager _instance;
     public static EventManager Instance
     {
         get
         {
-            if (!eventManager)
+            if (_instance == null)
             {
-                eventManager = FindAnyObjectByType(typeof(EventManager)) as EventManager;
-
-                if (!eventManager)
+                lock (instanceLock)
                 {
-                    Debug.LogError("There is no active EventManager");
+                    if (_instance == null)
+                    {
+                        _instance = new EventManager();
+
+                        _instance.InitializeEventsBasedManagers();
+                    }
                 }
-
-                else eventManager.Init();
             }
-
-            return eventManager;
+            return _instance;
         }
     }
 
-    private void Init()
+    private EventManager()
     {
-        if (eventDict == null) eventDict = new Dictionary<int, UnityEvent>();
-        if (typedEventDict == null) typedEventDict = new Dictionary<int, TypedEvent>();
+        eventDict = new Dictionary<int, UnityEvent>();
+        typedEventDict = new Dictionary<int, TypedEvent>();
+    }
+
+    private void InitializeEventsBasedManagers()
+    {
+        EnvironmentManager.Instance.Init();
     }
 
     public static void StartListening(UnityEventName eventName, UnityAction listener)
@@ -68,7 +74,7 @@ public class EventManager : MonoBehaviour
 
     public static void StopListening(UnityEventName eventName, UnityAction listener)
     {
-        if (eventManager == null) return;
+        if (_instance == null) return;
 
         if (Instance.eventDict.TryGetValue((int)eventName, out UnityEvent thisEvent))
         {
@@ -78,7 +84,7 @@ public class EventManager : MonoBehaviour
 
     public static void StopListening(TypedEventName eventName, UnityAction<object> listener)
     {
-        if (eventManager == null) return;
+        if (_instance == null) return;
 
         if (Instance.typedEventDict.TryGetValue((int)eventName, out TypedEvent thisEvent))
         {

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class Intro : MonoBehaviour
+public class PerformIntroStory : MonoBehaviour
 {
     [SerializeField, HideInInspector] private Volume dimVolume;
     [SerializeField] private GameObject bloodOnNote; //inactive -> referenced in editor 

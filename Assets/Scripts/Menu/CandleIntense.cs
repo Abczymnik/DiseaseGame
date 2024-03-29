@@ -6,7 +6,7 @@ using UnityEngine.Rendering.HighDefinition;
 public class CandleIntense : MonoBehaviour
 {
     [SerializeField, HideInInspector] private HDAdditionalLightData lightData;
-    private UnityAction onLevelChange;
+    private UnityAction<object> onChangeSceneWish;
 
     private void OnValidate()
     {
@@ -15,8 +15,8 @@ public class CandleIntense : MonoBehaviour
 
     private void OnEnable()
     {
-        onLevelChange += OnLevelChange;
-        EventManager.StartListening(UnityEventName.ChangeLevel, onLevelChange);
+        onChangeSceneWish += OnChangeSceneWish;
+        EventManager.StartListening(TypedEventName.ChangeSceneWish, onChangeSceneWish);
     }
     
     private void Update()
@@ -24,13 +24,13 @@ public class CandleIntense : MonoBehaviour
         lightData.intensity = 20 + Mathf.PingPong(Time.time*100, 10);
     }
 
-    private void OnLevelChange()
+    private void OnChangeSceneWish(object _)
     {
         this.enabled = false;
     }
 
     private void OnDisable()
     {
-        EventManager.StopListening(UnityEventName.ChangeLevel, onLevelChange);
+        EventManager.StopListening(TypedEventName.ChangeSceneWish, onChangeSceneWish);
     }
 }

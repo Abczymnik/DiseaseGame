@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -31,6 +32,7 @@ public class MouseItemData : MonoBehaviour
     {
         mouseLeftButtonInput = PlayerUI.Instance.InputActions.Gameplay.Select;
         mouseLeftButtonInput.performed += OnLeftButtonPress;
+        ScreenResolutionManager.onScreenResolutionChange += OnScreenResolutionChange;
     }
 
     private void Awake()
@@ -45,6 +47,19 @@ public class MouseItemData : MonoBehaviour
     {
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         rectTransform.anchoredPosition = new Vector2(mousePosition.x * screenWidthScalar, mousePosition.y * screenHeightScalar);
+    }
+
+    public void OnScreenResolutionChange(ScreenResolution newScreenResolution)
+    {
+        StartCoroutine(WaitForNextFrameAndSetScreenScalars(newScreenResolution));
+    }
+
+    private IEnumerator WaitForNextFrameAndSetScreenScalars(ScreenResolution newScreenResolution)
+    {
+        yield return null;
+
+        screenWidthScalar = scaler.referenceResolution.x / newScreenResolution.width;
+        screenHeightScalar = scaler.referenceResolution.y / newScreenResolution.height;
     }
 
     private void OnLeftButtonPress(InputAction.CallbackContext _)
@@ -71,5 +86,6 @@ public class MouseItemData : MonoBehaviour
     private void OnDisable()
     {
         mouseLeftButtonInput.performed -= OnLeftButtonPress;
+        ScreenResolutionManager.onScreenResolutionChange -= OnScreenResolutionChange;
     }
 }
