@@ -36,8 +36,21 @@ public class ScreenResolutionManager : MonoBehaviour
 
     public void SetScreenResolution(int resolutionIndex)
     {
-        Screen.SetResolution(AvailableResolutions[resolutionIndex].width, AvailableResolutions[resolutionIndex].height, true);
-        onScreenResolutionChange?.Invoke(AvailableResolutions[resolutionIndex]);
+        if(TrySetScreenResolution(resolutionIndex, out int highestPossibleResolutionIndex))
+        {
+            Screen.SetResolution(AvailableResolutions[resolutionIndex].width, AvailableResolutions[resolutionIndex].height, true);
+            onScreenResolutionChange?.Invoke(AvailableResolutions[resolutionIndex]);
+        }
+        else
+        {
+            if (highestPossibleResolutionIndex == -1) return;
+
+            Screen.SetResolution(AvailableResolutions[highestPossibleResolutionIndex].width,
+                AvailableResolutions[highestPossibleResolutionIndex].height, true);
+
+            SetResolutionLabel(highestPossibleResolutionIndex);
+            onScreenResolutionChange?.Invoke(AvailableResolutions[highestPossibleResolutionIndex]);
+        }
     }
 
     private void SetResolutionLabel()
@@ -51,6 +64,40 @@ public class ScreenResolutionManager : MonoBehaviour
                 return;
             }
         }
+    }
+
+    private void SetResolutionLabel(int resolutionIndex)
+    {
+        thisDropdown.value = resolutionIndex;
+        thisDropdown.captionText.text = thisDropdown.options[resolutionIndex].text;
+    }
+
+    private bool TrySetScreenResolution(int resolutionIndex, out int highestPossibleResolutionIndex)
+    {
+        foreach(var resolution in Screen.resolutions)
+        {
+            if(resolution.width == AvailableResolutions[resolutionIndex].width &&
+                resolution.height == AvailableResolutions[resolutionIndex].height)
+            {
+                highestPossibleResolutionIndex = resolutionIndex;
+                return true;
+            }
+        }
+
+        for (int i=resolutionIndex+1; i< AvailableResolutions.Length; i++)
+        {
+            foreach(var resolution in Screen.resolutions)
+            {
+                if (resolution.width == AvailableResolutions[i].width && resolution.height == AvailableResolutions[i].height)
+                {
+                    highestPossibleResolutionIndex = i;
+                    return false;
+                }
+            }
+        }
+
+        highestPossibleResolutionIndex = -1;
+        return false;
     }
 
     private void SetBackendAvailableScreenResolutions()

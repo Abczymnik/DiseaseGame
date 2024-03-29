@@ -74,5 +74,6 @@ public class CursorFollower : MonoBehaviour
     private void OnDisable()
     {
         mousePosition.performed -= OnCursorPositionChange;
+        ScreenResolutionManager.onScreenResolutionChange -= OnScreenResolutionChange;
     }
 }

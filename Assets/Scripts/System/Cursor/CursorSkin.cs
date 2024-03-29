@@ -77,5 +77,6 @@ public class CursorSkin : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.activeSceneChanged -= OnActiveSceneChange;
+        ScreenResolutionManager.onScreenResolutionChange -= OnScreenResolutionChange;
     }
 }

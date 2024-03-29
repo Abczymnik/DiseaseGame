@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -10,9 +9,6 @@ public class OptionsHolder : MonoBehaviour
 {
     [SerializeField] private Canvas optionsCanvas;
     [SerializeField] private Button[] mainButtons;
-    [SerializeField] private TMP_FontAsset menuFont; //Referenced in editor
-    [SerializeField] private TMP_FontAsset inGameFontStandardSize; //Referenced in editor
-    [SerializeField] private TMP_FontAsset inGameFontSmallSize; //Referenced in editor
     [SerializeField] private Volume backgroundBlur;
 
     private InputAction optionsEnable;
@@ -20,8 +16,6 @@ public class OptionsHolder : MonoBehaviour
     private UnityAction onVisibleOptionsByDefault;
     private UnityAction onDisableOptionsByDefault;
     private UnityAction<object> onChangeSceneWish;
-
-    private const float SMALL_FONT_SIZE = 24f;
 
     private void OnValidate()
     {
@@ -98,33 +92,6 @@ public class OptionsHolder : MonoBehaviour
         BlurBackground(false);
         EnableButtonsInteraction();
         optionsCanvas.worldCamera = Camera.main;
-        int newtSceneIndex = next.buildIndex;
-
-        switch(newtSceneIndex)
-        {
-            case 0:
-                ChangeFontAsset(menuFont);
-                break;
-            case 1:
-                break;
-            default:
-                ChangeFontAsset(inGameFontStandardSize);
-                break;
-        }
-    }
-
-    private void ChangeFontAsset(TMP_FontAsset font)
-    {
-        TextMeshProUGUI[] optionsTextComponents = GetComponentsInChildren<TextMeshProUGUI>(true);
-        foreach (var textComponent in optionsTextComponents)
-        {
-            if(font == menuFont) textComponent.font = font;
-            else
-            {
-                if (textComponent.fontSize > SMALL_FONT_SIZE) textComponent.font = font;
-                else textComponent.font = inGameFontSmallSize;
-            }
-        }
     }
 
     private void BlurBackground(bool active)
