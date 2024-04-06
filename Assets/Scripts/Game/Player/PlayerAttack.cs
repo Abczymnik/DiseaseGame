@@ -43,16 +43,16 @@ public class PlayerAttack : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
+    private void Awake()
+    {
+        attackInput = PlayerUI.Instance.InputActions.Gameplay.Attack;
+    }
+
     private void OnEnable()
     {
         onLevelUp += OnLevelUp;
         EventManager.StartListening(TypedEventName.LevelUp, onLevelUp);
-    }
-
-    private void Awake()
-    {
-        attackInput = PlayerUI.Instance.InputActions.Gameplay.Attack;
-        attackInput.performed += OnPlayerAttack;
+        AttackUIOn();
     }
 
     private void Start()
@@ -178,9 +178,19 @@ public class PlayerAttack : MonoBehaviour
         AttackSpeed = playerStats.AttackSpeed;
     }
 
+    public void AttackUIOn()
+    {
+        attackInput.performed += OnPlayerAttack;
+    }
+
+    public void AttackUIOff()
+    {
+        attackInput.performed -= OnPlayerAttack;
+    }
+
     private void OnDisable()
     {
         EventManager.StopListening(TypedEventName.LevelUp, onLevelUp);
-        attackInput.performed -= OnPlayerAttack;
+        AttackUIOff();
     }
 }

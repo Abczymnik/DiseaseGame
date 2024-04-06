@@ -65,15 +65,15 @@ public class PlayerMovement : MonoBehaviour
         playerController = GetComponent<CharacterController>();
     }
 
+    private void Awake()
+    {
+        moveInput = PlayerUI.Instance.InputActions.Gameplay.Move;
+    }
+
     private void OnEnable()
     {
         onLevelUp += OnLevelUp;
         EventManager.StartListening(TypedEventName.LevelUp, onLevelUp);
-    }
-
-    private void Awake()
-    {
-        moveInput = PlayerUI.Instance.InputActions.Gameplay.Move;
         MovementUIOn();
     }
 

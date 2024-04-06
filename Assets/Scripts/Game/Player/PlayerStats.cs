@@ -97,10 +97,11 @@ public class PlayerStats : MonoBehaviour
 
         while (CurrentHealth < MaxHealth)
         {
-            CurrentHealth += 1f * Time.deltaTime;
+            CurrentHealth += Time.deltaTime;
             yield return null;
         }
 
+        CurrentHealth = MaxHealth;
         restoreHealthCoroutine = null;
     }
 
@@ -114,10 +115,17 @@ public class PlayerStats : MonoBehaviour
     {
         float damage = (float)damageData;
         CurrentHealth -= damage;
-        if (CurrentHealth < 0) { return; }
+        if (CurrentHealth <= 0)
+        {
+            if (restoreHealthCoroutine != null)
+            {
+                StopCoroutine(restoreHealthCoroutine);
+                restoreHealthCoroutine = null;
+            }
+            return;
+        }
 
         if (restoreHealthCoroutine != null) StopCoroutine(restoreHealthCoroutine);
-
         restoreHealthCoroutine = StartCoroutine(RestoreHealthCoroutine());
     }
 
@@ -137,10 +145,13 @@ public class PlayerStats : MonoBehaviour
         IsDead = true;
         playerAnimator.SetBool("dead", true);
         UnsubscribeEvents();
-        PlayerUI.BlockInput();
-        playerMovement.enabled = false;
-        playerAttack.enabled = false;
-        if (restoreHealthCoroutine != null) StopCoroutine(restoreHealthCoroutine);
+        playerMovement.MovementUIOff();
+        playerAttack.AttackUIOff();
+        if (restoreHealthCoroutine != null)
+        {
+            StopCoroutine(restoreHealthCoroutine);
+            restoreHealthCoroutine = null;
+        }
     }
 
     private void OnDisable()
